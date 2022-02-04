@@ -18,14 +18,15 @@ const PrivacyPolicy = () => {
         <p className="text-zinc-400 text-sm mb-6">
           The data collection process (including data collected through cookies)
           related to our website (https://pryzma.io/) and services is described
-          in this document. For the purpose of this Privacy Policy “we”, “our”,
-          “Pryzma” and “website” will mean Pryzma&#39;s website and all its
-          relevant content and information. Also, the terms “you”, “client”, and
-          “user” shall mean anyone accessing this website and/or obtaining any
-          of the offered services through our website. We offer consultancy
-          services as well as digital products through our website. In this
-          document referring to "services" all through this Privacy policy shall
-          mean the services that are being provided through our website
+          in this document. For the purpose of this Privacy Policy &#34;we&#34;,
+          &#34;our&#34;, &#34;Pryzma&#34; and &#34;website&#34; will mean
+          Pryzma&#39;s website and all its relevant content and information.
+          Also, the terms &#34;you&#34;, &#34;client&#34;, and &#34;user&#34;
+          shall mean anyone accessing this website and/or obtaining any of the
+          offered services through our website. We offer consultancy services as
+          well as digital products through our website. In this document
+          referring to "services" all through this Privacy policy shall mean the
+          services that are being provided through our website
         </p>
         <p className="text-zinc-200">
           SECTION 2 - COLLECTION OF INFORMATION FROM THE USERS
