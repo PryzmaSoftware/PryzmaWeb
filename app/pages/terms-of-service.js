@@ -16,15 +16,15 @@ const TermsOfService = () => {
         </p>
         <p className="text-zinc-200">SECTION 1 - TERMS OF SERVICE OF PRYZMA</p>
         <p className="text-zinc-400 text-sm mb-6">
-          {` These are the Terms of Service (“Terms”) for our website
+          These are the Terms of Service (“Terms”) for our website
           https://pryzma.io (hereinafter referred to as “website”, “our”, “us”
           or “Pryzma”). The following Terms set forth below apply to the extent
-          the users use our website’s services. In these Terms of Service, the
-          terms such as “we”, “our” “us” will mean Pryzma, it’s services and
+          the users use our website's services. In these Terms of Service, the
+          terms such as “we”, “our” “us” will mean Pryzma, it's services and
           software while the terms “you”, “your”, “client” and “user” will mean
           anyone who is going to obtain our SAAS services through our website.
           To use our services, you need to acknowledge these Terms. By using our
-          services, you agree to be bound by these Terms. `}
+          services, you agree to be bound by these Terms.
         </p>
         <p className="text-zinc-200 mb-2">SECTION 2 - REQUIREMENTS</p>
         <ol className="list-decimal ml-10 mb-6">
@@ -45,7 +45,7 @@ const TermsOfService = () => {
         </ol>
         <p className="text-zinc-200">2.1. Personal Data Requirement</p>
         <p className="text-zinc-400 text-sm mb-6">
-          To use any aspects of our services, you’ll be asked to become our user
+          To use any aspects of our services, you'll be asked to become our user
           or subscriber through our website or the Agreement. Therefore, our
           services are only directed towards individuals who are 18 years of age
           or older. By using our services, becoming user of our website, and
@@ -66,7 +66,7 @@ const TermsOfService = () => {
           website, data, databases, and all other information and intellectual
           property accessible on or through our website is the property (through
           IP laws or licenses) of the owner of this website and are protected by
-          International and USA’s Copyright and Intellectual property laws. All
+          International and USA's Copyright and Intellectual property laws. All
           the third-party services and links available through our website are
           only for the purpose of providing our services and such services,
           listings and links are protected under the laws of the third-party
@@ -116,7 +116,7 @@ const TermsOfService = () => {
             of your login information.
           </li>
         </ol>
-        <p className="text-zinc-200">SECTION 5 – RESTRICTIONS ON USERS</p>
+        <p className="text-zinc-200">SECTION 5 - RESTRICTIONS ON USERS</p>
         <p className="text-zinc-400 text-sm mb-2">
           While using our services no user/client of Pryzma is allowed to do any
           of the following.
@@ -146,7 +146,7 @@ const TermsOfService = () => {
           </li>
           <li className="text-sm text-zinc-400">
             You as the user are strictly barred from making any chargebacks on
-            the amount they’ve already paid, doing so will result in legal
+            the amount they've already paid, doing so will result in legal
             proceedings against you.
           </li>
         </ol>
@@ -157,8 +157,8 @@ const TermsOfService = () => {
           We may use the services third-party services providers for the purpose
           of rendering our services. We do not endorse any websites that can be
           accessed through the links available on our website. References or
-          links in our website, videos, and services to any other individual’s,
-          business, or entity’s information, opinions, advice, programs,
+          links in our website, videos, and services to any other individual's,
+          business, or entity's information, opinions, advice, programs,
           products or services do not constitute our formal endorsement. We are
           only using third-party tools to provide our service and we do not have
           any control over the data policies of these websites. We will only
@@ -169,7 +169,7 @@ const TermsOfService = () => {
         </p>
         <p className="text-zinc-200">SECTION 7 - DISCLAIMER</p>
         <p className="text-zinc-400 text-sm mb-6">
-          The information provided on Pryzma’s website is based solely on
+          The information provided on Pryzma's website is based solely on
           research conducted by us and is presented "as is" for your information
           purposes only. This information is not intended as a promise to offer,
           buy or sell, or amount to a solicitation or incitement of offer to buy
@@ -194,7 +194,7 @@ const TermsOfService = () => {
           offering documents and their terms, rules and conditions. If you base
           a decision on information contained on our website, you will be solely
           responsible for that decision. The information contained and provided
-          through Pryzma’s website has been included after thorough research.
+          through Pryzma's website has been included after thorough research.
           However, this information has not been evaluated by any regulatory
           authority. In no event, we will be held liable for any loss or damage
           that you may have suffered after obtaining any information from our
@@ -217,7 +217,7 @@ const TermsOfService = () => {
           volatile. We do not make any promises that your investments will be
           profitable and therefore, Pryzma will not be responsible or liable for
           any loss or shortfall resulting from the operation of any
-          investment-related to Pryzma’s research materials or software. Our
+          investment-related to Pryzma's research materials or software. Our
           research materials and services may contain “forward-looking
           statements”. Any statements that express or involve discussions
           concerning predictions, expectations, beliefs, plans, projections,
@@ -236,12 +236,12 @@ const TermsOfService = () => {
           SECTION 10 - WAIVER OF LIABILITY AND RELEASE OF CLAIMS
         </p>
         <p className="text-zinc-400 text-sm mb-6">
-          The users and clients of Pryzma’s website hereby held us indemnified
+          The users and clients of Pryzma's website hereby held us indemnified
           from all legal claims and waive, release, and forever discharge any
           and/or all claims for incidental, direct, indirect, contractual,
           compensatory, tort-based, punitive, or any other damages or any sort
           arising from any cause or basis whatsoever including but not limited
-          to personal injury, property damage which the user or users’
+          to personal injury, property damage which the user or users
           associates, heirs, next of kin, executors, assigns or personal
           representatives may have suffered or which may hereafter occur accrue
           as a result of participation in any activity related to the products
@@ -268,7 +268,7 @@ const TermsOfService = () => {
           our website or the service following the posting of any changes to
           these Terms constitutes acceptance of those changes.
         </p>
-        <p className="text-zinc-200">SECTION 12 – CONTACT US</p>
+        <p className="text-zinc-200">SECTION 12 - CONTACT US</p>
         <a
           href="mailto:support@pryzma.io"
           className="text-sky-500 text-sm mb-12 hover:underline"
