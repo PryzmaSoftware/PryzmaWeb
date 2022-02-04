@@ -16,15 +16,17 @@ const TermsOfService = () => {
         </p>
         <p className="text-zinc-200">SECTION 1 - TERMS OF SERVICE OF PRYZMA</p>
         <p className="text-zinc-400 text-sm mb-6">
-          These are the Terms of Service (“Terms”) for our website
-          https://pryzma.io (hereinafter referred to as “website”, “our”, “us”
-          or “Pryzma”). The following Terms set forth below apply to the extent
-          the users use our website&#39;s services. In these Terms of Service,
-          the terms such as “we”, “our” “us” will mean Pryzma, it&#39;s services
-          and software while the terms “you”, “your”, “client” and “user” will
-          mean anyone who is going to obtain our SAAS services through our
-          website. To use our services, you need to acknowledge these Terms. By
-          using our services, you agree to be bound by these Terms.
+          These are the Terms of Service (&#34;Terms&#34;) for our website
+          https://pryzma.io (hereinafter referred to as &#34;website&#34;,
+          &#34;our&#34;, &#34;us&#34; or &#34;Pryzma&#34;). The following Terms
+          set forth below apply to the extent the users use our website&#39;s
+          services. In these Terms of Service, the terms such as &#34;we&#34;,
+          &#34;our&#34; &#34;us&#34; will mean Pryzma, it&#39;s services and
+          software while the terms &#34;you&#34;, &#34;your&#34;,
+          &#34;client&#34; and &#34;user&#34; will mean anyone who is going to
+          obtain our SAAS services through our website. To use our services, you
+          need to acknowledge these Terms. By using our services, you agree to
+          be bound by these Terms.
         </p>
         <p className="text-zinc-200 mb-2">SECTION 2 - REQUIREMENTS</p>
         <ol className="list-decimal ml-10 mb-6">
@@ -219,19 +221,20 @@ const TermsOfService = () => {
           profitable and therefore, Pryzma will not be responsible or liable for
           any loss or shortfall resulting from the operation of any
           investment-related to Pryzma&#39;s research materials or software. Our
-          research materials and services may contain “forward-looking
-          statements”. Any statements that express or involve discussions
+          research materials and services may contain &#34;forward-looking
+          statements&#34;. Any statements that express or involve discussions
           concerning predictions, expectations, beliefs, plans, projections,
           objectives, goals, assumptions, or future events or performance are
-          not statements of historical fact and may be “forward-looking
-          statements.” Forward-looking statements are based on expectations,
+          not statements of historical fact and may be &#34;forward-looking
+          statements.&#34; Forward-looking statements are based on expectations,
           estimates, and projections at the time the statements are made that
           involve several risks and uncertainties which could cause actual
           results or events to differ materially from those presently
           anticipated. Forward-looking statements in this action may be
-          identified through the use of words such as “expects”, “will,”
-          “anticipates,” “estimates,” “believes,” or statements indicating
-          certain actions “may,” “could,” or “might” occur.
+          identified through the use of words such as &#34;expects&#34;,
+          &#34;will,&#34; &#34;anticipates,&#34; &#34;estimates,&#34;
+          &#34;believes,&#34; or statements indicating certain actions
+          &#34;may,&#34; &#34;could,&#34; or &#34;might&#34; occur.
         </p>
         <p className="text-zinc-200">
           SECTION 10 - WAIVER OF LIABILITY AND RELEASE OF CLAIMS
