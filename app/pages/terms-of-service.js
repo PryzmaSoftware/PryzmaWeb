@@ -19,12 +19,12 @@ const TermsOfService = () => {
           These are the Terms of Service (“Terms”) for our website
           https://pryzma.io (hereinafter referred to as “website”, “our”, “us”
           or “Pryzma”). The following Terms set forth below apply to the extent
-          the users use our website's services. In these Terms of Service, the
-          terms such as “we”, “our” “us” will mean Pryzma, it's services and
-          software while the terms “you”, “your”, “client” and “user” will mean
-          anyone who is going to obtain our SAAS services through our website.
-          To use our services, you need to acknowledge these Terms. By using our
-          services, you agree to be bound by these Terms.
+          the users use our website&#39;s services. In these Terms of Service,
+          the terms such as “we”, “our” “us” will mean Pryzma, it&#39;s services
+          and software while the terms “you”, “your”, “client” and “user” will
+          mean anyone who is going to obtain our SAAS services through our
+          website. To use our services, you need to acknowledge these Terms. By
+          using our services, you agree to be bound by these Terms.
         </p>
         <p className="text-zinc-200 mb-2">SECTION 2 - REQUIREMENTS</p>
         <ol className="list-decimal ml-10 mb-6">
@@ -45,10 +45,10 @@ const TermsOfService = () => {
         </ol>
         <p className="text-zinc-200">2.1. Personal Data Requirement</p>
         <p className="text-zinc-400 text-sm mb-6">
-          To use any aspects of our services, you'll be asked to become our user
-          or subscriber through our website or the Agreement. Therefore, our
-          services are only directed towards individuals who are 18 years of age
-          or older. By using our services, becoming user of our website, and
+          To use any aspects of our services, you&#39;ll be asked to become our
+          user or subscriber through our website or the Agreement. Therefore,
+          our services are only directed towards individuals who are 18 years of
+          age or older. By using our services, becoming user of our website, and
           giving out the payment details you represent and warrant that you are
           at least 18 years old. While using any of our services you must
           provide information that is true and accurate (please read further
@@ -66,9 +66,9 @@ const TermsOfService = () => {
           website, data, databases, and all other information and intellectual
           property accessible on or through our website is the property (through
           IP laws or licenses) of the owner of this website and are protected by
-          International and USA's Copyright and Intellectual property laws. All
-          the third-party services and links available through our website are
-          only for the purpose of providing our services and such services,
+          International and USA&#39;s Copyright and Intellectual property laws.
+          All the third-party services and links available through our website
+          are only for the purpose of providing our services and such services,
           listings and links are protected under the laws of the third-party
           services partners.
         </p>
@@ -101,8 +101,8 @@ const TermsOfService = () => {
           <li className="text-sm text-zinc-400 mb-1">
             <span className="text-zinc-200">Payment Processing Problem - </span>
             If there is an issue with processing subscription charges, the
-            account will be put into 'read-only' mode. The account will remain
-            this way until the issue is resolved and the payment has been
+            account will be put into &#39;read-only&#39; mode. The account will
+            remain this way until the issue is resolved and the payment has been
             successfully processed.
           </li>
           <li className="text-sm text-zinc-400">
@@ -146,7 +146,7 @@ const TermsOfService = () => {
           </li>
           <li className="text-sm text-zinc-400">
             You as the user are strictly barred from making any chargebacks on
-            the amount they've already paid, doing so will result in legal
+            the amount they&#39;ve already paid, doing so will result in legal
             proceedings against you.
           </li>
         </ol>
@@ -157,19 +157,20 @@ const TermsOfService = () => {
           We may use the services third-party services providers for the purpose
           of rendering our services. We do not endorse any websites that can be
           accessed through the links available on our website. References or
-          links in our website, videos, and services to any other individual's,
-          business, or entity's information, opinions, advice, programs,
-          products or services do not constitute our formal endorsement. We are
-          only using third-party tools to provide our service and we do not have
-          any control over the data policies of these websites. We will only
-          share information for your own self-help. We are not responsible for
-          the website content, e-mails, videos, social media, programs,
-          products, and/or services of any off-site web pages, companies or
-          persons linked or referenced in our website, videos, and services.
+          links in our website, videos, and services to any other
+          individual&#39;s, business, or entity&#39;s information, opinions,
+          advice, programs, products or services do not constitute our formal
+          endorsement. We are only using third-party tools to provide our
+          service and we do not have any control over the data policies of these
+          websites. We will only share information for your own self-help. We
+          are not responsible for the website content, e-mails, videos, social
+          media, programs, products, and/or services of any off-site web pages,
+          companies or persons linked or referenced in our website, videos, and
+          services.
         </p>
         <p className="text-zinc-200">SECTION 7 - DISCLAIMER</p>
         <p className="text-zinc-400 text-sm mb-6">
-          The information provided on Pryzma's website is based solely on
+          The information provided on Pryzma&#39;s website is based solely on
           research conducted by us and is presented "as is" for your information
           purposes only. This information is not intended as a promise to offer,
           buy or sell, or amount to a solicitation or incitement of offer to buy
@@ -194,15 +195,15 @@ const TermsOfService = () => {
           offering documents and their terms, rules and conditions. If you base
           a decision on information contained on our website, you will be solely
           responsible for that decision. The information contained and provided
-          through Pryzma's website has been included after thorough research.
-          However, this information has not been evaluated by any regulatory
-          authority. In no event, we will be held liable for any loss or damage
-          that you may have suffered after obtaining any information from our
-          website. You as the user, customer, client or the subscriber of our
-          services must discern any risks before making any investments in new
-          funds, stocks, or foreign exchange markets. By using our website, you
-          hereby indemnify us from all future claims, lawsuits, legal
-          procedures, criminal liabilities, and other legal actions.
+          through Pryzma&#39;s website has been included after thorough
+          research. However, this information has not been evaluated by any
+          regulatory authority. In no event, we will be held liable for any loss
+          or damage that you may have suffered after obtaining any information
+          from our website. You as the user, customer, client or the subscriber
+          of our services must discern any risks before making any investments
+          in new funds, stocks, or foreign exchange markets. By using our
+          website, you hereby indemnify us from all future claims, lawsuits,
+          legal procedures, criminal liabilities, and other legal actions.
         </p>
         <p className="text-zinc-200">
           SECTION 9 - EARNINGS DISCLAIMER AND FORWARD DISCLAIMER
@@ -217,7 +218,7 @@ const TermsOfService = () => {
           volatile. We do not make any promises that your investments will be
           profitable and therefore, Pryzma will not be responsible or liable for
           any loss or shortfall resulting from the operation of any
-          investment-related to Pryzma's research materials or software. Our
+          investment-related to Pryzma&#39;s research materials or software. Our
           research materials and services may contain “forward-looking
           statements”. Any statements that express or involve discussions
           concerning predictions, expectations, beliefs, plans, projections,
@@ -236,13 +237,13 @@ const TermsOfService = () => {
           SECTION 10 - WAIVER OF LIABILITY AND RELEASE OF CLAIMS
         </p>
         <p className="text-zinc-400 text-sm mb-6">
-          The users and clients of Pryzma's website hereby held us indemnified
-          from all legal claims and waive, release, and forever discharge any
-          and/or all claims for incidental, direct, indirect, contractual,
-          compensatory, tort-based, punitive, or any other damages or any sort
-          arising from any cause or basis whatsoever including but not limited
-          to personal injury, property damage which the user or users
-          associates, heirs, next of kin, executors, assigns or personal
+          The users and clients of Pryzma&#39;s website hereby held us
+          indemnified from all legal claims and waive, release, and forever
+          discharge any and/or all claims for incidental, direct, indirect,
+          contractual, compensatory, tort-based, punitive, or any other damages
+          or any sort arising from any cause or basis whatsoever including but
+          not limited to personal injury, property damage which the user or
+          users associates, heirs, next of kin, executors, assigns or personal
           representatives may have suffered or which may hereafter occur accrue
           as a result of participation in any activity related to the products
           listed on our website and its services. Moreover, you hereby agree,
