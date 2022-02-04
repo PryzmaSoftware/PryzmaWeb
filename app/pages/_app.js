@@ -21,8 +21,9 @@ function MyApp({ Component, pageProps }) {
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_CODE}`}
+          id="googleScriptOne"
         />
-        <Script strategy="lazyOnload">
+        <Script strategy="lazyOnload" id="googleScriptTwo">
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -62,10 +63,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
+        id="googleScriptThree"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_CODE}`}
       />
-      <Script strategy="lazyOnload">
+      <Script strategy="lazyOnload" id="googleScriptFour">
         {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
