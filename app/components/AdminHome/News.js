@@ -74,7 +74,10 @@ const News = ({ news, watchListSymbols }) => {
                   </p>
                   <div className="flex mt-2">
                     {element.tickers.map((ticker) => (
-                      <p className="uppercase mr-2 text-xs font-medium text-zinc-300 py-1 px-1.5 rounded-md bg-zinc-700">
+                      <p
+                        className="uppercase mr-2 text-xs font-medium text-zinc-300 py-1 px-1.5 rounded-md bg-zinc-700"
+                        key={ticker}
+                      >
                         {ticker}
                       </p>
                     ))}
