@@ -173,15 +173,15 @@ const TermsOfService = () => {
         <p className="text-zinc-200">SECTION 7 - DISCLAIMER</p>
         <p className="text-zinc-400 text-sm mb-6">
           The information provided on Pryzma&#39;s website is based solely on
-          research conducted by us and is presented "as is" for your information
-          purposes only. This information is not intended as a promise to offer,
-          buy or sell, or amount to a solicitation or incitement of offer to buy
-          or sell, any stocks, bonds, currencies, plans or any form of
-          investment with which we are associated in any jurisdiction in which
-          such distribution or offers is not authorized to any person.
-          Furthermore, any of the terms stated in this disclaimer also do not
-          constitute financial, legal, accounting, or tax advice to any user and
-          should not be relied upon as such.
+          research conducted by us and is presented &#34;as is&#34; for your
+          information purposes only. This information is not intended as a
+          promise to offer, buy or sell, or amount to a solicitation or
+          incitement of offer to buy or sell, any stocks, bonds, currencies,
+          plans or any form of investment with which we are associated in any
+          jurisdiction in which such distribution or offers is not authorized to
+          any person. Furthermore, any of the terms stated in this disclaimer
+          also do not constitute financial, legal, accounting, or tax advice to
+          any user and should not be relied upon as such.
         </p>
         <p className="text-zinc-200">SECTION 8 - DISCLAIMER OF WARRANTIES</p>
         <p className="text-zinc-400 text-sm mb-6">
