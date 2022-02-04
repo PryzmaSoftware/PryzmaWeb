@@ -25,8 +25,8 @@ const PrivacyPolicy = () => {
           shall mean anyone accessing this website and/or obtaining any of the
           offered services through our website. We offer consultancy services as
           well as digital products through our website. In this document
-          referring to "services" all through this Privacy policy shall mean the
-          services that are being provided through our website
+          referring to &#34;services&#34; all through this Privacy policy shall
+          mean the services that are being provided through our website
         </p>
         <p className="text-zinc-200">
           SECTION 2 - COLLECTION OF INFORMATION FROM THE USERS
@@ -286,7 +286,7 @@ const PrivacyPolicy = () => {
         <p className="text-zinc-400 text-sm mb-6">
           All users have the right to opt-out of our e-mail and newsletter list.
           Users can either follow the link at the end of every e-mail sent by us
-          or click on ‘unsubscribe&#39; and they will no longer be contacted.
+          or click on unsubscribe&#39; and they will no longer be contacted.
           Users can also choose to contact us through our website at the address
           given below to let us know about their willingness to opting-out.
           Users&#39; requests will be taken care of as soon as possible.
