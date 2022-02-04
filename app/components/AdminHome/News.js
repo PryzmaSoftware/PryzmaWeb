@@ -26,7 +26,10 @@ const News = ({ news, watchListSymbols }) => {
                 className="flex items-center cursor-pointer mb-2 rounded-md p-2 hover:bg-zinc-800 transition-all duration-300"
                 key={index}
               >
-                <div className="rounded-md max-h-[128px] max-w-[217px] min-w-[217px] overflow-hidden">
+                <div
+                  className="rounded-md max-h-[128px] max-w-[217px] min-w-[217px] overflow-hidden"
+                  key={index}
+                >
                   <Image
                     src={element.image_url}
                     height={128}
