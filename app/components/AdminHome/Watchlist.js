@@ -283,7 +283,7 @@ const WatchList = ({ user, watchListSymbols, setWatchListSymbols }) => {
           })
         ) : (
           <p className="p-8 text-center text-sm text-zinc-300 leading-7">
-            You don't have any stocks in your watchlist at this time.
+            You don&#39;t have any stocks in your watchlist at this time.
             <br />
             Search for a stock above to add to your watchlist.
           </p>
