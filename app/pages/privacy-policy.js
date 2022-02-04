@@ -19,13 +19,13 @@ const PrivacyPolicy = () => {
           The data collection process (including data collected through cookies)
           related to our website (https://pryzma.io/) and services is described
           in this document. For the purpose of this Privacy Policy “we”, “our”,
-          “Pryzma” and “website” will mean Pryzma's website and all its relevant
-          content and information. Also, the terms “you”, “client”, and “user”
-          shall mean anyone accessing this website and/or obtaining any of the
-          offered services through our website. We offer consultancy services as
-          well as digital products through our website. In this document
-          referring to "services" all through this Privacy policy shall mean the
-          services that are being provided through our website
+          “Pryzma” and “website” will mean Pryzma&#39;s website and all its
+          relevant content and information. Also, the terms “you”, “client”, and
+          “user” shall mean anyone accessing this website and/or obtaining any
+          of the offered services through our website. We offer consultancy
+          services as well as digital products through our website. In this
+          document referring to "services" all through this Privacy policy shall
+          mean the services that are being provided through our website
         </p>
         <p className="text-zinc-200">
           SECTION 2 - COLLECTION OF INFORMATION FROM THE USERS
@@ -50,17 +50,19 @@ const PrivacyPolicy = () => {
         <p className="text-zinc-400 text-sm mb-6">
           In order to provide our services, there is certain data that is
           collected automatically. This type of information includes (but is not
-          limited to) the user's device type (eg; computer or phone), Internet
-          Protocol (IP) address, information of user's device (such as make,
-          model, and OS), the geographic or regional location related details,
-          the time and date when a user has used our website including
+          limited to) the user&#39;s device type (eg; computer or phone),
+          Internet Protocol (IP) address, information of user&#39;s device (such
+          as make, model, and OS), the geographic or regional location related
+          details, the time and date when a user has used our website including
           information related to the language preference, browser configuration,
           cookies and any possible unique identifiers.
         </p>
-        <p className="text-zinc-200">SECTION 3 - USAGE OF USERS' INFORMATION</p>
+        <p className="text-zinc-200">
+          SECTION 3 - USAGE OF USERS&#39; INFORMATION
+        </p>
         <p className="text-zinc-400 text-sm mb-6">
-          The users' information is used to provide, create and improve services
-          of our website for the reasons stated below.
+          The users&#39; information is used to provide, create and improve
+          services of our website for the reasons stated below.
         </p>
         <p className="text-zinc-200 mb-2">
           3.1. Providing And Securing Our Services.
@@ -78,7 +80,7 @@ const PrivacyPolicy = () => {
           </li>
         </ol>
         <p className="text-zinc-200">
-          3.2. Troubleshooting, Providing, And Improving Pryzma's Services
+          3.2. Troubleshooting, Providing, And Improving Pryzma&#39;s Services
         </p>
         <p className="text-zinc-400 text-sm mb-6">
           We use the information gathered from users to improve our services and
@@ -93,34 +95,35 @@ const PrivacyPolicy = () => {
         <p className="text-zinc-200">3.4. Comply With Lawful Commitments</p>
         <p className="text-zinc-400 text-sm mb-6">
           If we are subpoenaed, requested or ordered by any legal, judicial or
-          federal authority we might use and share users' data to comply with
-          the law.
+          federal authority we might use and share users&#39; data to comply
+          with the law.
         </p>
         <p className="text-zinc-200">SECTION 4 - COOKIES POLICY</p>
         <p className="text-zinc-400 text-sm mb-6">
           For the purpose of providing our services our website uses, collects
-          and stores cookies on users' devices in order to identify regular and
-          unique users. The collection of cookies helps our website's
+          and stores cookies on users&#39; devices in order to identify regular
+          and unique users. The collection of cookies helps our website&#39;s
           functionality, directs our traffic towards our affiliate partners, and
           improves our services. As a user, you can decide whether or not to
           accept cookies by changing the settings of your browser. By using our
-          website and purchasing any services by following our website's links
-          you hereby affirm and give us your consent to track cookies in this
-          way. Furthermore, cookies may also be stored by the third-party
+          website and purchasing any services by following our website&#39;s
+          links you hereby affirm and give us your consent to track cookies in
+          this way. Furthermore, cookies may also be stored by the third-party
           services providers related to our website. This will mainly happen
-          when you click on the third-party website's link and follow the link.
-          We make it clear that we are only responsible for the data collection
-          on our website and our Privacy Policy is specifically designed for our
-          website. Consider reading the privacy policies of any third-party
-          websites that you choose to visit.
+          when you click on the third-party website&#39;s link and follow the
+          link. We make it clear that we are only responsible for the data
+          collection on our website and our Privacy Policy is specifically
+          designed for our website. Consider reading the privacy policies of any
+          third-party websites that you choose to visit.
         </p>
         <p className="text-zinc-200">SECTION 5 - SHARING OF USER INFORMATION</p>
         <p className="text-zinc-400 text-sm mb-2">
-          We only share users' information with our service providers and
-          official contractors. We do not sell any users' information to anyone.
-          In addition, we also share some of the users' non-identifiable
-          information with automatic analytical tools and software in aggregated
-          form. We share users' information in the following ways:
+          We only share users&#39; information with our service providers and
+          official contractors. We do not sell any users&#39; information to
+          anyone. In addition, we also share some of the users&#39;
+          non-identifiable information with automatic analytical tools and
+          software in aggregated form. We share users&#39; information in the
+          following ways:
         </p>
         <ol className="list-decimal ml-10 mb-6">
           <li className="text-sm text-zinc-400 mb-1">
@@ -167,7 +170,7 @@ const PrivacyPolicy = () => {
           might be governed by their own respective policies and data protection
           laws. We urge the users and consumers of our website to keep
           themselves informed of any policies of such third-party links by
-          reading their respective policies and privacy statements. Pryzma's
+          reading their respective policies and privacy statements. Pryzma&#39;s
           website will not accept any liability for your access, use, or
           reliance on such add-ons, tools, software, apps, and the materials
           contained therein.
@@ -228,8 +231,9 @@ const PrivacyPolicy = () => {
             <span className="text-zinc-200">
               The Right To With Draw The Consent -{" "}
             </span>
-            You have the right to withdraw the consent from any of our website's
-            processing of your personal data, under certain conditions.
+            You have the right to withdraw the consent from any of our
+            website&#39;s processing of your personal data, under certain
+            conditions.
           </li>
           <li className="text-sm text-zinc-400 mb-1">
             <span className="text-zinc-200">
@@ -257,7 +261,7 @@ const PrivacyPolicy = () => {
           </a>
         </p>
         <p className="text-zinc-200">
-          SECTION 9 - CHILDREN'S ONLINE PRIVACY PROTECTION
+          SECTION 9 - CHILDREN&#39;S ONLINE PRIVACY PROTECTION
         </p>
         <p className="text-zinc-400 text-sm mb-6">
           We respect the law of the Children Online Privacy Protection Act
@@ -281,10 +285,10 @@ const PrivacyPolicy = () => {
         <p className="text-zinc-400 text-sm mb-6">
           All users have the right to opt-out of our e-mail and newsletter list.
           Users can either follow the link at the end of every e-mail sent by us
-          or click on ‘unsubscribe' and they will no longer be contacted. Users
-          can also choose to contact us through our website at the address given
-          below to let us know about their willingness to opting-out. Users'
-          requests will be taken care of as soon as possible.
+          or click on ‘unsubscribe&#39; and they will no longer be contacted.
+          Users can also choose to contact us through our website at the address
+          given below to let us know about their willingness to opting-out.
+          Users&#39; requests will be taken care of as soon as possible.
         </p>
         <p className="text-zinc-200">SECTION 12 - CONTACT US</p>
         <p className="text-zinc-400 text-sm mb-6">
