@@ -16,7 +16,7 @@ const TermsOfService = () => {
         </p>
         <p className="text-zinc-200">SECTION 1 - TERMS OF SERVICE OF PRYZMA</p>
         <p className="text-zinc-400 text-sm mb-6">
-          These are the Terms of Service (“Terms”) for our website
+          {` These are the Terms of Service (“Terms”) for our website
           https://pryzma.io (hereinafter referred to as “website”, “our”, “us”
           or “Pryzma”). The following Terms set forth below apply to the extent
           the users use our website’s services. In these Terms of Service, the
@@ -24,13 +24,13 @@ const TermsOfService = () => {
           software while the terms “you”, “your”, “client” and “user” will mean
           anyone who is going to obtain our SAAS services through our website.
           To use our services, you need to acknowledge these Terms. By using our
-          services, you agree to be bound by these Terms.
+          services, you agree to be bound by these Terms. `}
         </p>
         <p className="text-zinc-200 mb-2">SECTION 2 - REQUIREMENTS</p>
         <ol className="list-decimal ml-10 mb-6">
           <li className="text-sm text-zinc-400 mb-1">
             You must be 18 years old, or if you are a minor, have a parent or
-            gaurdians consent before use of the website.{" "}
+            gaurdians consent before use of the website.
           </li>
           <li className="text-sm text-zinc-400 mb-1">
             You must agree to let us collect your data.
@@ -119,7 +119,7 @@ const TermsOfService = () => {
         <p className="text-zinc-200">SECTION 5 – RESTRICTIONS ON USERS</p>
         <p className="text-zinc-400 text-sm mb-2">
           While using our services no user/client of Pryzma is allowed to do any
-          of the following.{" "}
+          of the following.
         </p>
         <ol className="list-decimal ml-10 mb-6">
           <li className="text-sm text-zinc-400 mb-1">
