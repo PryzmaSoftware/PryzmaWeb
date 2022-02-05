@@ -23,7 +23,10 @@ const DropDownNavMenu = ({ userData, active, setDropDownActive, button }) => {
     const response = await axios
       .get("/api/logout")
       .catch((e) => console.error(e));
-    if (response.data === "user logged out") router.push("/login");
+    const secondResponse = await axios
+      .get("/api/logout")
+      .catch((e) => console.error(e));
+    if (secondResponse.data === "user logged out") router.push("/login");
   };
 
   return (
