@@ -282,7 +282,7 @@ const Movers = () => {
           </div>
           {data &&
             data.map((element) => {
-              if (element.symbol.includes(".") || element.last === 0) return;
+              if (element.symbol.includes(".") || element.last < 0.005) return;
               return (
                 <div
                   onClick={() =>
