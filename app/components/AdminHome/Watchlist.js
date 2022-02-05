@@ -2,7 +2,7 @@ import { CaretDownFill, Router, X } from "react-bootstrap-icons";
 import axios from "axios";
 import { useState, useContext } from "react";
 import millify from "millify";
-import SymbolContext from "../../pages/SymbolContext";
+import SymbolContext from "../SymbolContext";
 import { useRouter } from "next/router";
 
 const WatchList = ({ user, watchListSymbols, setWatchListSymbols }) => {

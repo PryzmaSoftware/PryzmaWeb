@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
-import SymbolContext from "../../pages/SymbolContext";
+import SymbolContext from "../SymbolContext";
 import millify from "millify";
 
 const Stats = ({ isLoading, setStats }) => {

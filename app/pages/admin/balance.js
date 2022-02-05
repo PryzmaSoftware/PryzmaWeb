@@ -2,8 +2,8 @@ import clientPromise from "../../lib/mongodb";
 import { withIronSession } from "next-iron-session";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import UserContext from "../UserContext";
-import SymbolContext from "../SymbolContext";
+import UserContext from "../../components/UserContext";
+import SymbolContext from "../../components/SymbolContext";
 import millify from "millify";
 import Head from "next/head";
 

@@ -5,7 +5,7 @@ import WatchList from "../../components/AdminHome/Watchlist";
 import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import News from "../../components/AdminHome/News";
-import UserContext from "../../pages/UserContext";
+import UserContext from "../../components/UserContext";
 import Head from "next/head";
 
 const AdminHome = ({ user, watchlist, news }) => {

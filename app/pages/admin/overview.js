@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import SymbolContext from "../SymbolContext";
+import SymbolContext from "../../components/SymbolContext";
 import { withIronSession } from "next-iron-session";
 import clientPromise from "../../lib/mongodb";
-import UserContext from "../UserContext";
+import UserContext from "../../components/UserContext";
 import CompanyProfile from "../../components/Overview/CompanyProfile";
 import Quote from "../../components/Overview/Quote";
 import Stats from "../../components/Overview/Stats";

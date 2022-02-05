@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
-import SymbolContext from "../../pages/SymbolContext";
+import SymbolContext from "../SymbolContext";
 import { format } from "date-fns";
 import Image from "next/image";
 

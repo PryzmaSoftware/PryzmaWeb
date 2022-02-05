@@ -3,7 +3,7 @@ import clientPromise from "../../lib/mongodb";
 import { withIronSession } from "next-iron-session";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import SymbolContext from "../SymbolContext";
+import SymbolContext from "../../components/SymbolContext";
 import millify from "millify";
 import Head from "next/head";
 import { useRouter } from "next/router";

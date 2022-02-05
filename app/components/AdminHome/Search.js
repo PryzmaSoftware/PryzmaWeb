@@ -6,7 +6,7 @@ import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import ButtonSpinner from "../ButtonSpinner";
 import { useDetectClickOutside } from "react-detect-click-outside";
-import SymbolContext from "../../pages/SymbolContext";
+import SymbolContext from "../SymbolContext";
 import { useForm } from "react-hook-form";
 
 const Search = () => {
