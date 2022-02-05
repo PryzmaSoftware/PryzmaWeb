@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
       <>
         <Script
           strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_CODE}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-TN02PJMMFZ`}
           id="googleScriptOne"
         />
         <Script strategy="lazyOnload" id="googleScriptTwo">
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', ${process.env.GOOGLE_ANALYTICS_CODE});`}
+          gtag('config', 'G-TN02PJMMFZ');`}
         </Script>
         <NextNProgress
           color="#A78BFA"
@@ -65,14 +65,14 @@ function MyApp({ Component, pageProps }) {
       <Script
         id="googleScriptThree"
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_CODE}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-TN02PJMMFZ`}
       />
       <Script strategy="lazyOnload" id="googleScriptFour">
         {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', ${process.env.GOOGLE_ANALYTICS_CODE});`}
+          gtag('config', 'G-TN02PJMMFZ');`}
       </Script>
       <div className="font-monts bg-zinc-900">
         <Nav />
