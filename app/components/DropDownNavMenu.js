@@ -24,7 +24,7 @@ const DropDownNavMenu = ({ userData, active, setDropDownActive, button }) => {
       .get("/api/logout")
       .catch((e) => console.error(e));
     const secondResponse = await axios
-      .get("/api/logout")
+      .post("/api/logout", false)
       .catch((e) => console.error(e));
     if (secondResponse.data === "user logged out") router.push("/login");
   };
