@@ -31,6 +31,7 @@ const Login = () => {
       router.push("/admin");
     } else if (response?.data === "incorrect password") {
       setIsSubmitting(false);
+      setEmailError(false);
       setPasswordError("*incorrect password");
     } else if (response?.data === "user not found") {
       setIsSubmitting(false);
@@ -43,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-80px)] min-h-[600px] flex justify-center animate-fadeIn opacity-0">
+    <div className="h-[calc(100vh-82px)] min-h-[600px] flex justify-center animate-fadeIn opacity-0 p-4">
       <Head>
         <title>Pryzma - Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,41 +80,33 @@ const Login = () => {
             Client Login
           </p>
           <div>
-            <p className="mt-6 text-sm text-zinc-300 pb-1">Email</p>
+            <p className="mt-6 text-sm text-white font-light pb-1">Email</p>
             <input
               disabled={isSubmitting ? true : false}
               type="email"
               placeholder="Email"
               autoComplete="off"
-              className={`w-full p-2.5 rounded-md text-zinc-400 border outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200 ${
-                errors.email || emailError
-                  ? "border-rose-500"
-                  : "border-zinc-700"
-              }`}
+              className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
               {...register("email", { required: true })}
             />
             {emailError && (
-              <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+              <p className="text-xs font-semibold text-red-600 mt-0.5 absolute">
                 {emailError}
               </p>
             )}
           </div>
           <div>
-            <p className="mt-6 text-sm text-zinc-300 pb-1">Password</p>
+            <p className="mt-6 text-sm text-white font-light pb-1">Password</p>
             <input
               disabled={isSubmitting ? true : false}
               type="password"
               placeholder="Password"
               autoComplete="off"
-              className={`w-full p-2.5 rounded-md text-zinc-400 border outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200 ${
-                errors.email || emailError
-                  ? "border-rose-500"
-                  : "border-zinc-700"
-              }`}
+              className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
               {...register("password", { required: true })}
             />
             {passwordError && (
-              <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+              <p className="text-xs font-semibold text-red-600 mt-0.5 absolute">
                 {passwordError}
               </p>
             )}
@@ -121,23 +114,23 @@ const Login = () => {
           <button
             type="submit"
             disabled={isSubmitting ? true : false}
-            className={`mt-8 rounded-md h-[40px] flex items-center justify-center w-full font-semibold text-sm text-violet-500 trasnition-all duration-300 ${
+            className={`mt-8 rounded-md h-[40px] flex border items-center justify-center w-full font-medium text-sm trasnition-all duration-300 ${
               isSubmitting
-                ? "bg-zinc-400 hover:bg-zinc-400"
-                : "bg-zinc-200 hover:bg-white"
+                ? "bg-neutral-700 border-neutral-700"
+                : "bg-white text-black hover:bg-transparent hover:text-white border-white"
             }`}
           >
             {isSubmitting ? <ButtonSpinner /> : "Login"}
           </button>
         </form>
-        <div className="text-xs flex justify-center mt-6 w-4/5 mx-auto min-w-fit text-zinc-400">
+        <div className="text-xs flex justify-center mt-6 w-4/5 mx-auto min-w-fit font-medium text-neutral-500">
           <Link href="/forgot-password">
-            <a className="pr-2 text-center border-r border-zinc-300 hover:text-violet-400 transition-all hover:underline">
+            <a className="pr-2 text-center border-r border-neutral-700 hover:text-white transition-all">
               Forgot Password
             </a>
           </Link>
           <Link href="/signup">
-            <a className="pl-2 text-center hover:text-violet-400 transition-all hover:underline">
+            <a className="pl-2 text-center hover:text-white transition-all">
               Sign up now
             </a>
           </Link>

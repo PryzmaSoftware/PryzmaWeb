@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         />
         <UserContext.Provider value={{ user, setUser }}>
           <SymbolContext.Provider value={{ symbol, setSymbol }}>
-            <div className="font-monts">
+            <div className="font-inter">
               <div className="flex">
                 <NestedNav />
                 <div className="w-full bg-zinc-900">
@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }) {
 
           gtag('config', 'G-TN02PJMMFZ');`}
       </Script>
-      <div className="font-monts bg-zinc-900">
+      <div className="font-inter bg-black">
         <Nav />
         <Component {...pageProps} />
       </div>

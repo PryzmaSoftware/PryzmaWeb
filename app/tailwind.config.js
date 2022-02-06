@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        monts: ["Montserrat", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       keyframes: {
         fadeInUp: {
@@ -21,12 +21,18 @@ module.exports = {
           "0%": { height: 0 },
           "100%": { height: "100%" },
         },
+        move: {
+          "0%": { backgroundPosition: "left" },
+          "50%": { backgroundPosition: "right" },
+          "100%": { backgroundPosition: "left" },
+        },
       },
       animation: {
         fadeInUpFast: "fadeInUp 0.2s ease-in-out forwards",
         fadeInUp: "fadeInUp 0.5s ease-in-out forwards",
         fadeIn: "fadeIn 0.5s ease-in-out forwards",
         grow: "grow 0.2s linear forwards",
+        move: "move 8s linear infinite",
       },
     },
   },

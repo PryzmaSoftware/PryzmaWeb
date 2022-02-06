@@ -3,19 +3,19 @@ import Head from "next/head";
 
 const TermsOfService = () => {
   return (
-    <div className="bg-zinc-900">
+    <div className="bg-black">
       <Head>
         <title>Pryzma - Terms of Service</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Terms of Service" />
         <meta name="keywords" content="pryzma, terms of service" />
       </Head>
-      <div className="p-4 max-w-7xl mx-auto opacity-0 animate-fadeIn">
-        <p className="text-zinc-200 font-semibold text-2xl text-center mb-10">
+      <div className="p-4 max-w-7xl mx-auto opacity-0 animate-fadeIn mt-4 mb-12">
+        <p className="text-white font-semibold text-4xl text-center mb-14">
           Terms Of Service
         </p>
-        <p className="text-zinc-200">SECTION 1 - TERMS OF SERVICE OF PRYZMA</p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-white">SECTION 1 - TERMS OF SERVICE OF PRYZMA</p>
+        <p className="text-neutral-400 text-sm mb-6">
           These are the Terms of Service (&#34;Terms&#34;) for our website
           https://pryzma.io (hereinafter referred to as &#34;website&#34;,
           &#34;our&#34;, &#34;us&#34; or &#34;Pryzma&#34;). The following Terms
@@ -28,25 +28,25 @@ const TermsOfService = () => {
           need to acknowledge these Terms. By using our services, you agree to
           be bound by these Terms.
         </p>
-        <p className="text-zinc-200 mb-2">SECTION 2 - REQUIREMENTS</p>
+        <p className="text-white mb-2">SECTION 2 - REQUIREMENTS</p>
         <ol className="list-decimal ml-10 mb-6">
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             You must be 18 years old, or if you are a minor, have a parent or
             gaurdians consent before use of the website.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             You must agree to let us collect your data.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             You must not be otherwise barred or restricted by any law from
             signing the legal documents and/or agreements.
           </li>
-          <li className="text-sm text-zinc-400">
+          <li className="text-sm text-neutral-400">
             You need to pay our charges before availing of any of our services.
           </li>
         </ol>
-        <p className="text-zinc-200">2.1. Personal Data Requirement</p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-white">2.1. Personal Data Requirement</p>
+        <p className="text-neutral-400 text-sm mb-6">
           To use any aspects of our services, you&#39;ll be asked to become our
           user or subscriber through our website or the Agreement. Therefore,
           our services are only directed towards individuals who are 18 years of
@@ -60,8 +60,8 @@ const TermsOfService = () => {
           otherwise is violating the personal rights of another person or
           entity, he/she/they shall be banned from using our services.
         </p>
-        <p className="text-zinc-200">SECTION - 3 INTELLECTUAL PROPERTY</p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-white">SECTION - 3 INTELLECTUAL PROPERTY</p>
+        <p className="text-neutral-400 text-sm mb-6">
           At the website of Pryzma, all intellectual property such as the
           graphics, images, logos, source code, texts, words, designs, videos,
           layout, graphics, pictures, materials and information related to the
@@ -74,10 +74,10 @@ const TermsOfService = () => {
           listings and links are protected under the laws of the third-party
           services partners.
         </p>
-        <p className="text-zinc-200">
+        <p className="text-white">
           SECTION 4 - SUBSCRIPTION SERVICES AND PAYMENT POLICY OF PRYZMA
         </p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-neutral-400 text-sm mb-6">
           We offer paid subscription plans for all our users. In our plans, we
           offer a monthly and an annual subscription for our services. We also
           offer a 7-day free trial and in case a user selects the actual
@@ -92,70 +92,70 @@ const TermsOfService = () => {
           date and you will not be charged for the next subscription however,
           your subscription will remain active till the end of its term.
         </p>
-        <p className="text-zinc-200 mb-2">4.1. Authority Of Pryzma</p>
+        <p className="text-white mb-2">4.1. Authority Of Pryzma</p>
         <ol className="list-decimal ml-10 mb-6">
-          <li className="text-sm text-zinc-400 mb-1">
-            <span className="text-zinc-200">No Refunds - </span>We do not offer
-            any refunds. All users have the right to cancel any time and their
-            plan will remain active for at least one billing cycle and after
-            that, the subscription will be canceled.
+          <li className="text-sm text-neutral-400 mb-1">
+            <span className="text-white">No Refunds - </span>We do not offer any
+            refunds. All users have the right to cancel any time and their plan
+            will remain active for at least one billing cycle and after that,
+            the subscription will be canceled.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
-            <span className="text-zinc-200">Payment Processing Problem - </span>
+          <li className="text-sm text-neutral-400 mb-1">
+            <span className="text-white">Payment Processing Problem - </span>
             If there is an issue with processing subscription charges, the
             account will be put into &#39;read-only&#39; mode. The account will
             remain this way until the issue is resolved and the payment has been
             successfully processed.
           </li>
-          <li className="text-sm text-zinc-400">
-            <span className="text-zinc-200">Breach of Any Rules - </span>If we
-            find that anyone is breaking any rules or in any other case of
-            suspicious behavior, we reserve the right to withdraw access to your
-            account without notice for any actual or suspected breach of these
-            terms or any other documentation referred to in them, including,
-            without limitation, where we suspect that there has been
-            unauthorized access to your account or any unauthorized disclosure
-            of your login information.
+          <li className="text-sm text-neutral-400">
+            <span className="text-white">Breach of Any Rules - </span>If we find
+            that anyone is breaking any rules or in any other case of suspicious
+            behavior, we reserve the right to withdraw access to your account
+            without notice for any actual or suspected breach of these terms or
+            any other documentation referred to in them, including, without
+            limitation, where we suspect that there has been unauthorized access
+            to your account or any unauthorized disclosure of your login
+            information.
           </li>
         </ol>
-        <p className="text-zinc-200">SECTION 5 - RESTRICTIONS ON USERS</p>
-        <p className="text-zinc-400 text-sm mb-2">
+        <p className="text-white">SECTION 5 - RESTRICTIONS ON USERS</p>
+        <p className="text-neutral-400 text-sm mb-2">
           While using our services no user/client of Pryzma is allowed to do any
           of the following.
         </p>
         <ol className="list-decimal ml-10 mb-6">
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             User are not allowed to transmit any material to our consultant that
             might breach the law or breach the terms set out herein.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             You as a user are not allowed to post any material anywhere that is
             defamatory or against our website.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             Users cannot post any content or comments that are fraudulent in
             nature and/or are false or misleading about the consultants and/or
             the website.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             Users are prohibited from harassing, defaming, threatening, or
             intimidating anyone related to our website.
           </li>
-          <li className="text-sm text-zinc-400 mb-1">
+          <li className="text-sm text-neutral-400 mb-1">
             Users cannot break or infringe any copyright, trademark, or any
             other intellectual property law in any way or manner that may harm
             now or in the future to our business.
           </li>
-          <li className="text-sm text-zinc-400">
+          <li className="text-sm text-neutral-400">
             You as the user are strictly barred from making any chargebacks on
             the amount they&#39;ve already paid, doing so will result in legal
             proceedings against you.
           </li>
         </ol>
-        <p className="text-zinc-200">
+        <p className="text-white">
           SECTION 6 - THIRD-PARTY SERVICES DISCLAIMER
         </p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-neutral-400 text-sm mb-6">
           We may use the services third-party services providers for the purpose
           of rendering our services. We do not endorse any websites that can be
           accessed through the links available on our website. References or
@@ -170,8 +170,8 @@ const TermsOfService = () => {
           companies or persons linked or referenced in our website, videos, and
           services.
         </p>
-        <p className="text-zinc-200">SECTION 7 - DISCLAIMER</p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-white">SECTION 7 - DISCLAIMER</p>
+        <p className="text-neutral-400 text-sm mb-6">
           The information provided on Pryzma&#39;s website is based solely on
           research conducted by us and is presented &#34;as is&#34; for your
           information purposes only. This information is not intended as a
@@ -183,8 +183,8 @@ const TermsOfService = () => {
           also do not constitute financial, legal, accounting, or tax advice to
           any user and should not be relied upon as such.
         </p>
-        <p className="text-zinc-200">SECTION 8 - DISCLAIMER OF WARRANTIES</p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-white">SECTION 8 - DISCLAIMER OF WARRANTIES</p>
+        <p className="text-neutral-400 text-sm mb-6">
           Any types of Investments in financial markets, foreign exchange (FX)
           cryptocurrencies, stocks, bonds, and financial securities are
           speculative and involve significant risks including illiquidity,
@@ -207,10 +207,10 @@ const TermsOfService = () => {
           website, you hereby indemnify us from all future claims, lawsuits,
           legal procedures, criminal liabilities, and other legal actions.
         </p>
-        <p className="text-zinc-200">
+        <p className="text-white">
           SECTION 9 - EARNINGS DISCLAIMER AND FORWARD DISCLAIMER
         </p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-neutral-400 text-sm mb-6">
           There is no assurance or guarantee in financial markets therefore
           there is no guarantee that goals for any profits you might have
           planned will be achieved. As with any money market, your investment in
@@ -236,10 +236,10 @@ const TermsOfService = () => {
           &#34;believes,&#34; or statements indicating certain actions
           &#34;may,&#34; &#34;could,&#34; or &#34;might&#34; occur.
         </p>
-        <p className="text-zinc-200">
+        <p className="text-white">
           SECTION 10 - WAIVER OF LIABILITY AND RELEASE OF CLAIMS
         </p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-neutral-400 text-sm mb-6">
           The users and clients of Pryzma&#39;s website hereby held us
           indemnified from all legal claims and waive, release, and forever
           discharge any and/or all claims for incidental, direct, indirect,
@@ -260,10 +260,8 @@ const TermsOfService = () => {
           way related to our services, even if we were aware in advance of the
           possibility of any such claim.
         </p>
-        <p className="text-zinc-200">
-          SECTION 11 - CHANGES TO TERMS OF SERVICE
-        </p>
-        <p className="text-zinc-400 text-sm mb-6">
+        <p className="text-white">SECTION 11 - CHANGES TO TERMS OF SERVICE</p>
+        <p className="text-neutral-400 text-sm mb-6">
           You can review the most current version of the Terms of Service at any
           time on this page. We reserve the right, at our sole discretion, to
           update, change, or replace any part of these Terms by posting updates
@@ -272,15 +270,15 @@ const TermsOfService = () => {
           our website or the service following the posting of any changes to
           these Terms constitutes acceptance of those changes.
         </p>
-        <p className="text-zinc-200">SECTION 12 - CONTACT US</p>
+        <p className="text-white">SECTION 12 - CONTACT US</p>
         <a
           href="mailto:support@pryzma.io"
-          className="text-sky-500 text-sm mb-12 hover:underline"
+          className="text-sky-500 text-sm hover:underline"
         >
           support@pryzma.io
         </a>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
