@@ -19,14 +19,14 @@ const Features = () => {
         <p className="font-bold text-white text-2xl steps:text-4xl text-center mt-2 capitalize">
           Get the most up to date information
         </p>
-        <div className="flex flex-row steps:flex-col mt-12 h-[800px] steps:h-auto justify-center">
+        <div className="flex flex-row steps:flex-col mt-12 h-[900px] steps:h-auto justify-center">
           <div className="flex h-full w-full steps:mb-10 flex-col steps:flex-row mr-4 steps:mr-0">
             <div className="mr-4 w-full h-full flex flex-col items-center">
               <Image src={profile} layout="fixed" height={50} width={50} />
               <p className="text-xs w-[112px] text-center font-semibold text-black py-1 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 mb-4 mt-3">
                 Company Profile
               </p>
-              <p className="text-neutral-500 text-sm text-center ">
+              <p className="text-neutral-500 text-sm text-center">
                 Get a detailed overview of a company.
               </p>
             </div>
