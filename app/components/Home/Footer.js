@@ -47,7 +47,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <Twitter className="text-neutral-400 hover:text-white transition-all mt-1 mb-4" />
+          <Twitter className="text-neutral-400 hover:text-white transition-all mb-4 sm:mb-0" />
         </a>
       </div>
     </div>
