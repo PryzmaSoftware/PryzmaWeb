@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-82px)] min-h-[600px] flex justify-center animate-fadeIn opacity-0 p-4">
+    <div className="h-[calc(100vh-84px)] min-h-[600px] flex justify-center animate-fadeIn opacity-0 p-4">
       <Head>
         <title>Pryzma - Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,7 +75,7 @@ const Login = () => {
         </div>
       )}
       <div className="max-w-sm w-full mx-auto">
-        <form className="w-full mt-40" onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full mt-20" onSubmit={handleSubmit(onSubmit)}>
           <p className="text-zinc-200 font-semibold text-2xl text-center">
             Client Login
           </p>

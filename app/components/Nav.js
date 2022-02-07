@@ -77,14 +77,14 @@ const Nav = () => {
                       ? setDropDownActive(false)
                       : setDropDownActive(true)
                   }
-                  className={`text-xs flex text-zinc-400 font-medium hover:border-violet-500 items-center cursor-pointer rounded-md p-1.5 border border-zinc-800 pl-4 pr-4 hover:bg-zinc-800 transition-all duration-200 ${
-                    dropDownActive && "bg-zinc-800"
+                  className={`text-xs flex text-neutral-400 font-medium hover:text-white hover:border-white items-center cursor-pointer rounded-md p-1.5 border border-neutral-700 pl-4 pr-4 transition-all duration-300 ${
+                    dropDownActive ? "border-white" : ""
                   }`}
                 >
                   <Person className="mr-1 text-lg pointer-events-none" />
                   {name}
                   <CaretDownFill
-                    className={`pointer-events-none ml-2 text-xs relative top-[1px] text-zinc-400 transition-all duration-300 ${
+                    className={`pointer-events-none ml-2 text-xs relative top-[1px] transition-all duration-300 ${
                       dropDownActive ? "rotate-180" : "rotate-0"
                     }`}
                   />

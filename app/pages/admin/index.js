@@ -31,8 +31,8 @@ const AdminHome = ({ user, watchlist, news }) => {
         <meta name="keywords" content="pryzma, admin, home" />
       </Head>
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between border-b border-zinc-800 pb-4 animate-fadeIn">
-          <p className="font-semibold text-2xl text-zinc-200">
+        <div className="flex items-center justify-between border-b border-neutral-800 pb-4 animate-fadeIn">
+          <p className="font-semibold text-2xl text-white">
             Welcome, {user.user.firstName}
           </p>
           <Time />

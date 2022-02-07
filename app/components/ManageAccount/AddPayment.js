@@ -48,10 +48,10 @@ const AddPayment = ({ user, price }) => {
     appearance: {
       labels: "floating",
       variables: {
-        colorPrimary: "#8B5CF6",
-        colorBackground: "#27272A",
-        fontFamily: "Montserrat, sans-serif",
-        colorText: "#A1A1AA",
+        colorPrimary: "#FFFFFF",
+        colorBackground: "#000000",
+        fontFamily: "Inter, sans-serif",
+        colorText: "#FFFFFF",
       },
     },
   };
@@ -114,16 +114,16 @@ const Payment = ({ user, price }) => {
 
   return (
     <form className="w-full">
-      <p className="text-zinc-200 font-semibold text-2xl pb-3">
+      <p className="text-white font-semibold text-2xl pb-3">
         Add Payment Method
       </p>
       {!user.isCanceled && (
-        <p className="mb-6 text-sm text-zinc-300">
+        <p className="mb-6 text-sm text-neutral-400">
           You will not be charged until your 7 day free trial period is over.
         </p>
       )}
       {user.isCanceled && (
-        <p className="mb-6 text-sm text-zinc-300">
+        <p className="mb-6 text-sm text-neutral-400">
           You are now signing up for the{" "}
           {price === "monthly" ? "monthly" : "annual"} plan for{" "}
           {price === "monthly" ? "$14.99/mo" : "$149.99/yr"}
@@ -133,10 +133,10 @@ const Payment = ({ user, price }) => {
       <button
         disabled={!stripe || isSubmitting ? true : false}
         onClick={handleSubmit}
-        className={`h-[40px] mt-8 w-[100px] flex justify-center items-center text-sm text-white font-medium rounded-md transition-all duration-300 mr-2 ${
+        className={`h-[40px] mt-8 w-[100px] flex justify-center items-center border text-sm font-medium rounded-md transition-all duration-300 mr-2 ${
           isSubmitting
-            ? "bg-violet-400 hover:bg-violet-400"
-            : "bg-violet-600 hover:bg-violet-800"
+            ? "bg-neutral-700 border-neutral-700"
+            : "border-white bg-white text-black hover:text-white hover:bg-transparent"
         }`}
       >
         {isSubmitting ? (

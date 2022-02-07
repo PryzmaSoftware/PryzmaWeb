@@ -44,10 +44,8 @@ const Payment = () => {
           </p>
         </div>
       )}
-      <p className="font-semibold text-zinc-200 text-2xl">
-        Payment Information
-      </p>
-      <p className="mb-6 text-sm font-medium text-zinc-400 mt-2">
+      <p className="font-semibold text-white text-2xl">Payment Information</p>
+      <p className="mb-6 text-sm text-neutral-400 mt-2">
         You will not be charged until your 7 day free trial period is over.
       </p>
       <PaymentElement />
@@ -55,10 +53,10 @@ const Payment = () => {
         <button
           disabled={!stripe || isSubmitting ? true : false}
           onClick={handleSubmit}
-          className={`h-[40px] w-[100px] flex justify-center items-center text-sm text-white font-medium rounded-md transition-all duration-300 ${
+          className={`h-[40px] w-[100px] flex justify-center items-center border text-sm font-medium rounded-md transition-all duration-300 ${
             isSubmitting
-              ? "bg-violet-400/75 hover:bg-violet-400/75"
-              : "bg-violet-600 hover:bg-violet-800"
+              ? "bg-neutral-700 border-neutral-700"
+              : "bg-white border-white text-black hover:text-white hover:bg-transparent"
           }`}
         >
           {isSubmitting ? <ButtonSpinner /> : "Submit"}

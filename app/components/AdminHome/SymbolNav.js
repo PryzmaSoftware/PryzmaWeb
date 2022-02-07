@@ -28,18 +28,18 @@ const SymbolNav = () => {
 
   return (
     <div className="p-4 pb-0 animate-fadeIn opacity-0">
-      <div className="flex items-center justify-between border-b pb-4 border-zinc-800 max-w-7xl mx-auto">
+      <div className="flex items-center justify-between border-b pb-4 border-neutral-800 max-w-7xl mx-auto">
         <p>
-          <span className="font-semibold text-xl text-zinc-200">{`${symbol[0]} - `}</span>
-          <span className="font-medium text-zinc-200">{symbol[1]}</span>
+          <span className="font-semibold text-xl text-white">{`${symbol[0]} - `}</span>
+          <span className="font-medium text-white">{symbol[1]}</span>
         </p>
         <button
           disabled={isSubmitting ? true : false}
           onClick={handleWatchlistButton}
-          className={`text-xs bg-zinc-200 hover:bg-white font-semibold p-2 rounded-md transition-all duration-300 ${
+          className={`text-xs font-medium p-2 rounded-md border border-neutral-700 transition-all duration-300 ${
             user.watchlist.indexOf(symbol[0]) !== -1
-              ? "text-red-500"
-              : "text-violet-500"
+              ? "text-neutral-500 hover:text-red-600 hover:border-red-600"
+              : "text-neutral-500 hover:text-white hover:border-white"
           } ${isSubmitting ? "opacity-70" : "opacity-100"}`}
         >{`${
           user.watchlist.indexOf(symbol[0]) === -1

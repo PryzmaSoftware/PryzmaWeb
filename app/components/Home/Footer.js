@@ -7,13 +7,13 @@ const Footer = () => {
 
   return (
     <div className="px-4 border-t border-neutral-800 bg-neutral-900">
-      <div className="max-w-7xl mx-auto flex justify-between pt-8 pb-8 w-full">
+      <div className="max-w-7xl mx-auto flex flex-col items-center sm:items-baseline sm:flex-row justify-between pt-8 pb-8 w-full">
         <Link href="/">
-          <a className="font-medium text-xl text-white transition-all">
+          <a className="font-medium text-xl text-white transition-all mb-4">
             Pryzma
           </a>
         </Link>
-        <div>
+        <div className="order-last sm:-order-none mt-2">
           <div className="flex justify-center">
             <Link href="/terms-of-service">
               <a
@@ -38,7 +38,7 @@ const Footer = () => {
               </a>
             </Link>
           </div>
-          <p className="mt-6 text-xs text-neutral-500">
+          <p className="mt-6 text-xs text-neutral-500 text-center">
             &copy; Copyright 2022 Pryzma. All Rights Reservered.
           </p>
         </div>
@@ -47,7 +47,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <Twitter className="text-neutral-400 hover:text-white transition-all" />
+          <Twitter className="text-neutral-400 hover:text-white transition-all mt-1 mb-4" />
         </a>
       </div>
     </div>

@@ -22,7 +22,7 @@ const NestedNav = () => {
   }, [router.pathname]);
 
   return (
-    <div className="bg-zinc-800 max-w-[230px] min-w-[230px] w-full h-screen overflow-auto sticky top-0 flex flex-col">
+    <div className="bg-black max-w-[230px] w-fit md:min-w-[230px] h-screen overflow-auto sticky top-0 flex flex-col">
       <p className="text-2xl mx-auto pt-3">
         <Image src={logo} layout="fixed" height={29} width={100} />
       </p>
@@ -34,16 +34,16 @@ const NestedNav = () => {
           }
           className={`${
             router.pathname.endsWith("/admin")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
-          } text-white text-xs p-2 pl-4 relative mt-[7px] hover:opacity-100 hover:bg-zinc-700/25 duration-200 transition-all flex items-center`}
+          } text-white text-xs p-2 pl-4 relative mt-[7px] hover:opacity-100 hover:bg-neutral-900 duration-200 transition-all flex items-center`}
         >
           <span
             className={`${
               number === 1 || router.pathname.endsWith("/admin")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 ease-in content-none left-0 bottom-0 my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 ease-in content-none right-0 bottom-0 my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={home} height={20} width={20} layout="fixed" />
           <span className="ml-3">Home</span>
@@ -55,9 +55,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/movers") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 hover:opacity-100 hover:bg-zinc-700/25 relative transition-all duration-200 flex items-center ${
+          className={`text-white text-xs p-2 pl-4 hover:opacity-100 hover:bg-neutral-900 relative transition-all duration-200 flex items-center ${
             router.pathname.endsWith("/movers")
-              ? "opacity-100 bg-zinc-700/25"
+              ? "opacity-100 bg-neutral-900"
               : "opacity-60"
           }`}
         >
@@ -66,7 +66,7 @@ const NestedNav = () => {
               number === 6 || router.pathname.endsWith("/movers")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={stats} height={20} width={20} layout="fixed" />
           <span className="ml-3">Top Movers</span>
@@ -78,9 +78,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/overview") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 flex items-center relative hover:opacity-100 duration-200 hover:bg-zinc-700/25 transition-all ${
+          className={`text-white text-xs p-2 pl-4 flex items-center relative hover:opacity-100 duration-200 hover:bg-neutral-900 transition-all ${
             router.pathname.endsWith("/overview")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -90,7 +90,7 @@ const NestedNav = () => {
               number === 2 || router.pathname.endsWith("/overview")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all ease-in  content-none left-0 bottom-0 my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all ease-in  content-none right-0 bottom-0 my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={overview} height={20} width={20} layout="fixed" />
           <span className="ml-3">Overview</span>
@@ -100,13 +100,13 @@ const NestedNav = () => {
         <a onMouseEnter={() => setNumber(4)}
           onMouseLeave={() =>
             !router.pathname.endsWith("/financials") && setNumber(0)
-          } className={`text-white text-xs p-2 pl-4 flex items-center relative hover:opacity-100 duration-200 hover:bg-zinc-700/25 transition-all ${router.pathname.endsWith('/financials') ? 'bg-zinc-700/25 opacity-100' : 'opacity-60'}`}><span className={`${number === 4 || router.pathname.endsWith("/financials") ? "h-full" : 'h-0'} absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}></span><Image src={financials} height={20} width={20} layout="fixed"/><span className="ml-3">Financials</span></a>
+          } className={`text-white text-xs p-2 pl-4 flex items-center relative hover:opacity-100 duration-200 hover:bg-neutral-900 transition-all ${router.pathname.endsWith('/financials') ? 'bg-neutral-900 opacity-100' : 'opacity-60'}`}><span className={`${number === 4 || router.pathname.endsWith("/financials") ? "h-full" : 'h-0'} absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}></span><Image src={financials} height={20} width={20} layout="fixed"/><span className="ml-3">Financials</span></a>
       </Link>
       <Link href="/admin/statistics">
         <a onMouseEnter={() => setNumber(5)}
           onMouseLeave={() =>
             !router.pathname.endsWith("/statistics") && setNumber(0)
-          } className={`text-white text-xs p-2 pl-4 relative hover:opacity-100 hover:bg-zinc-700/25 duration-200 transition-all ${router.pathname.endsWith('/statistics') ? 'bg-zinc-700/25 opacity-100' : 'opacity-60'}`}><span className={`${number === 5 || router.pathname.endsWith("/statistics") ? "h-full" : 'h-0'} absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}></span><Image src={stats} height={20} width={20} layout="fixed"/><span className="ml-3">Statistics</span></a>
+          } className={`text-white text-xs p-2 pl-4 relative hover:opacity-100 hover:bg-neutral-900 duration-200 transition-all ${router.pathname.endsWith('/statistics') ? 'bg-neutral-900 opacity-100' : 'opacity-60'}`}><span className={`${number === 5 || router.pathname.endsWith("/statistics") ? "h-full" : 'h-0'} absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}></span><Image src={stats} height={20} width={20} layout="fixed"/><span className="ml-3">Statistics</span></a>
       </Link> */}
       {/* <Link href="/admin/movers">
         <a
@@ -114,9 +114,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/movers") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 hover:opacity-100 hover:bg-zinc-700/25 relative transition-all duration-200 flex items-center ${
+          className={`text-white text-xs p-2 pl-4 hover:opacity-100 hover:bg-neutral-900 relative transition-all duration-200 flex items-center ${
             router.pathname.endsWith("/movers")
-              ? "opacity-100 bg-zinc-700/25"
+              ? "opacity-100 bg-neutral-900"
               : "opacity-60"
           }`}
         >
@@ -125,7 +125,7 @@ const NestedNav = () => {
               number === 6 || router.pathname.endsWith("/movers")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={stats} height={20} width={20} layout="fixed" />
           <span className="ml-3">Top Movers</span>
@@ -137,9 +137,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/offerings") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-zinc-700/25 hover:opacity-100 transition-all duration-200 ${
+          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
             router.pathname.endsWith("/offerings")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -148,7 +148,7 @@ const NestedNav = () => {
               number === 7 || router.pathname.endsWith("/offerings")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={offerings} height={20} width={20} layout="fixed" />
           <span className="ml-3">Offerings</span>
@@ -160,9 +160,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/income") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 hover:bg-zinc-700/25 hover:opacity-100 trasnition-all duration-200 flex relative items-center ${
+          className={`text-white text-xs p-2 pl-4 hover:bg-neutral-900 hover:opacity-100 trasnition-all duration-200 flex relative items-center ${
             router.pathname.endsWith("/income")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -171,7 +171,7 @@ const NestedNav = () => {
               number === 8 || router.pathname.endsWith("/income")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={income} height={20} width={20} layout="fixed" />
           <span className="ml-3">Income Statement</span>
@@ -183,9 +183,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/balance") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 relative hover:bg-zinc-700/25 hover:opacity-100 transition-all duration-200 flex items-center ${
+          className={`text-white text-xs p-2 pl-4 relative hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 flex items-center ${
             router.pathname.endsWith("/balance")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -194,7 +194,7 @@ const NestedNav = () => {
               number === 9 || router.pathname.endsWith("/balance")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={balance} height={20} width={20} layout="fixed" />
           <span className="ml-3">Balance Sheet</span>
@@ -206,9 +206,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/cash") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-zinc-700/25 hover:opacity-100 transition-all duration-200 ${
+          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
             router.pathname.endsWith("/cash")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -217,7 +217,7 @@ const NestedNav = () => {
               number === 10 || router.pathname.endsWith("/cash")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={cash} height={20} width={20} layout="fixed" />
           <span className="ml-3">Cash Flow</span>
@@ -229,9 +229,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/institutional") && setNumber(0)
           }
-          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-zinc-700/25 hover:opacity-100 transition-all duration-200 ${
+          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
             router.pathname.endsWith("/institutional")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -240,7 +240,7 @@ const NestedNav = () => {
               number === 11 || router.pathname.endsWith("/institutional")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={institution} height={20} width={20} layout="fixed" />
           <span className="ml-3">Institutional Ownership</span>
@@ -252,9 +252,9 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/insiders") && setNumber(0)
           }
-          className={`text-white mb-10 text-xs p-2 pl-4 relative flex items-center hover:bg-zinc-700/25 hover:opacity-100 transition-all duration-200 ${
+          className={`text-white mb-10 text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
             router.pathname.endsWith("/insiders")
-              ? "bg-zinc-700/25 opacity-100"
+              ? "bg-neutral-900 opacity-100"
               : "opacity-60"
           }`}
         >
@@ -263,7 +263,7 @@ const NestedNav = () => {
               number === 12 || router.pathname.endsWith("/insiders")
                 ? "h-full"
                 : "h-0"
-            } absolute h-0 origin-center transition-all duration-200 content-none left-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-violet-400`}
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
           ></span>
           <Image src={insider} height={20} width={20} layout="fixed" />
           <span className="ml-3">Insider Ownership</span>

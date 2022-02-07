@@ -54,8 +54,8 @@ const Offerings = ({ user }) => {
           />
         </Head>
         <div className="max-w-7xl mx-auto">
-          <div className="mx-auto w-fit p-4 border border-violet-500 rounded-md bg-zinc-800 mt-10">
-            <p className="text-zinc-300 font-medium text-sm text-center">
+          <div className="p-4 mx-auto rounded-md w-fit bg-black mt-16 animate-fadeIn opacity-0">
+            <p className="text-white text-sm font-light">
               Search for a stock above to view info
             </p>
           </div>
@@ -79,20 +79,20 @@ const Offerings = ({ user }) => {
           />
         </Head>
         <div className="max-w-7xl mx-auto mt-4">
-          <div className="p-4 max-w-[300px] w-full bg-zinc-800 animate-pulse rounded-md"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
+          <div className="p-4 max-w-[300px] w-full bg-neutral-800 animate-pulse rounded-md"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
         </div>
       </div>
     );
 
   if (data === "data not available" || !data.length)
     return (
-      <div className="p-4 mx-auto rounded-md border w-fit border-violet-500 bg-zinc-800 mt-10 animate-fadeIn opacity-0">
+      <div className="p-4 mx-auto rounded-md border w-fit border-red-500 bg-neutral-800 mt-10 animate-fadeIn opacity-0">
         <Head>
           <title>Pryzma - Offerings - {symbol[0]}</title>
           <meta
@@ -105,9 +105,7 @@ const Offerings = ({ user }) => {
             content="pryzma, offerings, shelf registrations"
           />
         </Head>
-        <p className="font-medium text-zinc-200 text-sm">
-          No data available for {symbol[0]}
-        </p>
+        <p className=" text-white text-sm">No data available for {symbol[0]}</p>
       </div>
     );
 
@@ -123,29 +121,27 @@ const Offerings = ({ user }) => {
         />
       </Head>
       <div className="max-w-7xl mx-auto">
-        <p className="font-medium text-zinc-200 text-2xl mb-2">
+        <p className="font-medium text-white text-2xl mb-2">
           Offerings & Shelf Registrations
         </p>
         <table className="w-full">
           <thead>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-200 text-xs p-2">
-                Form Type
-              </td>
-              <td className="font-medium text-zinc-200 text-xs">Date</td>
-              <td className="font-medium text-zinc-200 text-xs">Description</td>
-              <td className="font-medium text-zinc-200 text-xs">Link</td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-white text-xs p-2">Form Type</td>
+              <td className=" text-white text-xs">Date</td>
+              <td className=" text-white text-xs">Description</td>
+              <td className=" text-white text-xs">Link</td>
             </tr>
           </thead>
           <tbody>
             {data &&
               data.map((element, index) => {
                 return (
-                  <tr className="border-b border-zinc-800" key={index}>
-                    <td className="font-medium text-zinc-400 text-xs p-2">
+                  <tr className="border-b border-neutral-800" key={index}>
+                    <td className=" text-neutral-300 text-xs p-2">
                       {element.formType}
                     </td>
-                    <td className="font-medium text-zinc-400 text-xs">
+                    <td className=" text-neutral-300 text-xs">
                       {element.formType.charAt(0) === "S" ||
                       element.formType.charAt(0) === "F"
                         ? element.formType.includes("A")
@@ -153,7 +149,7 @@ const Offerings = ({ user }) => {
                           : "Shelf Registration"
                         : "Prospectus Supplement"}
                     </td>
-                    <td className="font-medium text-zinc-400 text-xs">
+                    <td className=" text-neutral-300 text-xs">
                       {format(new Date(element.date), "MMMM dd, yyyy")}
                     </td>
                     <td>
@@ -161,9 +157,9 @@ const Offerings = ({ user }) => {
                         href={element.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xs font-medium text-zinc-400 flex items-center hover:underline"
+                        className="text-xs  text-neutral-300 flex items-center hover:underline"
                       >
-                        <Link45deg className="mr-2 text-violet-500" />
+                        <Link45deg className="mr-2 text-neutral-500" />
                         View File
                       </a>
                     </td>

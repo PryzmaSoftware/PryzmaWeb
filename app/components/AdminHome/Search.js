@@ -133,7 +133,7 @@ const Search = () => {
           autoComplete="off"
           type="text"
           placeholder="Search Symbol or Company Name..."
-          className="bg-zinc-800 text-sm p-2 w-full transition-all placeholder:text-zinc-500 border-zinc-800 border font-medium text-zinc-300 focus:border-violet-500 duration-300 rounded-md outline-none pr-10"
+          className="bg-black text-sm p-2 w-full transition-all placeholder:text-neutral-500 border-neutral-700 border font-medium text-white focus:border-white duration-300 rounded-md outline-none pr-10"
         />
         <button type="submit">
           {isSubmitting ? (
@@ -141,12 +141,12 @@ const Search = () => {
               <ButtonSpinner />
             </div>
           ) : (
-            <MagnifyGlass className="text-gray-400 absolute right-4 bottom-2.5 z-10 text-xl hover:text-violet-500 transition-all" />
+            <MagnifyGlass className="text-neutral-500 absolute right-4 bottom-2.5 z-10 text-xl hover:text-white transition-all" />
           )}
         </button>
       </form>
       {results || text ? (
-        <div className="absolute w-full bg-zinc-800 shadow-md shadow-black/50 rounded-md mt-2 overflow-hidden opacity-0 translate-y-2 animate-fadeInUpFast">
+        <div className="absolute w-full bg-neutral-800 shadow-xl shadow-black/50 rounded-md mt-2 overflow-hidden opacity-0 translate-y-2 animate-fadeInUpFast">
           {results?.length ? (
             results.map((element, index) => {
               if (element.exchange === "OTCM") return;
@@ -160,13 +160,13 @@ const Search = () => {
                   onClick={handleResultClick}
                   key={index}
                   value={[element.symbol, element.name]}
-                  className="w-full hover:bg-zinc-700 flex p-2 items-center transition duration-200 cursor-pointer"
+                  className="w-full hover:bg-neutral-900 flex p-3 items-center transition duration-200 cursor-pointer"
                 >
-                  <p className="text-sm text-zinc-200 font-medium pointer-events-none">
+                  <p className="text-xs py-1 px-2 bg-neutral-700 rounded-md text-white pointer-events-none tracking-wider mr-2">
                     {element.symbol}
                   </p>
-                  <Dash className="text-zinc-400 pointer-events-none" />
-                  <p className="text-zinc-400 text-sm pointer-events-none">
+                  {/* <Dash className="text-neutral-300 pointer-events-none" /> */}
+                  <p className="text-neutral-300 text-xs pointer-events-none">
                     {element.securityName}
                   </p>
                 </button>

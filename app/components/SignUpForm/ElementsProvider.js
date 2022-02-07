@@ -26,10 +26,10 @@ const ElementsProvider = ({ email }) => {
     appearance: {
       labels: "floating",
       variables: {
-        colorPrimary: "#8B5CF6",
-        colorBackground: "#27272A",
-        fontFamily: "Montserrat, sans-serif",
-        colorText: "#A1A1AA",
+        colorPrimary: "#FFFFFF",
+        colorBackground: "#000000",
+        fontFamily: "Inter, sans-serif",
+        colorText: "#FFFFFF",
       },
     },
   };

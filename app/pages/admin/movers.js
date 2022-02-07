@@ -156,21 +156,21 @@ const Movers = () => {
         <div className="px-4">
           <div className="max-w-7xl mx-auto mt-4">
             <div className="flex items-center justify-between">
-              <div className="p-4 max-w-[300px] w-full bg-zinc-800 animate-pulse rounded-md"></div>
+              <div className="p-4 max-w-[300px] w-full bg-neutral-800 animate-pulse rounded-md"></div>
               <div className="flex">
-                <div className="p-2 rounded-md w-[70px] bg-zinc-800 animate-pulse mr-4"></div>
-                <div className="p-2 rounded-md w-[70px] bg-zinc-800 animate-pulse"></div>
+                <div className="p-2 rounded-md w-[70px] bg-neutral-800 animate-pulse mr-4"></div>
+                <div className="p-2 rounded-md w-[70px] bg-neutral-800 animate-pulse"></div>
               </div>
             </div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-            <div className="w-full p-3 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+            <div className="w-full p-3 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
           </div>
         </div>
       </>
@@ -188,10 +188,8 @@ const Movers = () => {
           <meta name="description" content="Top Movers" />
           <meta name="keywords" content="pryzma, top movers, gainers, losers" />
         </Head>
-        <div className="p-4 mx-auto rounded-md border w-fit border-violet-500 bg-zinc-800 mt-16 animate-fadeIn opacity-0">
-          <p className="font-medium text-zinc-200 text-sm">
-            No data available at this time
-          </p>
+        <div className="p-4 mx-auto rounded-md border w-fit border-red-500 bg-neutral-800 mt-16 animate-fadeIn opacity-0">
+          <p className="text-white text-sm">No data available at this time.</p>
         </div>
       </>
     );
@@ -207,35 +205,35 @@ const Movers = () => {
       <div className="p-4 animate-fadeIn opacity-0">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-4">
-            <p className="font-medium text-zinc-200 text-2xl mb-2 capitalize">
+            <p className="font-medium text-white text-2xl mb-2 capitalize">
               Top Movers - {direction}
             </p>
             <div className="flex">
               <button
                 onClick={() => setDirection("gainers")}
-                className={`py-1 px-2 text-xs font-semibold hover:text-violet-500 rounded-md mr-2 transition-all ${
+                className={`py-1.5 text-xs text-center font-medium w-[75px] hover:text-white rounded-md mr-2 transition-all duration-300 ${
                   direction === "gainers"
-                    ? "text-violet-500 bg-white"
-                    : "bg-zinc-800 text-zinc-200"
+                    ? "text-white border-white border"
+                    : " border border-neutral-700 text-neutral-500 hover:border-white"
                 }`}
               >
                 Gainers
               </button>
               <button
                 onClick={() => setDirection("losers")}
-                className={`py-1 px-2 text-xs font-semibold hover:text-violet-500 rounded-md transition-all ${
+                className={`py-1.5 text-xs font-medium text-center w-[75px] hover:text-white rounded-md transition-all duration-300 ${
                   direction === "losers"
-                    ? "text-violet-500 bg-white"
-                    : "bg-zinc-800 text-zinc-200"
+                    ? "text-white border-white border"
+                    : " border border-neutral-700 text-neutral-500 hover:border-white"
                 }`}
               >
                 Losers
               </button>
             </div>
           </div>
-          <div className="flex border-b border-zinc-800 pb-2 pl-2">
+          <div className="flex border-b border-neutral-800 pb-2 pl-2">
             <p
-              className="w-full text-xs font-medium text-zinc-200 flex items-center cursor-pointer selection:bg-none"
+              className="w-full text-xs text-white flex items-center cursor-pointer selection:bg-none"
               onClick={handleSymbolSort}
             >
               Symbol{" "}
@@ -244,7 +242,7 @@ const Movers = () => {
               />
             </p>
             <p
-              className="w-full text-xs font-medium text-zinc-200 flex items-center cursor-pointer selection:bg-none"
+              className="w-full text-xs text-white flex items-center cursor-pointer selection:bg-none"
               onClick={handlePriceSort}
             >
               Price{" "}
@@ -253,7 +251,7 @@ const Movers = () => {
               />
             </p>
             <p
-              className="w-full text-xs font-medium text-zinc-200 flex items-center cursor-pointer selection:bg-none"
+              className="w-full text-xs text-white flex items-center cursor-pointer selection:bg-none"
               onClick={handleChangeSort}
             >
               Change{" "}
@@ -262,7 +260,7 @@ const Movers = () => {
               />
             </p>
             <p
-              className="w-full text-xs font-medium text-zinc-200 flex items-center cursor-pointer selection:bg-none"
+              className="w-full text-xs text-white flex items-center cursor-pointer selection:bg-none"
               onClick={handlePercentSort}
             >
               % Change{" "}
@@ -271,7 +269,7 @@ const Movers = () => {
               />
             </p>
             <p
-              className="w-full text-xs font-medium text-zinc-200 flex items-center cursor-pointer selection:bg-none"
+              className="w-full text-xs text-white flex items-center cursor-pointer selection:bg-none"
               onClick={handleVolumeSort}
             >
               Volume{" "}
@@ -291,10 +289,10 @@ const Movers = () => {
                   className="flex py-2 border-b pl-2 border-zinc-800 cursor-pointer hover:bg-zinc-800 transition-all"
                   key={element.symbol}
                 >
-                  <p className="w-full text-xs text-zinc-400 font-medium">
+                  <p className="w-full text-xs text-neutral-300">
                     {element.symbol}
                   </p>
-                  <p className="w-full text-xs text-zinc-400 font-medium">
+                  <p className="w-full text-xs text-neutral-300">
                     {element.last.toFixed(2)}
                   </p>
                   <p
@@ -315,7 +313,7 @@ const Movers = () => {
                   >
                     {element.percent_change.toFixed(2)}%
                   </p>
-                  <p className="w-full text-xs text-zinc-400 font-medium">
+                  <p className="w-full text-xs text-neutral-300">
                     {millify(element.volume, { precision: 2, space: true })}
                   </p>
                 </div>

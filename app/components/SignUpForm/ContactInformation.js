@@ -59,67 +59,67 @@ const ContactInformation = ({ increment, email }) => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="w-full">
-          <p className="text-zinc-200 font-semibold text-2xl">
+          <p className="text-white font-semibold text-2xl">
             Account Information
           </p>
-          <p className="mt-6 text-sm text-zinc-300 pb-1">First Name</p>
+          <p className="mt-6 text-sm text-white font-light pb-1">First Name</p>
           <input
             type="text"
             placeholder="First Name"
-            className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+            className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
             {...register("first", { required: true })}
           />
           {errors.first && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *required field
             </p>
           )}
         </div>
         <div>
-          <p className="mt-6 text-sm text-zinc-300 pb-1">Last Name</p>
+          <p className="mt-6 text-sm font-light text-white pb-1">Last Name</p>
           <input
             type="text"
             placeholder="Last Name"
-            className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+            className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
             {...register("last", { required: true })}
           />
           {errors.last && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *required field
             </p>
           )}
         </div>
         <div>
-          <p className="mt-6 text-sm text-zinc-300 pb-1">Email</p>
+          <p className="mt-6 text-sm text-white font-light pb-1">Email</p>
           <input
             type="email"
             placeholder="Email"
-            className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+            className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
             {...register("email", { required: true })}
           />
           {errors.email && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *required field
             </p>
           )}
         </div>
         <div>
-          <p className="mt-6 text-sm text-zinc-300 pb-1">
+          <p className="mt-6 text-sm text-white font-light pb-1">
             Password (8 characters min)
           </p>
           <input
             type="password"
             placeholder="Password"
-            className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+            className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
             {...register("password", { required: true, minLength: 8 })}
           />
           {errors.password?.type === "required" && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *required field
             </p>
           )}
           {errors.password?.type === "minLength" && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *password must be at least 8 characters
             </p>
           )}
@@ -131,15 +131,17 @@ const ContactInformation = ({ increment, email }) => {
           )}
         </div>
         <div>
-          <p className="mt-6 text-sm text-zinc-300 pb-1">Confirm Password</p>
+          <p className="mt-6 text-sm text-white font-light pb-1">
+            Confirm Password
+          </p>
           <input
             type="password"
             placeholder="Confirm Password"
-            className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+            className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
             {...register("confirmPassword", { required: true, minLength: 8 })}
           />
           {errors.confirmPassword?.type === "required" && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *required field
             </p>
           )}
@@ -150,12 +152,12 @@ const ContactInformation = ({ increment, email }) => {
             </p>
           )}
           {!passwordMatch && watch("confirmPassword")?.length >= 8 && (
-            <p className="text-xs font-medium text-rose-600 absolute mt-0.5">
+            <p className="text-xs font-medium text-red-500 absolute mt-0.5">
               *Passwords do not match
             </p>
           )}
           {errors.confirmPassword?.type === "minLength" && (
-            <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+            <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
               *password must be at least 8 characters
             </p>
           )}
@@ -164,24 +166,14 @@ const ContactInformation = ({ increment, email }) => {
           <button
             disabled={isSubmitting ? true : false}
             type="submit"
-            className={`h-[40px] w-[180px] text-sm text-center text-white flex justify-center items-center font-medium rounded-md transition-all duration-300 ${
+            className={`h-[40px] w-[180px] text-sm text-center flex justify-center items-center font-medium rounded-md transition-all duration-300 ${
               isSubmitting
-                ? "bg-violet-400/75 hover:bg-violet-400/75"
-                : "bg-violet-600 hover:bg-violet-800"
+                ? "bg-neutral-700 border-neutral-700"
+                : "bg-white border border-white text-black hover:bg-transparent hover:text-white"
             }`}
           >
             {isSubmitting ? <ButtonSpinner /> : "Create Account"}
           </button>
-          <p>
-            <span className="text-zinc-400 text-xs">
-              Already have an account?
-            </span>
-            <Link href="/login">
-              <a className="text-xs ml-2 text-zinc-400 hover:text-violet-400 underline">
-                Sign In
-              </a>
-            </Link>
-          </p>
         </div>
       </form>
       {errorMessage && (

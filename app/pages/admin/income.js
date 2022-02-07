@@ -74,8 +74,8 @@ const Income = ({ user }) => {
           <meta name="keywords" content="pryzma, income, income statement" />
         </Head>
         <div className="max-w-7xl mx-auto">
-          <div className="mx-auto w-fit p-4 border border-violet-500 rounded-md bg-zinc-800 mt-10">
-            <p className="text-zinc-300 font-medium text-sm text-center">
+          <div className="p-4 mx-auto rounded-md w-fit bg-black mt-16 animate-fadeIn opacity-0">
+            <p className="text-white text-sm font-light">
               Search for a stock above to view info
             </p>
           </div>
@@ -97,25 +97,25 @@ const Income = ({ user }) => {
         </Head>
         <div className="max-w-7xl mx-auto mt-4">
           <div className="flex items-center justify-between">
-            <div className="p-4 max-w-[300px] w-full bg-zinc-800 animate-pulse rounded-md"></div>
+            <div className="p-4 max-w-[300px] w-full bg-neutral-800 animate-pulse rounded-md"></div>
             <div className="flex">
-              <div className="p-2 rounded-md w-[70px] bg-zinc-800 animate-pulse mr-4"></div>
-              <div className="p-2 rounded-md w-[70px] bg-zinc-800 animate-pulse"></div>
+              <div className="p-2 rounded-md w-[70px] bg-neutral-800 animate-pulse mr-4"></div>
+              <div className="p-2 rounded-md w-[70px] bg-neutral-800 animate-pulse"></div>
             </div>
           </div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
-          <div className="w-full p-4 rounded-md bg-zinc-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
+          <div className="w-full p-4 rounded-md bg-neutral-800 animate-pulse mt-3"></div>
         </div>
       </div>
     );
 
   if (data === "data not available" || !data.length)
     return (
-      <div className="p-4 mx-auto rounded-md border w-fit border-violet-500 bg-zinc-800 mt-10 opacity-0 animate-fadeIn">
+      <div className="p-4 mx-auto rounded-md border w-fit border-red-500 bg-neutral-800 mt-10 animate-fadeIn opacity-0">
         <Head>
           <title>Pryzma - Income Statement - {symbol[0]}</title>
           <meta
@@ -125,9 +125,7 @@ const Income = ({ user }) => {
           <meta name="description" content="Income Statement" />
           <meta name="keywords" content="pryzma, income, income statement" />
         </Head>
-        <p className="font-medium text-zinc-200 text-sm">
-          No data available for {symbol[0]}
-        </p>
+        <p className=" text-white text-sm">No data available for {symbol[0]}</p>
       </div>
     );
 
@@ -140,22 +138,18 @@ const Income = ({ user }) => {
         <meta name="keywords" content="pryzma, income, income statement" />
       </Head>
       <div className="mx-auto max-w-7xl">
-        <div className="flex justify-between items-center">
-          <p className="font-medium text-zinc-200 text-2xl mb-2 capitalize">
+        <div className="flex justify-between items-center mb-2">
+          <p className="font-medium text-white text-2xl mb-2 capitalize">
             Income Statement - {period}
           </p>
           <div className="flex">
             <button
               onClick={handleSwitchPeriod}
               value="quarterly"
-              className={`rounded-md text-xs font-medium bg-zinc-800 px-2 py-1 mr-2 ${
+              className={`rounded-md border text-xs w-[80px] hover:text-white hover:border-white text-center duration-300 px-2 py-1.5 mr-2 ${
                 period === "quarterly"
-                  ? "text-violet-500 bg-white"
-                  : "text-zinc-200"
-              } ${
-                period === "quarterly"
-                  ? "hover:text-violet-500"
-                  : "hover:text-violet-500"
+                  ? "border-white text-white"
+                  : "border-neutral-700 text-neutral-500"
               } transition-all`}
             >
               Quarterly
@@ -163,14 +157,10 @@ const Income = ({ user }) => {
             <button
               onClick={handleSwitchPeriod}
               value="annual"
-              className={`rounded-md text-xs font-medium bg-zinc-800 px-2 py-1 ${
+              className={`rounded-md border text-xs w-[80px] text-center hover:border-white hover:text-white duration-300 px-2 py-1.5 ${
                 period === "annual"
-                  ? "text-violet-500 bg-white"
-                  : "text-zinc-200"
-              } ${
-                period === "annual"
-                  ? "hover:text-violet-500"
-                  : "hover:text-violet-500"
+                  ? "text-white border-white"
+                  : "text-neutral-500 border-neutral-700"
               } transition-all`}
             >
               Annual
@@ -179,76 +169,64 @@ const Income = ({ user }) => {
         </div>
         <table className="w-full">
           <thead>
-            <tr className="border-b border-zinc-800">
-              <td className="text-xs font-medium text-zinc-200 p-2">
-                Break Down
-              </td>
-              <td className="text-xs font-medium text-zinc-200">
+            <tr className="border-b border-neutral-800">
+              <td className="text-xs  text-white p-2">Break Down</td>
+              <td className="text-xs  text-white">
                 {data[0] ? data[0].fiscal_date : ""}
               </td>
               {data[1] ? (
-                <td className="text-xs font-medium text-zinc-200">
-                  {data[1].fiscal_date}
-                </td>
+                <td className="text-xs  text-white">{data[1].fiscal_date}</td>
               ) : (
                 ""
               )}
               {data[2] ? (
-                <td className="text-xs font-medium text-zinc-200">
-                  {data[2].fiscal_date}
-                </td>
+                <td className="text-xs  text-white">{data[2].fiscal_date}</td>
               ) : (
                 ""
               )}
               {data[3] ? (
-                <td className="text-xs font-medium text-zinc-200">
-                  {data[3].fiscal_date}
-                </td>
+                <td className="text-xs  text-white">{data[3].fiscal_date}</td>
               ) : (
                 ""
               )}
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 p-2 text-xs">
-                Total Revenue
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 p-2 text-xs">Total Revenue</td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].sales
                     ? millify(data[0].sales, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].sales
                     ? millify(data[1].sales, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].sales
                     ? millify(data[2].sales, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].sales
                     ? millify(data[3].sales, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 p-2 text-xs">
-                Cost of Goods
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 p-2 text-xs">Cost of Goods</td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].cost_of_goods
                     ? millify(data[0].cost_of_goods, {
                         precision: 2,
@@ -258,7 +236,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].cost_of_goods
                     ? millify(data[1].cost_of_goods, {
                         precision: 2,
@@ -268,7 +246,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].cost_of_goods
                     ? millify(data[2].cost_of_goods, {
                         precision: 2,
@@ -278,7 +256,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].cost_of_goods
                     ? millify(data[3].cost_of_goods, {
                         precision: 2,
@@ -288,12 +266,10 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 p-2 text-xs">
-                Gross Profit
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 p-2 text-xs">Gross Profit</td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].gross_profit
                     ? millify(data[0].gross_profit, {
                         precision: 2,
@@ -303,7 +279,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].cost_of_goods
                     ? millify(data[1].cost_of_goods, {
                         precision: 2,
@@ -313,7 +289,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].cost_of_goods
                     ? millify(data[2].cost_of_goods, {
                         precision: 2,
@@ -323,7 +299,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].cost_of_goods
                     ? millify(data[3].cost_of_goods, {
                         precision: 2,
@@ -333,8 +309,8 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className=" border-b border-zinc-800">
-              <td className="text-xs font-medium text-zinc-400 p-2">
+            <tr className=" border-b border-neutral-800">
+              <td className="text-xs  text-neutral-300 p-2">
                 Operating Expenses
               </td>
               {data[0] && <td></td>}
@@ -342,12 +318,12 @@ const Income = ({ user }) => {
               {data[2] && <td></td>}
               {data[3] && <td></td>}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2 pl-6">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2 pl-6">
                 Research & Development
               </td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].operating_expense.research_and_development
                     ? millify(
                         data[0].operating_expense.research_and_development,
@@ -357,7 +333,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].operating_expense.research_and_development
                     ? millify(
                         data[1].operating_expense.research_and_development,
@@ -367,7 +343,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].operating_expense.research_and_development
                     ? millify(
                         data[2].operating_expense.research_and_development,
@@ -377,7 +353,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].operating_expense.research_and_development
                     ? millify(
                         data[3].operating_expense.research_and_development,
@@ -387,12 +363,12 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2 pl-6">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2 pl-6">
                 Selling General & Administrative
               </td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].operating_expense.selling_general_and_administrative
                     ? millify(
                         data[0].operating_expense
@@ -403,7 +379,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].operating_expense.selling_general_and_administrative
                     ? millify(
                         data[1].operating_expense
@@ -414,7 +390,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].operating_expense.selling_general_and_administrative
                     ? millify(
                         data[2].operating_expense
@@ -425,7 +401,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].operating_expense.selling_general_and_administrative
                     ? millify(
                         data[3].operating_expense
@@ -436,12 +412,12 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2 pl-6">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2 pl-6">
                 Other Operating Expenses
               </td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].operating_expense.other_operating_expenses
                     ? millify(
                         data[0].operating_expense.other_operating_expenses,
@@ -451,7 +427,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].operating_expense.other_operating_expenses
                     ? millify(
                         data[1].operating_expense.other_operating_expenses,
@@ -461,7 +437,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].operating_expense.other_operating_expenses
                     ? millify(
                         data[2].operating_expense.other_operating_expenses,
@@ -471,7 +447,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].operating_expense.other_operating_expenses
                     ? millify(
                         data[3].operating_expense.other_operating_expenses,
@@ -481,12 +457,12 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">
                 Operating Income
               </td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].operating_income
                     ? millify(data[0].operating_income, {
                         precision: 2,
@@ -496,7 +472,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].operating_income
                     ? millify(data[1].operating_income, {
                         precision: 2,
@@ -506,7 +482,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].operating_income
                     ? millify(data[2].operating_income, {
                         precision: 2,
@@ -516,7 +492,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].operating_income
                     ? millify(data[3].operating_income, {
                         precision: 2,
@@ -526,8 +502,8 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className=" border-b border-zinc-800">
-              <td className="text-xs font-medium text-zinc-400 p-2">
+            <tr className=" border-b border-neutral-800">
+              <td className="text-xs  text-neutral-300 p-2">
                 Non Operating Interest
               </td>
               {data[0] && <td></td>}
@@ -535,12 +511,10 @@ const Income = ({ user }) => {
               {data[2] && <td></td>}
               {data[3] && <td></td>}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2 pl-6">
-                Income
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2 pl-6">Income</td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].non_operating_interest.income
                     ? millify(data[0].non_operating_interest.income, {
                         precision: 2,
@@ -550,7 +524,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].non_operating_interest.income
                     ? millify(data[1].non_operating_interest.income, {
                         precision: 2,
@@ -560,7 +534,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].non_operating_interest.income
                     ? millify(data[2].non_operating_interest.income, {
                         precision: 2,
@@ -570,7 +544,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].non_operating_interest.income
                     ? millify(data[3].non_operating_interest.income, {
                         precision: 2,
@@ -580,12 +554,10 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2 pl-6">
-                Expense
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2 pl-6">Expense</td>
               {data[0] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[0].non_operating_interest.expense
                     ? millify(data[0].non_operating_interest.expense, {
                         precision: 2,
@@ -595,7 +567,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[1].non_operating_interest.expense
                     ? millify(data[1].non_operating_interest.expense, {
                         precision: 2,
@@ -605,7 +577,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[2].non_operating_interest.expense
                     ? millify(data[2].non_operating_interest.expense, {
                         precision: 2,
@@ -615,7 +587,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="font-medium text-zinc-400 text-xs">
+                <td className=" text-neutral-300 text-xs">
                   {data[3].non_operating_interest.expense
                     ? millify(data[3].non_operating_interest.expense, {
                         precision: 2,
@@ -625,12 +597,12 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">
                 Other Income Expense
               </td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].other_income_expense
                     ? millify(data[0].other_income_expense, {
                         precision: 2,
@@ -640,7 +612,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].other_income_expense
                     ? millify(data[1].other_income_expense, {
                         precision: 2,
@@ -650,7 +622,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].other_income_expense
                     ? millify(data[2].other_income_expense, {
                         precision: 2,
@@ -660,7 +632,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].other_income_expense
                     ? millify(data[3].other_income_expense, {
                         precision: 2,
@@ -670,12 +642,10 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
-                Pretax Income
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">Pretax Income</td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].pretax_income
                     ? millify(data[0].pretax_income, {
                         precision: 2,
@@ -685,7 +655,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].pretax_income
                     ? millify(data[1].pretax_income, {
                         precision: 2,
@@ -695,7 +665,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].pretax_income
                     ? millify(data[2].pretax_income, {
                         precision: 2,
@@ -705,7 +675,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].pretax_income
                     ? millify(data[3].pretax_income, {
                         precision: 2,
@@ -715,126 +685,120 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
-                Income Tax
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">Income Tax</td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].income_tax
                     ? millify(data[0].income_tax, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].income_tax
                     ? millify(data[1].income_tax, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].income_tax
                     ? millify(data[2].income_tax, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].income_tax
                     ? millify(data[3].income_tax, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
-                Net Income
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">Net Income</td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].net_income
                     ? millify(data[0].net_income, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].net_income
                     ? millify(data[1].net_income, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].net_income
                     ? millify(data[2].net_income, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].net_income
                     ? millify(data[3].net_income, { precision: 2, space: true })
                     : "-"}
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">EPS</td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">EPS</td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].eps_basic ? data[0].eps_basic : "-"}
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].eps_basic ? data[1].eps_basic : "-"}
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].eps_basic ? data[2].eps_basic : "-"}
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].eps_basic ? data[3].eps_basic : "-"}
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
-                EPS Diluted
-              </td>
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">EPS Diluted</td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].eps_diluted ? data[0].eps_diluted : "-"}
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].eps_diluted ? data[1].eps_diluted : "-"}
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].eps_diluted ? data[2].eps_diluted : "-"}
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].eps_diluted ? data[3].eps_diluted : "-"}
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">
                 Shares Outstanding
               </td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].basic_shares_outstanding
                     ? millify(data[0].basic_shares_outstanding, {
                         precision: 2,
@@ -844,7 +808,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].basic_shares_outstanding
                     ? millify(data[1].basic_shares_outstanding, {
                         precision: 2,
@@ -854,7 +818,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].basic_shares_outstanding
                     ? millify(data[2].basic_shares_outstanding, {
                         precision: 2,
@@ -864,7 +828,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].basic_shares_outstanding
                     ? millify(data[3].basic_shares_outstanding, {
                         precision: 2,
@@ -874,12 +838,12 @@ const Income = ({ user }) => {
                 </td>
               )}
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="font-medium text-zinc-400 text-xs p-2">
+            <tr className="border-b border-neutral-800">
+              <td className=" text-neutral-300 text-xs p-2">
                 Diluted Shares Outstanding
               </td>
               {data[0] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[0].diluted_shares_outstanding
                     ? millify(data[0].diluted_shares_outstanding, {
                         precision: 2,
@@ -889,7 +853,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[1] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[1].diluted_shares_outstanding
                     ? millify(data[1].diluted_shares_outstanding, {
                         precision: 2,
@@ -899,7 +863,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[2] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[2].diluted_shares_outstanding
                     ? millify(data[2].diluted_shares_outstanding, {
                         precision: 2,
@@ -909,7 +873,7 @@ const Income = ({ user }) => {
                 </td>
               )}
               {data[3] && (
-                <td className="text-zinc-400 font-medium text-xs">
+                <td className="text-neutral-300  text-xs">
                   {data[3].diluted_shares_outstanding
                     ? millify(data[3].diluted_shares_outstanding, {
                         precision: 2,

@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
           gtag('config', 'G-TN02PJMMFZ');`}
         </Script>
         <NextNProgress
-          color="#A78BFA"
+          color="#FFFFFF"
           startPosition={0.7}
           stopDelayMs={50}
           height={2}
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
             <div className="font-inter">
               <div className="flex">
                 <NestedNav />
-                <div className="w-full bg-zinc-900">
+                <div className="w-full bg-neutral-900">
                   <Nav />
                   {router.pathname.endsWith("/admin") ||
                   router.pathname.endsWith("/manage-account") ||

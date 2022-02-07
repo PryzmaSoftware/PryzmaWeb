@@ -35,6 +35,12 @@ module.exports = {
         move: "move 8s linear infinite",
       },
     },
+    screens: {
+      xs: "500px",
+      sm: "600px",
+      md: "768px",
+      steps: "700px",
+    },
   },
   plugins: [
     require("@tailwindcss/line-clamp"),

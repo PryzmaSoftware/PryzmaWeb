@@ -16,10 +16,10 @@ const SubscriptionCreated = () => {
         <meta name="description" content="Subscription Created" />
         <meta name="keywords" content="pryzma, subscription" />
       </Head>
-      <p className="text-center text-3xl font-semibold text-zinc-200 mb-2">
+      <p className="text-center text-3xl font-semibold text-white mb-2">
         Your subscription has been created!
       </p>
-      <p className="text-center text-3xl font-semibold text-zinc-200 mb-10">
+      <p className="text-center text-3xl font-semibold text-white mb-10">
         You can now use all features!
       </p>
       <button

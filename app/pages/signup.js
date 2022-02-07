@@ -28,27 +28,29 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-80px)] min-h-[900px] flex">
+    <div className="h-[calc(100vh-84px)] min-h-[900px] flex px-4">
       <Head>
         <title>Pryzma - Sign up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Create an account at Pryzma." />
         <meta name="keywords" content="pryzma, sign up, create account" />
       </Head>
-      <div className="w-full max-w-screen-sm mx-auto mt-40 animate-fadeIn">
-        <div className="mb-2 font-medium text-zinc-300">Step {step.step}/3</div>
+      <div className="w-full max-w-screen-sm mx-auto mt-20 animate-fadeIn">
+        <div className="mb-2 font-medium text-white">Step {step.step}/3</div>
         <div className="flex mb-6">
           <span
-            className={`h-0.5 w-full mr-2 rounded-full bg-violet-500`}
+            className={`h-0.5 w-full mr-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500`}
           ></span>
           <span
-            className={`h-0.5 w-full mr-2 rounded-full ${
-              step.step >= 2 ? "bg-violet-500" : "bg-zinc-700"
+            className={`h-0.5 w-full mr-2 rounded-full bg-gradient-to-r ${
+              step.step >= 2 ? "from-fuchsia-500 to-cyan-500" : "bg-neutral-700"
             }`}
           ></span>
           <span
-            className={`h-0.5 w-full mr-2 rounded-full ${
-              step.step === 3 ? "bg-violet-500 " : "bg-zinc-700"
+            className={`h-0.5 w-full mr-2 rounded-full bg-gradient-to-r ${
+              step.step === 3
+                ? "from-fuchsia-500 to-cyan-500"
+                : "bg-neutral-700"
             }`}
           ></span>
         </div>

@@ -159,8 +159,8 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
       {/* <p className="text-gray-700 font-bold text-2xl border-b border-gray-300 pb-3 mb-8 mt-12 animate-fadeInUp translate-y-12">
         Subscription Information
       </p> */}
-      <div className="bg-zinc-800 p-3 w-full rounded-md text-sm flex justify-between items-center mb-4 animate-fadeInUp translate-y-12">
-        <p className="text-zinc-200">
+      <div className="bg-black p-3 w-full rounded-md text-sm flex justify-between items-center mb-4 animate-fadeInUp translate-y-12">
+        <p className="text-white">
           <span className="font-medium">Pryzma Monthly</span>{" "}
           <span>($14.99/mo)</span>
         </p>
@@ -170,10 +170,10 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           disabled={
             plan === "monthly" || user.paymentStatus === "failed" ? true : false
           }
-          className={`p-2 w-[116px] rounded-md font-medium transition-all bg-left bg-[length:200%] duration-300 ${
+          className={`p-2 w-[116px] rounded-md font-medium transition-all bg-left duration-300 ${
             plan === "monthly"
-              ? "bg-gradient-to-r from-indigo-600 to-rose-600 text-white"
-              : "border border-violet-500 text-violet-500 hover:bg-violet-600 hover:border-violet-600 hover:text-white"
+              ? "bg-gradient-to-r from-indigo-600 to-rose-600 bg-[length:200%] animate-move text-white"
+              : "border border-white bg-transparent text-white hover:bg-white hover:text-black"
           } ${user.paymentStatus === "failed" ? "cursor-not-allowed" : ""}`}
         >
           {plan === "monthly" && "Current Plan"}
@@ -181,8 +181,8 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           {plan === "canceled" || plan === null ? "Select Plan" : ""}
         </button>
       </div>
-      <div className="bg-zinc-800 p-3 w-full rounded-md text-sm flex justify-between items-center animate-fadeInUp translate-y-12">
-        <p className="text-zinc-200">
+      <div className="bg-black p-3 w-full rounded-md text-sm flex justify-between items-center animate-fadeInUp translate-y-12">
+        <p className="text-white">
           <span className="font-medium">Pryzma Annual</span>{" "}
           <span>($149.99/yr)</span>
         </p>
@@ -194,8 +194,8 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           }
           className={`p-2 w-[116px] rounded-md font-medium transition-all bg-left bg-[length:200%] duration-300 ${
             plan === "annual"
-              ? "bg-gradient-to-r from-indigo-600 to-rose-600 text-white"
-              : "border border-violet-500 text-violet-500 hover:bg-violet-600 hover:border-violet-600 hover:text-white"
+              ? "bg-gradient-to-r from-indigo-600 to-rose-600 bg-[length:200%] animate-move text-white"
+              : "border border-white bg-transparent text-white hover:bg-white hover:text-black"
           } ${user.paymentStatus === "failed" ? "cursor-not-allowed" : ""}`}
         >
           {plan === "annual" && "Current Plan"}
@@ -204,30 +204,30 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
         </button>
       </div>
       <div className="flex mt-4 animate-fadeInUp translate-y-12">
-        <div className="bg-zinc-800 p-4 w-full mr-4 rounded-md">
-          <p className="font-medium text-center mb-4 text-zinc-200">
+        <div className="bg-black p-4 w-full mr-4 rounded-md">
+          <p className="font-medium text-center mb-4 text-white">
             Payment Method
           </p>
           <div className="flex items-center justify-center">
             <p className="mr-4 flex items-center">
-              <CreditCard className="mr-2 text-xl text-zinc-200" />
-              <span className="uppercase text-xs text-zinc-200 font-medium">
+              <CreditCard className="mr-2 text-xl text-white" />
+              <span className="uppercase text-xs text-white font-light">
                 {user.cardDetails.brand}
               </span>
             </p>
-            <p className="text-zinc-200 text-xs font-medium">
+            <p className="text-white text-xs font-light">
               ****{user.cardDetails.last4}
             </p>
           </div>
         </div>
-        <div className="p-4 bg-zinc-800 w-full rounded-md">
-          <p className="font-medium text-center mb-4 text-zinc-200">
+        <div className="p-4 bg-black w-full rounded-md">
+          <p className="font-medium text-center mb-4 text-white">
             Next Billing Period
           </p>
           {user.cancelAtPeriodEnd ? (
-            <DashLg className="text-xl text-zinc-200 mx-auto" />
+            <DashLg className="text-xl text-white mx-auto" />
           ) : (
-            <p className="text-zinc-200 font-medium text-center text-sm">
+            <p className="text-white font-light text-center text-sm">
               {format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}
             </p>
           )}
@@ -241,14 +241,20 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           <button
             disabled={paymentLoading ? true : false}
             onClick={handlePaymentMethodClick}
-            className={`p-2.5 pl-4 pr-4 rounded-md border transition-all duration-300 text-sm font-medium text-white flex items-center mr-4 ${
+            className={`p-2.5 w-[229px] justify-center rounded-md border transition-all duration-300 text-sm font-medium flex items-center mr-4 ${
               paymentLoading
-                ? "bg-violet-400 hover:none border-violet-400"
-                : "bg-violet-600 hover:bg-violet-800 border-violet-600 hover:border-violet-800"
+                ? "bg-neutral-700 border-neutral-700"
+                : "border-white bg-white text-black hover:bg-transparent hover:text-white"
             }`}
           >
-            <CreditCard className="mr-2 text-xl" />
-            Update Payment Method
+            {paymentLoading ? (
+              <ButtonSpinner />
+            ) : (
+              <>
+                <CreditCard className="mr-2 text-xl" />
+                <span>Update Payment Method</span>
+              </>
+            )}
           </button>
         ) : (
           ""
@@ -256,7 +262,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
         {user.cancelAtPeriodEnd && user.subscriptionId ? (
           <button
             onClick={() => setRenewModalActive(true)}
-            className={`p-2.5 pl-4 pr-4 rounded-md bg-violet-600 text-white text-sm font-medium hover:bg-violet-800 transition-all duration-300 flex items-center`}
+            className={`p-2.5 pl-4 pr-4 rounded-md font-medium border text-sm border-white bg-white text-black hover:bg-transparent hover:text-white transition-all duration-300 flex items-center`}
           >
             <ArrowRepeat className="mr-2 text-xl" />
             Renew Plan
@@ -267,7 +273,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
         {!user.cancelAtPeriodEnd && !user.isCanceled ? (
           <button
             onClick={() => setCancelModalActive(true)}
-            className="p-2.5 pl-4 pr-4 rounded-md border border-zinc-500 hover:border-zinc-600 text-xs font-medium text-zinc-500 flex items-center hover:text-white hover:bg-zinc-600 transition-all duration-300"
+            className="p-2.5 pl-4 pr-4 rounded-md text-xs flex items-center border border-neutral-700 text-neutral-500 hover:border-white hover:text-white transition-all duration-300"
           >
             <XCircle className="mr-2 text-xl" />
             Cancel Plan
@@ -309,7 +315,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
         setSuccess={setSuccess}
         refreshData={refreshData}
       />
-      <p className="text-zinc-400 font-medium text-xs mt-10 leading-5 animate-fadeInUp translate-y-12">
+      <p className="text-neutral-400 text-xs mt-10 leading-5 animate-fadeInUp translate-y-12">
         Please note that we do not provide refunds. If you downgrade from annual
         to monthly, we will keep a credit on your account (ex. if you downgrade
         from Annual to Monthly, we will apply the pro-rated credit to your next
@@ -336,11 +342,14 @@ const CancelModal = ({
         }`}
       ></div>
       <div
-        className={`w-[320px] bg-zinc-800 p-6 pt-10 pb-10 rounded-lg fixed transition-all top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] ${
+        className={`w-[320px] bg-neutral-800 p-6 pt-8 pb-8 rounded-lg fixed transition-all top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] ${
           cancelModalActive ? "opacity-100 z-[10]" : "opacity-0 z-[-1]"
         }`}
       >
-        <p className="text-zinc-200 text-center leading-7 mb-10">
+        <p className="text-center font-medium text-2xl text-white mb-2">
+          Cancel Plan
+        </p>
+        <p className="text-white font-light text-center leading-7 mb-10">
           {user.paymentStatus !== "failed" &&
             "Are you sure you want to cancel your subscription? You will still have access to your current services until the next billing period."}
           {user.paymentStatus === "failed" &&
@@ -351,10 +360,10 @@ const CancelModal = ({
             value={true}
             disabled={isSubmitting ? true : false}
             onClick={updateRenewal}
-            className={`h-[40px] mr-2 p-2.5 w-full rounded-md text-white text-sm font-medium transition-all flex items-center justify-center duration-300 ${
+            className={`h-[40px] mr-2 p-2.5 w-full rounded-md border text-sm font-medium transition-all flex items-center justify-center duration-300 ${
               isSubmitting
-                ? "bg-red-400 hover:none"
-                : "bg-red-600 hover:bg-red-700"
+                ? "bg-red-400 border-red-400"
+                : "border-red-600 text-red-600 bg-transparent hover:text-white hover:bg-red-600"
             }`}
           >
             {isSubmitting ? (
@@ -368,7 +377,7 @@ const CancelModal = ({
           </button>
           <button
             onClick={() => setCancelModalActive(false)}
-            className="h-[40px] p-2.5 w-full rounded-md bg-gray-500 text-white text-sm font-medium flex items-center justify-center transition-all duration-300 hover:bg-gray-600"
+            className="flex items-center p-2.5 w-full rounded-md justify-center text-sm font-medium transition-all duration-300 border border-neutral-700 text-neutral-500 hover:border-white hover:text-white"
           >
             Go Back
             <ArrowReturnLeft className="text-xl ml-2" />
@@ -395,11 +404,14 @@ const RenewModal = ({
         }`}
       ></div>
       <div
-        className={`w-[320px] bg-zinc-800 p-6 pt-10 pb-10 rounded-lg fixed transition-all top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] ${
+        className={`w-[320px] bg-neutral-800 p-6 pt-8 pb-8 rounded-lg fixed transition-all top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] ${
           renewModalActive ? "opacity-100 z-[10]" : "opacity-0 z-[-1]"
         }`}
       >
-        <p className="text-zinc-200 text-center leading-7 mb-10">
+        <p className="text-center font-medium text-2xl text-white mb-2">
+          Renew Plan
+        </p>
+        <p className="text-white font-light text-center leading-7 mb-10">
           Are you sure you want to renew your current subscription? Doing so
           will allow you to keep your current services, while being billed
           normally.
@@ -409,10 +421,10 @@ const RenewModal = ({
             value={undefined}
             disabled={isSubmitting ? true : false}
             onClick={updateRenewal}
-            className={`h-[40px] mr-2 p-2.5 w-full min-w-fit rounded-md text-white text-sm font-medium transition-all flex items-center justify-center duration-300 ${
+            className={`h-[40px] mr-2 p-2.5 w-full min-w-fit rounded-md border text-sm font-medium transition-all flex items-center justify-center duration-300 ${
               isSubmitting
-                ? "bg-violet-400 hover:none"
-                : "bg-violet-600 hover:bg-violet-800"
+                ? "border-neutral-700 bg-neutral-700"
+                : "border-white bg-white text-black hover:bg-transparent hover:text-white"
             }`}
           >
             {isSubmitting ? (
@@ -426,7 +438,7 @@ const RenewModal = ({
           </button>
           <button
             onClick={() => setRenewModalActive(false)}
-            className="h-[40px] p-2.5 w-full rounded-md bg-gray-500 text-white text-sm font-medium flex items-center justify-center transition-all duration-300 hover:bg-gray-600"
+            className="flex items-center p-2.5 w-full rounded-md justify-center text-sm font-medium transition-all duration-300 border border-neutral-700 text-neutral-500 hover:border-white hover:text-white"
           >
             Go Back
             <ArrowReturnLeft className="text-xl ml-2" />

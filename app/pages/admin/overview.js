@@ -48,9 +48,9 @@ const Overview = ({ user }) => {
           />
         </Head>
         <div className="max-w-7xl mx-auto">
-          <div className="mx-auto w-fit p-4 border border-violet-500 rounded-md bg-zinc-800 mt-10">
-            <p className="text-zinc-300 font-medium text-sm">
-              Search for a stock above to see an overview on it.
+          <div className="p-4 mx-auto rounded-md w-fit bg-black mt-16 animate-fadeIn opacity-0">
+            <p className="text-white text-sm font-light">
+              Search for a stock above to view info
             </p>
           </div>
         </div>

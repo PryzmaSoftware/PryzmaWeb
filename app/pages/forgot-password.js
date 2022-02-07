@@ -49,7 +49,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="max-w-sm w-full mx-auto h-[calc(100vh-80px)] min-h-[600px] flex flex-col opacity-0 animate-fadeIn">
+    <div className="max-w-sm w-full mx-auto h-[calc(100vh-84px)] min-h-[600px] flex flex-col opacity-0 animate-fadeIn">
       <Head>
         <title>Pryzma - Forgot Password</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,11 +70,11 @@ const ForgotPassword = () => {
           </p>
         </div>
       )}
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-40">
-        <p className="font-semibold text-zinc-200 text-2xl text-center">
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-20">
+        <p className="font-semibold text-white text-2xl text-center">
           Forgot Password
         </p>
-        <p className="text-sm font-medium text-zinc-400 mt-2 text-center leading-6">
+        <p className="text-sm text-neutral-400 mt-2 text-center leading-6">
           Enter the email associated with your account. If there is an existing
           account with the provided email, we will send you an email with a
           special link to reset your password.
@@ -82,21 +82,21 @@ const ForgotPassword = () => {
         <input
           type="email"
           placeholder="Email"
-          className="mt-8 w-full p-2.5 rounded-md text-zinc-400 border outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200 border-zinc-700"
+          className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700 mt-8`}
           {...register("email", { required: true })}
         />
         {errors.email && (
-          <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+          <p className="text-xs font-medium text-red-600 mt-0.5 absolute">
             *required field
           </p>
         )}
         <button
           disabled={isSubmitting ? true : false}
           type="submit"
-          className={`text-white mx-auto font-medium text-sm h-[40px] flex items-center justify-center w-full mt-8 rounded-md transition-all duration-300 ${
+          className={`mx-auto border font-medium text-sm h-[40px] flex items-center justify-center w-full mt-8 rounded-md transition-all duration-300 ${
             isSubmitting
-              ? "bg-violet-400/75"
-              : "bg-violet-600 hover:bg-violet-800"
+              ? "bg-neutral-700 border-neutral-700"
+              : "border-white bg-white text-black hover:bg-transparent hover:text-white"
           }`}
         >
           {isSubmitting ? <ButtonSpinner /> : "Submit"}
@@ -105,7 +105,7 @@ const ForgotPassword = () => {
       <div className="mt-6 flex justify-center">
         <button
           onClick={() => router.back()}
-          className="hover:text-violet-400 transition-all hover:underline text-xs text-zinc-400"
+          className="transition-all text-xs font-medium text-neutral-500 hover:text-white"
         >
           Go Back
         </button>

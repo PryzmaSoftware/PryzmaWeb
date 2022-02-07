@@ -74,29 +74,29 @@ const AccountInformation = ({ user }) => {
       >
         <div className="flex w-full">
           <div className="w-full mr-4 mb-6">
-            <p className="text-sm text-zinc-300 pb-1">First Name</p>
+            <p className="text-sm text-white font-light pb-1">First Name</p>
             <input
               onChange={(e) => setFirstName(e.target.value)}
               type="text"
-              className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+              className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500 bg-black focus:border-white transition-all duration-300 border-neutral-800`}
               {...register("firstName", { required: true, value: firstName })}
             />
             {errors.firstName && (
-              <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+              <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
                 *required field
               </p>
             )}
           </div>
           <div className="w-full">
-            <p className="text-sm text-zinc-300 pb-1">Last Name</p>
+            <p className="text-sm text-white font-light pb-1">Last Name</p>
             <input
               onChange={(e) => setLastName(e.target.value)}
               type="text"
-              className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+              className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500 bg-black focus:border-white transition-all duration-300 border-neutral-800`}
               {...register("lastName", { required: true, value: lastName })}
             />
             {errors.lastName && (
-              <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+              <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
                 *required field
               </p>
             )}
@@ -104,27 +104,27 @@ const AccountInformation = ({ user }) => {
         </div>
         <div className="flex w-full">
           <div className="w-full mr-4">
-            <p className="text-sm text-zinc-300 pb-1">Email</p>
+            <p className="text-sm text-white pb-1 font-light">Email</p>
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              className="p-2.5 rounded-md text-zinc-400 border w-full border-zinc-700 outline-none focus:shadow-[0px_0px_0px_2px_rgba(139,92,246,0.3)] focus:border-violet-500/60 bg-zinc-800 transition-all duration-200"
+              className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500 bg-black focus:border-white transition-all duration-300 border-neutral-800`}
               {...register("email", { required: true, value: email })}
             />
             {errors.email && !emailError && (
-              <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+              <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
                 *required field
               </p>
             )}
             {emailError && (
-              <p className="text-xs font-medium text-rose-600 mt-0.5 absolute">
+              <p className="text-xs font-medium text-red-500 mt-0.5 absolute">
                 *email is already in use
               </p>
             )}
           </div>
           <div className="w-full">
-            <p className="text-sm text-zinc-300 pb-1">Date Joined</p>
-            <p className="mt-2 text-zinc-400">
+            <p className="text-sm text-white font-light pb-1">Date Joined</p>
+            <p className="mt-2 text-white">
               {format(new Date(user.dateJoined), "MMMM dd, yyyy")}
             </p>
           </div>
@@ -132,10 +132,10 @@ const AccountInformation = ({ user }) => {
         <button
           disabled={isSubmitting ? true : false}
           type="submit"
-          className={`text-sm mt-8 text-white font-medium rounded-md h-[40px] w-[180px] flex items-center justify-center transition-all duration-300 ${
+          className={`text-sm mt-8 font-medium rounded-md h-[40px] w-[180px] flex border items-center justify-center transition-all duration-300 ${
             isSubmitting
-              ? "bg-violet-400/75 hover:none"
-              : "bg-violet-600 hover:bg-violet-800"
+              ? "border-neutral-700 bg-neutral-700"
+              : "border-white bg-white text-black hover:bg-transparent hover:text-white"
           }`}
         >
           {isSubmitting ? <ButtonSpinner /> : "Update Account Info"}

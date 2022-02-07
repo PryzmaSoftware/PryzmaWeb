@@ -40,41 +40,31 @@ const Stats = ({ isLoading, setStats }) => {
 
   if (isLoading || !data)
     return (
-      <div className="w-full p-10 mt-8 rounded-lg bg-zinc-800 animate-pulse"></div>
+      <div className="w-full p-10 mt-8 rounded-lg bg-neutral-800 animate-pulse"></div>
     );
 
   return (
     <div className="mt-8 animate-fadeIn opacity-0">
       <div>
-        <p className="text-zinc-200 font-medium text-lg py-2 border-b border-zinc-800">
+        <p className="text-white font-medium text-lg py-2 border-b border-neutral-800">
           Statistics
         </p>
         {data.message === "twelve" ? (
           <table className="w-full table-fixed">
             <thead>
-              <tr className="border-b border-zinc-800">
-                <td className="text-xs font-medium text-zinc-200 p-3 pl-4">
-                  Market Cap
-                </td>
-                <td className="text-xs font-medium text-zinc-200">
-                  Shares Outs
-                </td>
-                <td className="text-xs font-medium text-zinc-200">Float</td>
-                <td className="text-xs font-medium text-zinc-200">
-                  Shares Short
-                </td>
-                <td className="text-xs font-medium text-zinc-200">
-                  Short Float %
-                </td>
-                <td className="text-xs font-medium text-zinc-200">
-                  Insider Own
-                </td>
-                <td className="text-xs font-medium text-zinc-200">Inst Own</td>
+              <tr className="border-b border-neutral-800">
+                <td className="text-xs text-white p-3 pl-4">Market Cap</td>
+                <td className="text-xs text-white">Shares Outs</td>
+                <td className="text-xs text-white">Float</td>
+                <td className="text-xs text-white">Shares Short</td>
+                <td className="text-xs text-white">Short Float %</td>
+                <td className="text-xs text-white">Insider Own</td>
+                <td className="text-xs text-white">Inst Own</td>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-zinc-800">
-                <td className="text-xs font-medium text-zinc-400 p-3 pl-4">
+              <tr className="border-b border-neutral-800">
+                <td className="text-xs text-neutral-300 p-3 pl-4">
                   {data.marketCap.market_capitalization
                     ? millify(data.marketCap.market_capitalization, {
                         precision: 2,
@@ -82,7 +72,7 @@ const Stats = ({ isLoading, setStats }) => {
                       })
                     : "-"}
                 </td>
-                <td className="text-xs font-medium text-zinc-400">
+                <td className="text-xs text-neutral-300">
                   {data.stats.shares_outstanding
                     ? millify(data.stats.shares_outstanding, {
                         precision: 2,
@@ -90,7 +80,7 @@ const Stats = ({ isLoading, setStats }) => {
                       })
                     : "-"}
                 </td>
-                <td className="text-xs font-medium text-zinc-400">
+                <td className="text-xs text-neutral-300">
                   {data.stats.float_shares
                     ? millify(data.stats.float_shares, {
                         precision: 2,
@@ -98,7 +88,7 @@ const Stats = ({ isLoading, setStats }) => {
                       })
                     : "-"}
                 </td>
-                <td className="text-xs font-medium text-zinc-400">
+                <td className="text-xs text-neutral-300">
                   {data.stats.shares_short
                     ? millify(data.stats.shares_short, {
                         precision: 2,
@@ -106,7 +96,7 @@ const Stats = ({ isLoading, setStats }) => {
                       })
                     : "-"}
                 </td>
-                <td className="text-xs font-medium text-zinc-400">
+                <td className="text-xs text-neutral-300">
                   {data.stats.shares_short && data.stats.float_shares
                     ? `${(
                         (data.stats.shares_short / data.stats.float_shares) *
@@ -114,14 +104,14 @@ const Stats = ({ isLoading, setStats }) => {
                       ).toFixed(2)}%`
                     : "-"}
                 </td>
-                <td className="text-xs font-medium text-zinc-400">
+                <td className="text-xs text-neutral-300">
                   {data.stats.percent_held_by_insiders
                     ? `${(data.stats.percent_held_by_insiders * 100).toFixed(
                         2
                       )}%`
                     : "-"}
                 </td>
-                <td className="text-xs font-medium text-zinc-400">
+                <td className="text-xs text-neutral-300">
                   {data.stats.percent_held_by_institutions
                     ? `${(
                         data.stats.percent_held_by_institutions * 100
@@ -133,28 +123,22 @@ const Stats = ({ isLoading, setStats }) => {
           </table>
         ) : (
           <table className="w-full table-fixed">
-            <tr className="border-b border-zinc-800">
-              <td className="text-xs font-medium text-zinc-200 p-3 pl-4">
-                Market Cap
-              </td>
-              <td className="text-xs font-medium text-zinc-200">Shares Outs</td>
-              <td className="text-xs font-medium text-zinc-200">Float</td>
-              <td className="text-xs font-medium text-zinc-200">
-                Shares Short
-              </td>
-              <td className="text-xs font-medium text-zinc-200">
-                Short Float %
-              </td>
-              <td className="text-xs font-medium text-zinc-200">Insider Own</td>
-              <td className="text-xs font-medium text-zinc-200">Inst Own</td>
+            <tr className="border-b border-neutral-800">
+              <td className="text-xs text-white p-3 pl-4">Market Cap</td>
+              <td className="text-xs text-white">Shares Outs</td>
+              <td className="text-xs text-white">Float</td>
+              <td className="text-xs text-white">Shares Short</td>
+              <td className="text-xs text-white">Short Float %</td>
+              <td className="text-xs text-white">Insider Own</td>
+              <td className="text-xs text-white">Inst Own</td>
             </tr>
-            <tr className="border-b border-zinc-800">
-              <td className="text-xs font-medium text-zinc-400 p-3 pl-4">
+            <tr className="border-b border-neutral-800">
+              <td className="text-xs text-neutral-300 p-3 pl-4">
                 {data.marketCap
                   ? millify(data.marketCap, { precision: 2, space: true })
                   : "-"}
               </td>
-              <td className="text-xs font-medium text-zinc-400">
+              <td className="text-xs text-neutral-300">
                 {data.sharesOutstanding
                   ? millify(data.sharesOutstanding, {
                       precision: 2,
@@ -162,11 +146,11 @@ const Stats = ({ isLoading, setStats }) => {
                     })
                   : "-"}
               </td>
-              <td className="text-xs font-medium text-zinc-400">-</td>
-              <td className="text-xs font-medium text-zinc-400">-</td>
-              <td className="text-xs font-medium text-zinc-400">-</td>
-              <td className="text-xs font-medium text-zinc-400">-</td>
-              <td className="text-xs font-medium text-zinc-400">-</td>
+              <td className="text-xs text-neutral-300">-</td>
+              <td className="text-xs text-neutral-300">-</td>
+              <td className="text-xs text-neutral-300">-</td>
+              <td className="text-xs text-neutral-300">-</td>
+              <td className="text-xs text-neutral-300">-</td>
             </tr>
           </table>
         )}
