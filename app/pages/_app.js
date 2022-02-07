@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
           gtag('config', 'G-TN02PJMMFZ');`}
         </Script>
         <NextNProgress
-          color="#FFFFFF"
+          color="#c026d3"
           startPosition={0.7}
           stopDelayMs={50}
           height={2}

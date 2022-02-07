@@ -49,6 +49,7 @@ const ForgotPassword = () => {
   };
 
   return (
+    <div className="px-4">
     <div className="max-w-sm w-full mx-auto h-[calc(100vh-84px)] min-h-[600px] flex flex-col opacity-0 animate-fadeIn">
       <Head>
         <title>Pryzma - Forgot Password</title>
@@ -110,6 +111,7 @@ const ForgotPassword = () => {
           Go Back
         </button>
       </div>
+    </div>
     </div>
   );
 };
