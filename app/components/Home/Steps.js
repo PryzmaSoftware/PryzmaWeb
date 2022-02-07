@@ -1,6 +1,6 @@
 const Steps = () => {
   return (
-    <div className="mt-20 p-4 opacity-0 animate-fadeIn" id="steps">
+    <div className="mt-20 p-4 opacity-0 animate-fadeIn">
       <div className="mx-auto max-w-7xl">
         <p className="text-neutral-500 font-semibold uppercase text-xs steps:text-sm text-center">
           helping you make the best decisions

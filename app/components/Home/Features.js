@@ -10,7 +10,7 @@ import offerings from "../../public/images/business-and-financial-8.svg";
 
 const Features = () => {
   return (
-    <div className="p-4 mt-20 mb-10 opacity-0 animate-fadeIn">
+    <div className="p-4 mt-20 mb-10 opacity-0 animate-fadeIn" id="features">
       <div className="max-w-7xl mx-auto">
         <p className="text-neutral-500 font-semibold uppercase text-xs steps:text-sm text-center">
           info that will give you the{" "}

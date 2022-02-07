@@ -40,8 +40,9 @@ const Home = () => {
               </a>
             </Link>
             <SmoothScrollLink
-              to="steps"
+              to="features"
               smooth={true}
+              offset={-82}
               className="text-neutral-500 cursor-pointer font-medium rounded-md w-full xs:w-[200px] text-center py-3 transition-all duration-300 border border-neutral-700 hover:border-white hover:text-white"
             >
               View Features
