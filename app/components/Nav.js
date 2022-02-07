@@ -34,7 +34,7 @@ const Nav = () => {
 
   return (
     <div
-      className={`px-4 transition-all duration-300 sticky top-0 z-[9999] border ${
+      className={`px-4 transition-all duration-300 sticky top-0 z-[9999] border-b ${
         scrollY > 0 && !router.pathname.startsWith("/admin")
           ? "border-neutral-800 backdrop-blur bg-black/50"
           : "border-transparent bg-black"
