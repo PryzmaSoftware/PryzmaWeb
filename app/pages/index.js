@@ -33,7 +33,7 @@ const Home = () => {
           <p className="font-[800] text-zinc-200 sm:text-[120px] xs:text-[80px] text-[60px] md:text-[150px] text-center opacity-0 animate-fadeIn tracking-tighter px-4">
             Execute.
           </p>
-          <div className="flex justify-center flex-col xs:flex-row opacity-0 animate-fadeIn px-4">
+          <div className="flex justify-center flex-col xs:flex-row opacity-0 animate-fadeIn px-4 mt-2 xs:mt-0">
             <Link href="/signup">
               <a className="animate-fadeIn animate-move mb-4 xs:mb-0 mr-6 hover:scale-105 text-center w-full xs:w-[200px] text-white bg-gradient-to-r from-indigo-600 to-rose-600 bg-[length:400%] bg-left hover:bg-right rounded-md py-3 transition-all duration-300">
                 Start Free Trial
