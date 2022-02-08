@@ -238,7 +238,7 @@ const Movers = () => {
             >
               Symbol{" "}
               <CaretDownFill
-                className={`text-violet-500 ml-1 transition-all duration-300`}
+                className={`text-neutral-500 ml-1 transition-all duration-300`}
               />
             </p>
             <p
@@ -247,7 +247,7 @@ const Movers = () => {
             >
               Price{" "}
               <CaretDownFill
-                className={`text-violet-500 ml-1 transition-all duration-300`}
+                className={`text-neutral-500 ml-1 transition-all duration-300`}
               />
             </p>
             <p
@@ -256,7 +256,7 @@ const Movers = () => {
             >
               Change{" "}
               <CaretDownFill
-                className={`text-violet-500 ml-1 transition-all duration-300`}
+                className={`text-neutral-500 ml-1 transition-all duration-300`}
               />
             </p>
             <p
@@ -265,7 +265,7 @@ const Movers = () => {
             >
               % Change{" "}
               <CaretDownFill
-                className={`text-violet-500 ml-1 transition-all duration-300`}
+                className={`text-neutral-500 ml-1 transition-all duration-300`}
               />
             </p>
             <p
@@ -274,13 +274,13 @@ const Movers = () => {
             >
               Volume{" "}
               <CaretDownFill
-                className={`text-violet-500 ml-1 transition-all duration-300`}
+                className={`text-neutral-500 ml-1 transition-all duration-300`}
               />
             </p>
           </div>
           {data &&
             data.map((element) => {
-              if (element.symbol.includes(".") || element.last < 0.005) return;
+              if (element.symbol.includes(".") || element.last < 0.005 || element.volume < 500) return;
               return (
                 <div
                   onClick={() =>

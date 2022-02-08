@@ -173,7 +173,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           className={`p-2 w-[116px] rounded-md font-medium transition-all bg-left duration-300 ${
             plan === "monthly"
               ? "bg-gradient-to-r from-indigo-600 to-rose-600 bg-[length:200%] animate-move text-white"
-              : "border border-white bg-transparent text-white hover:bg-white hover:text-black"
+              : "border border-neutral-700 text-neutral-500 hover:border-white hover:text-white"
           } ${user.paymentStatus === "failed" ? "cursor-not-allowed" : ""}`}
         >
           {plan === "monthly" && "Current Plan"}
@@ -195,7 +195,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           className={`p-2 w-[116px] rounded-md font-medium transition-all bg-left bg-[length:200%] duration-300 ${
             plan === "annual"
               ? "bg-gradient-to-r from-indigo-600 to-rose-600 bg-[length:200%] animate-move text-white"
-              : "border border-white bg-transparent text-white hover:bg-white hover:text-black"
+              : "border border-neutral-700 text-neutral-500 hover:border-white hover:text-white"
           } ${user.paymentStatus === "failed" ? "cursor-not-allowed" : ""}`}
         >
           {plan === "annual" && "Current Plan"}
@@ -227,9 +227,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           {user.cancelAtPeriodEnd ? (
             <DashLg className="text-xl text-white mx-auto" />
           ) : (
-            <p className="text-white font-light text-center text-sm">
-              {format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}
-            </p>
+            user.nextInvoice ? <p className="text-white font-light text-center text-sm">{format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}</p> : <DashLg className="text-xl text-white mx-auto" />
           )}
         </div>
       </div>

@@ -51,7 +51,7 @@ const ResetPassword = ({ query }) => {
         <meta name="keywords" content="pryzma, reset password" />
       </Head>
       {errorMessage && (
-        <div className="absolute top-[150px] left-[50%] translate-x-[-50%] w-fit p-4 rounded-md bg-gradient-to-br from-red-400 to-red-600">
+        <div className="absolute top-[100px] left-[50%] translate-x-[-50%] w-fit p-4 rounded-md bg-gradient-to-br from-red-400 to-red-600">
           <p className="text-xs font-semibold text-center text-black leading-5">
             {errorMessage}
           </p>

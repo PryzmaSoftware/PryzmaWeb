@@ -2,12 +2,13 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
-import { ArrowRight, CaretDownFill, Person } from "react-bootstrap-icons";
+import { List, CaretDownFill, Person } from "react-bootstrap-icons";
 import DropDownNavMenu from "./DropDownNavMenu";
 import Search from "./AdminHome/Search";
 import logo from "../public/images/logo.png";
 import Image from "next/image";
 import useScrollPosition from "@react-hook/window-scroll";
+import DropNav from './Home/DropNav';
 
 const Nav = () => {
   const router = useRouter();
@@ -16,6 +17,8 @@ const Nav = () => {
   const [name, setName] = useState();
   const [dropDownActive, setDropDownActive] = useState(false);
   const [userData, setUserData] = useState();
+
+  const [homeNaveActive, setHomeNavActive] = useState(false);
 
   const button = useRef();
 
@@ -101,18 +104,20 @@ const Nav = () => {
             </div>
           ) : (
             <div className="flex items-center">
+            <List className="text-white block sm:hidden text-3xl cursor-pointer" onClick={() => homeNaveActive ? setHomeNavActive(false) : setHomeNavActive(true)}/>
+            <DropNav homeNavActive={homeNaveActive} setHomeNaveActive={setHomeNavActive} />
               <Link href="/contact">
-                <a className="mr-6 text-sm text-neutral-500 font-medium hover:text-white transition-all">
+                <a className="mr-6 text-sm text-neutral-500 font-medium hidden sm:block hover:text-white transition-all">
                   Contact
                 </a>
               </Link>
               <Link href="/login">
-                <a className="mr-6 text-sm text-neutral-500 font-medium hover:text-white transition-all">
+                <a className="mr-6 text-sm text-neutral-500 font-medium hidden sm:block hover:text-white transition-all">
                   Login
                 </a>
               </Link>
               <Link href="/signup">
-                <a className="rounded-md py-1.5 font-medium text-sm px-5 bg-white flex items-center border border-white hover:bg-transparent hover:text-white transition-all duration-300">
+                <a className="rounded-md py-1.5 font-medium text-sm px-5 bg-white hidden sm:flex items-center border border-white hover:bg-transparent hover:text-white transition-all duration-300">
                   Sign Up
                 </a>
               </Link>
