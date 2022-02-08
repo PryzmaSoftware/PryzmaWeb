@@ -59,7 +59,7 @@ const ResetPassword = ({ query }) => {
       )}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto w-full max-w-sm mt-20 animate-fadeIn opacity-0"
+        className="mx-auto w-full max-w-sm mt-24 animate-fadeIn opacity-0"
       >
         <p className="text-white font-bold text-2xl text-center">
           Reset Password

@@ -80,6 +80,7 @@ const ContactInformation = ({ increment, email }) => {
           <input
             type="text"
             placeholder="Last Name"
+            autoComplete="off"
             className={`w-full p-2.5 rounded-md text-white font-normal border outline-none placeholder:text-neutral-500  bg-transparent focus:border-white transition-all duration-300 border-neutral-700`}
             {...register("last", { required: true })}
           />

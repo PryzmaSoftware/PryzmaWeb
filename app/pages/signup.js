@@ -35,7 +35,7 @@ const Signup = () => {
         <meta name="description" content="Create an account at Pryzma." />
         <meta name="keywords" content="pryzma, sign up, create account" />
       </Head>
-      <div className="w-full max-w-screen-sm mx-auto mt-20 animate-fadeIn">
+      <div className="w-full max-w-screen-sm mx-auto mt-24 animate-fadeIn">
         <div className="mb-2 font-medium text-white">Step {step.step}/3</div>
         <div className="flex mb-6">
           <span

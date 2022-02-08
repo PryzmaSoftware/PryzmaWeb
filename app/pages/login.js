@@ -75,7 +75,7 @@ const Login = () => {
         </div>
       )}
       <div className="max-w-sm w-full mx-auto">
-        <form className="w-full mt-20" onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full mt-24" onSubmit={handleSubmit(onSubmit)}>
           <p className="text-zinc-200 font-semibold text-2xl text-center">
             Client Login
           </p>

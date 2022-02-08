@@ -71,7 +71,7 @@ const ForgotPassword = () => {
           </p>
         </div>
       )}
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-20">
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-24">
         <p className="font-semibold text-white text-2xl text-center">
           Forgot Password
         </p>

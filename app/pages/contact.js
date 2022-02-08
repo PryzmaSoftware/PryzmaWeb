@@ -3,7 +3,7 @@ import { People, Envelope } from "react-bootstrap-icons";
 const Contact = () => {
   return (
     <div className="p-4 h-[calc(100vh-84px)] min-h-[600px]">
-      <div className="max-w-xs rounded-md border border-neutral-700 mt-20 overflow-hidden mx-auto opacity-0 animate-fadeIn">
+      <div className="max-w-xs rounded-md border border-neutral-700 mt-24 overflow-hidden mx-auto opacity-0 animate-fadeIn">
         <div className="bg-gradient-to-br from-indigo-600 to-fuchsia-600 py-4 text-center">
           <People className="text-5xl text-white mx-auto mb-1" />
           <p className="text-white font-bold text-3xl">Support</p>
