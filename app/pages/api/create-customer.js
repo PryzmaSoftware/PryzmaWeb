@@ -30,7 +30,7 @@ const handler = async (req, res) => {
       email: req.body.data.email,
     });
 
-    // CREATE THE CUSTOMER FOR MONGODB
+    // CREATE THE CUSTOMER FOR MONGO
     const newUser = {
       stripeCustomerId: customer.id,
       priceId: null,
