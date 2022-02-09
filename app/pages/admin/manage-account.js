@@ -54,7 +54,7 @@ const ManageAccount = ({ user }) => {
       <div className="max-w-screen-sm w-full mx-auto mt-40 mb-20">
         <div className="flex justify-between mb-10 animate-fadeInUp translate-y-12 border-b border-neutral-800 relative">
           <span
-            className={`content-none bg-gradient-to-r bg-white w-1/3 h-0.5 absolute bottom-[-1px] transition-all ease-in-out duration-500 rounded-full ${
+            className={`content-none bg-fuchsia-600 w-1/3 h-0.5 absolute bottom-[-1px] transition-all ease-in-out duration-500 rounded-full ${
               page === "account" && "left-0"
             } ${page === "password" && "left-1/2 translate-x-[-50%]"} ${
               page === "subscription" && "left-[100%] translate-x-[-100%]"
