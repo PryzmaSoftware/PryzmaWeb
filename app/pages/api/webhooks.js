@@ -151,11 +151,11 @@ const handler = async (req, res) => {
     case 'invoice.upcoming':
       customer = event.data.object.customer;
       user = await users.findOne({stripeCustomerId: customer});
-      const amountDue = event.data.object.amount_due;
+      const invoiceAmountDue = event.data.object.amount_due;
 
       const updateAmountdue = {
         $set: {
-          amountDue: amountDue,
+          amountDue: invoiceAmountDue
         },
       };
 
