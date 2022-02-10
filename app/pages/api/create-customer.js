@@ -43,6 +43,7 @@ const handler = async (req, res) => {
       trial: false,
       isCanceled: false,
       nextInvoice: null,
+      amountDue: null,
       watchlist: [],
       firstName:
         req.body.data.first.charAt(0).toUpperCase() +

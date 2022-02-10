@@ -147,6 +147,22 @@ const handler = async (req, res) => {
       //update in mongodb
       await users.update({ stripeCustomerId: customer }, updateBillingPeriod);
       console.log("subscription updated");
+      break
+    case 'invoice.upcoming':
+      customer = event.data.object.customer;
+      user = await users.findOne({stripeCustomerId: customer});
+      const amountDue = event.data.object.amount_due;
+
+      const updateAmountdue = {
+        $set: {
+          amountDue: amountDue,
+        },
+      };
+
+      //update in mongodb
+      await users.update({ stripeCustomerId: customer }, updateAmountdue);
+      console.log("Invoice Upcoming");
+      break
     // unhandled event types get logged to the console
     default:
       console.log(`Unhandled event type ${event.type}`);
