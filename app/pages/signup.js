@@ -19,7 +19,7 @@ const reducer = (state, action) => {
 
 const Signup = () => {
   // keep track of step user is in on sign up form
-  const [step, dispatch] = useReducer(reducer, { step: 2 });
+  const [step, dispatch] = useReducer(reducer, { step: 1 });
   // setting user email so we can look up when choosing plan
   const email = useRef();
   // go to next step
