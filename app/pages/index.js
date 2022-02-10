@@ -20,7 +20,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="stocks, research, pryzma, fundamentals, financials, statistics, short interest, float, dilution, news"
+          content="stocks, trade signals, pryzma, fundamentals, financials, statistics, float, ai, machine learning, news"
         />
       </Head>
       <div className="max-w-7xl mx-auto">
