@@ -7,7 +7,7 @@ const handler = async (req, res, session) => {
   const priceId = req.body.priceId;
   const email = req.body.email;
   const subscriptionType =
-    priceId === "price_1KPWKjIUx22VK4GNd2bVhQ27" ? "monthly" : "annual";
+    priceId === "price_1KRRO2IUx22VK4GNyRLlzRbO" ? "monthly" : "annual";
 
   try {
     // connect to MONGODB

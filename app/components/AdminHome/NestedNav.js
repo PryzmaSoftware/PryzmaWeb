@@ -12,6 +12,7 @@ import institution from "../../public/images/institutionalAdmin.svg";
 import insider from "../../public/images/insiderAdmin.svg";
 import offerings from "../../public/images/offeringsAdmin.svg";
 import logo from "../../public/images/logo.png";
+import ai from "../../public/images/ai.svg";
 
 const NestedNav = () => {
   const [number, setNumber] = useState();
@@ -252,7 +253,7 @@ const NestedNav = () => {
           onMouseLeave={() =>
             !router.pathname.endsWith("/insiders") && setNumber(0)
           }
-          className={`text-white mb-10 text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
+          className={`text-white text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
             router.pathname.endsWith("/insiders")
               ? "bg-neutral-900 opacity-100"
               : "opacity-60"
@@ -267,6 +268,29 @@ const NestedNav = () => {
           ></span>
           <Image src={insider} height={20} width={20} layout="fixed" />
           <span className="ml-3">Insider Ownership</span>
+        </a>
+      </Link>
+      <Link href="/admin/precision-alpha">
+        <a
+          onMouseEnter={() => setNumber(13)}
+          onMouseLeave={() =>
+            !router.pathname.endsWith("/precision-alpha") && setNumber(0)
+          }
+          className={`text-white mb-10 text-xs p-2 pl-4 relative flex items-center hover:bg-neutral-900 hover:opacity-100 transition-all duration-200 ${
+            router.pathname.endsWith("/precision-alpha")
+              ? "bg-neutral-900 opacity-100"
+              : "opacity-60"
+          }`}
+        >
+          <span
+            className={`${
+              number === 13 || router.pathname.endsWith("/precision-alpha")
+                ? "h-full"
+                : "h-0"
+            } absolute h-0 origin-center transition-all duration-200 content-none right-0 bottom-0 ease-in my-auto top-0 w-0.5 rounded-full bg-gradient-to-b from-fuchsia-500 to-sky-500`}
+          ></span>
+          <Image src={ai} height={20} width={20} layout="fixed" />
+          <span className="ml-3">Precision Alpha</span>
         </a>
       </Link>
     </div>

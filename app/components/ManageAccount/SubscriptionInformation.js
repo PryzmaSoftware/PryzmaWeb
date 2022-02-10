@@ -166,7 +166,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
         </p>
         <button
           onClick={handleSubscriptionChange}
-          value="price_1KPWKjIUx22VK4GNd2bVhQ27"
+          value="price_1KRRO2IUx22VK4GNyRLlzRbO"
           disabled={
             plan === "monthly" || user.paymentStatus === "failed" ? true : false
           }
@@ -188,7 +188,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
         </p>
         <button
           onClick={handleSubscriptionChange}
-          value="price_1KPWKjIUx22VK4GNALchjwAk"
+          value="price_1KRROLIUx22VK4GNHslw9W1x"
           disabled={
             plan === "annual" || user.paymentStatus === "failed" ? true : false
           }
@@ -226,8 +226,12 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
           </p>
           {user.cancelAtPeriodEnd ? (
             <DashLg className="text-xl text-white mx-auto" />
+          ) : user.nextInvoice ? (
+            <p className="text-white font-light text-center text-sm">
+              {format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}
+            </p>
           ) : (
-            user.nextInvoice ? <p className="text-white font-light text-center text-sm">{format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}</p> : <DashLg className="text-xl text-white mx-auto" />
+            <DashLg className="text-xl text-white mx-auto" />
           )}
         </div>
       </div>

@@ -27,9 +27,9 @@ module.exports = {
           "100%": { backgroundPosition: "left" },
         },
         height: {
-          '0%': {height: '0%'},
-          '100%': {height: '100vh', minHeight: 'fit', maxHeight: 'fit'}
-        }
+          "0%": { height: "0%" },
+          "100%": { height: "100vh", minHeight: "fit", maxHeight: "fit" },
+        },
       },
       animation: {
         fadeInUpFast: "fadeInUp 0.2s ease-in-out forwards",
@@ -37,7 +37,7 @@ module.exports = {
         fadeIn: "fadeIn 0.5s ease-in-out forwards",
         grow: "grow 0.2s linear forwards",
         move: "move 8s linear infinite",
-        height: 'height 2s ease forwards'
+        height: "height 2s ease forwards",
       },
     },
     screens: {
@@ -45,6 +45,7 @@ module.exports = {
       sm: "600px",
       md: "768px",
       steps: "700px",
+      precisionHome: "930px",
     },
   },
   plugins: [

@@ -4,7 +4,7 @@ import axios from "axios";
 import SymbolContext from "../../components/SymbolContext";
 import UserContext from "../../components/UserContext";
 import { useState, useEffect, useContext } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import Probability from "../../components/PrecisionAlpha/Probability";
 import MarketPower from "../../components/PrecisionAlpha/MarketPower";
 import MarketResistance from "../../components/PrecisionAlpha/MarketResistance";
@@ -48,7 +48,7 @@ const PrecisionAlpha = ({ user }) => {
     getData();
   }, [symbol]);
 
-  console.log(data)
+  console.log(data);
 
   if (!symbol)
     return (
@@ -75,26 +75,88 @@ const PrecisionAlpha = ({ user }) => {
       </div>
     );
 
-  if (isLoading || !data) return <div>Pecision is loading</div>
+  if (isLoading || !data)
+    return (
+      <div className="w-full max-w-7xl mx-auto">
+        <Head>
+          <title>Pryzma - Precision Alpha - {symbol[0]}</title>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta name="description" content="Stock Overview" />
+          <meta
+            name="keywords"
+            content="pryzma, precision alpha, ai, artificial intelligence, trade signals"
+          />
+        </Head>
+        <div className="flex w-full mt-6">
+          <div className="w-full mr-6">
+            <div className="w-full h-[80px] rounded-md bg-neutral-800 animate-pulse mb-4"></div>
+            <div className="w-full h-[250px] rounded-md bg-neutral-800 animate-pulse"></div>
+          </div>
+          <div className="w-full">
+            <div className="w-full h-[80px] rounded-md bg-neutral-800 animate-pulse mb-4"></div>
+            <div className="w-full h-[250px] rounded-md bg-neutral-800 animate-pulse"></div>
+          </div>
+        </div>
+        <div className="flex w-full mt-10">
+          <div className="w-full mr-6">
+            <div className="w-full h-[80px] rounded-md bg-neutral-800 animate-pulse mb-4"></div>
+            <div className="w-full h-[250px] rounded-md bg-neutral-800 animate-pulse"></div>
+          </div>
+          <div className="w-full">
+            <div className="w-full h-[80px] rounded-md bg-neutral-800 animate-pulse mb-4"></div>
+            <div className="w-full h-[250px] rounded-md bg-neutral-800 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    );
 
-  if (data === 'data not available') return <div>Data not available</div>
+  if (data === "data not available")
+    return (
+      <div className="p-4 mx-auto rounded-md border w-fit border-red-500 bg-neutral-800 mt-10 animate-fadeIn opacity-0">
+        <Head>
+          <title>Pryzma - Precision Alpha - {symbol[0]}</title>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta name="description" content="Precision Alpha" />
+          <meta
+            name="keywords"
+            content="pryzma, precision alpha, ai, artificial intelligence, signals"
+          />
+        </Head>
+        <p className=" text-white text-sm">No data available for {symbol[0]}</p>
+      </div>
+    );
 
   return (
     <div className="p-4">
+      <Head>
+        <title>Pryzma - Precision Alpha - {symbol[0]}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Stock Overview" />
+        <meta
+          name="keywords"
+          content="pryzma, precision alpha, ai, artificial intelligence, trade signals"
+        />
+      </Head>
       <div className="mx-auto max-w-7xl w-full mb-12">
-      <div className="w-full flex">
-      <Probability data={data}/>
-      <EnergyTemp data={data} />
-      </div>
-    <div className="w-full flex mt-6">
-    <MarketPower data={data} />
-      
-      <MarketNoise data={data} />
-    </div>
-    <div className="w-full flex mt-6">
-      <MarketEmotion data={data} />
-      <MarketResistance data={data} />
-    </div>
+        <div className="w-full flex">
+          <Probability data={data} />
+          <EnergyTemp data={data} />
+        </div>
+        <div className="w-full flex mt-6">
+          <MarketPower data={data} />
+
+          <MarketNoise data={data} />
+        </div>
+        <div className="w-full flex mt-6">
+          <MarketEmotion data={data} />
+          <MarketResistance data={data} />
+        </div>
       </div>
     </div>
   );

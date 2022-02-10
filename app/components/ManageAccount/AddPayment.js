@@ -126,7 +126,7 @@ const Payment = ({ user, price }) => {
         <p className="mb-6 text-sm text-neutral-400">
           You are now signing up for the{" "}
           {price === "monthly" ? "monthly" : "annual"} plan for{" "}
-          {price === "monthly" ? "$14.99/mo" : "$149.99/yr"}
+          {price === "monthly" ? "$79.99/mo" : "$799.99/yr"}
         </p>
       )}
       <PaymentElement />
@@ -142,7 +142,7 @@ const Payment = ({ user, price }) => {
         {isSubmitting ? (
           <ButtonSpinner />
         ) : user.isCanceled ? (
-          `Pay ${price === "monthly" ? "$14.99" : "$149.99"}`
+          `Pay ${price === "monthly" ? "$79.99" : "$799.99"}`
         ) : (
           "Submit"
         )}

@@ -14,11 +14,11 @@ const Plan = ({ increment, email }) => {
   const handleButtonClick = async (e) => {
     // make call to backend to create subscription
     setIsSubmitting(true);
-    if (e.target.value === "price_1KPWKjIUx22VK4GNd2bVhQ27") {
+    if (e.target.value === "price_1KRRO2IUx22VK4GNyRLlzRbO") {
       setMonthlyLoader(true);
       plan.current = "monthly";
     }
-    if (e.target.value === "price_1KPWKjIUx22VK4GNALchjwAk") {
+    if (e.target.value === "price_1KRROLIUx22VK4GNHslw9W1x") {
       setAnnualLoader(true);
       plan.current = "annual";
     }
@@ -62,12 +62,16 @@ const Plan = ({ increment, email }) => {
             Monthly
           </p>
           <p className="text-center mt-2 mb-4">
-            <span className="text-3xl font-medium text-white">$14.99</span>
+            <span className="text-3xl font-medium text-white">$79.99</span>
             <span className="text-neutral-400 text-sm"> /mo</span>
           </p>
           <p className="flex items-center mt-6">
             <Check className="text-blue-500 text-lg mr-2 mb-2" />
             <span className="text-white text-sm">Top Movers</span>
+          </p>
+          <p className="flex items-center">
+            <Check className="text-blue-500 text-lg mr-2 mb-2" />
+            <span className="text-white text-sm">AI Trade Signals</span>
           </p>
           <p className="flex items-center">
             <Check className="text-blue-500 text-lg mr-2 mb-2" />
@@ -100,7 +104,7 @@ const Plan = ({ increment, email }) => {
           <button
             disabled={isSubmitting ? true : false}
             onClick={handleButtonClick}
-            value="price_1KPWKjIUx22VK4GNd2bVhQ27"
+            value="price_1KRRO2IUx22VK4GNyRLlzRbO"
             className={`w-full flex justify-center items-center h-[42px] font-medium text-sm border rounded-md transition-all duration-300 ${
               monthlyLoader
                 ? "bg-neutral-700 border-neutral-700"
@@ -118,12 +122,16 @@ const Plan = ({ increment, email }) => {
             Annual
           </p>
           <p className="text-center mt-2 mb-4">
-            <span className="text-3xl font-medium text-white">$149.99</span>
+            <span className="text-3xl font-medium text-white">$799.99</span>
             <span className="text-neutral-400 text-sm"> /yr</span>
           </p>
           <p className="flex items-center mt-6">
             <Check className="text-blue-500 text-lg mr-2 mb-2" />
             <span className="text-white text-sm">Top Movers</span>
+          </p>
+          <p className="flex items-center">
+            <Check className="text-blue-500 text-lg mr-2 mb-2" />
+            <span className="text-white text-sm">AI Trade Signals</span>
           </p>
           <p className="flex items-center">
             <Check className="text-blue-500 text-lg mr-2 mb-2" />
@@ -156,7 +164,7 @@ const Plan = ({ increment, email }) => {
           <button
             disabled={isSubmitting ? true : false}
             onClick={handleButtonClick}
-            value="price_1KPWKjIUx22VK4GNALchjwAk"
+            value="price_1KRROLIUx22VK4GNHslw9W1x"
             className={`w-full h-[42px] flex text-sm justify-center bg-[length:200%] bg-left hover:bg-right items-center text-white font-medium rounded-md transition-all duration-500 ${
               annualLoader
                 ? "bg-gradient-to-r from-rose-400 to-indigo-400 hover:bg-left"

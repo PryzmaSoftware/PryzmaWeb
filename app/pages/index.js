@@ -6,6 +6,7 @@ import Steps from "../components/Home/Steps";
 import Features from "../components/Home/Features";
 import Exchanges from "../components/Home/Exhanges";
 import { Link as SmoothScrollLink } from "react-scroll";
+import PrecisionAlpha from "../components/Home/PrecisionAlpha";
 
 const Home = () => {
   return (
@@ -58,6 +59,7 @@ const Home = () => {
       <Exchanges />
       <Steps />
       <Features />
+      <PrecisionAlpha />
       <Footer />
     </div>
   );
