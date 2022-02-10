@@ -147,8 +147,8 @@ const handler = async (req, res) => {
       //update in mongodb
       await users.updateOne({ stripeCustomerId: customer }, updateBillingPeriod);
       console.log("subscription updated");
-      break
-    case 'invoice.upcoming':
+      break;
+    case "invoice.upcoming":
       customer = event.data.object.customer;
       user = await users.findOne({stripeCustomerId: customer});
       const invoiceAmountDue = event.data.object.amount_due;
