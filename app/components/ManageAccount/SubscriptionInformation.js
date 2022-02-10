@@ -162,7 +162,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
       <div className="bg-black p-3 w-full rounded-md text-sm flex justify-between items-center mb-4 animate-fadeInUp translate-y-12">
         <p className="text-white">
           <span className="font-medium">Pryzma Monthly</span>{" "}
-          <span>($14.99/mo)</span>
+          <span>($79.99/mo)</span>
         </p>
         <button
           onClick={handleSubscriptionChange}
@@ -184,7 +184,7 @@ const SubscriptionInformation = ({ user, accountMessage, refreshData }) => {
       <div className="bg-black p-3 w-full rounded-md text-sm flex justify-between items-center animate-fadeInUp translate-y-12">
         <p className="text-white">
           <span className="font-medium">Pryzma Annual</span>{" "}
-          <span>($149.99/yr)</span>
+          <span>($799.99/yr)</span>
         </p>
         <button
           onClick={handleSubscriptionChange}
