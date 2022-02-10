@@ -145,7 +145,7 @@ const handler = async (req, res) => {
       };
 
       //update in mongodb
-      await users.update({ stripeCustomerId: customer }, updateBillingPeriod);
+      await users.updateOne({ stripeCustomerId: customer }, updateBillingPeriod);
       console.log("subscription updated");
       break
     case 'invoice.upcoming':
@@ -160,7 +160,7 @@ const handler = async (req, res) => {
       };
 
       //update in mongodb
-      await users.update({ stripeCustomerId: customer }, updateAmountdue);
+      await users.updateOne({ stripeCustomerId: customer }, updateAmountdue);
       console.log("Invoice Upcoming");
       break
     // unhandled event types get logged to the console
