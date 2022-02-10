@@ -57,7 +57,7 @@ const PrecisionAlpha = ({ user }) => {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta name="description" content="Stock Overview" />
+          <meta name="description" content="Precision Alpha" />
           <meta
             name="keywords"
             content="pryzma, precision alpha, ai, artificial intelligence, trade signals"
@@ -82,7 +82,7 @@ const PrecisionAlpha = ({ user }) => {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta name="description" content="Stock Overview" />
+          <meta name="description" content="Precision Alpha" />
           <meta
             name="keywords"
             content="pryzma, precision alpha, ai, artificial intelligence, trade signals"
@@ -123,7 +123,7 @@ const PrecisionAlpha = ({ user }) => {
           <meta name="description" content="Precision Alpha" />
           <meta
             name="keywords"
-            content="pryzma, precision alpha, ai, artificial intelligence, signals"
+            content="pryzma, precision alpha, ai, artificial intelligence, trade signals"
           />
         </Head>
         <p className=" text-white text-sm">No data available for {symbol[0]}</p>
@@ -135,7 +135,7 @@ const PrecisionAlpha = ({ user }) => {
       <Head>
         <title>Pryzma - Precision Alpha - {symbol[0]}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Stock Overview" />
+        <meta name="description" content="Precision Alpha" />
         <meta
           name="keywords"
           content="pryzma, precision alpha, ai, artificial intelligence, trade signals"
