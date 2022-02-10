@@ -19,7 +19,7 @@ const reducer = (state, action) => {
 
 const Signup = () => {
   // keep track of step user is in on sign up form
-  const [step, dispatch] = useReducer(reducer, { step: 1 });
+  const [step, dispatch] = useReducer(reducer, { step: 2 });
   // setting user email so we can look up when choosing plan
   const email = useRef();
   // go to next step
@@ -28,14 +28,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-84px)] min-h-[1000px] bg-black flex px-4">
+    <div className="h-[calc(100vh-84px)] min-h-[1300px] sm:min-h-[800px] flex px-4">
       <Head>
         <title>Pryzma - Sign up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Create an account at Pryzma." />
         <meta name="keywords" content="pryzma, sign up, create account" />
       </Head>
-      <div className="w-full max-w-screen-sm mx-auto mt-24 animate-fadeIn">
+      <div className="w-full max-w-screen-sm mx-auto mt-24 animate-fadeIn bg-black">
         <div className="mb-2 font-medium text-white">Step {step.step}/3</div>
         <div className="flex mb-6">
           <span
