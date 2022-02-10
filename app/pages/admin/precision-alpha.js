@@ -48,8 +48,6 @@ const PrecisionAlpha = ({ user }) => {
     getData();
   }, [symbol]);
 
-  console.log(data);
-
   if (!symbol)
     return (
       <div className="p-4">

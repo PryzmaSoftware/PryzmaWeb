@@ -56,8 +56,8 @@ const Plan = ({ increment, email }) => {
         A 7 day free trial come with your subscription. You can cancel anytime
         before the seven days are over and not get charged.
       </p>
-      <div className="flex mt-6">
-        <div className="w-full border border-neutral-700 mr-6 rounded-md p-6">
+      <div className="flex-col sm:flex-row flex mt-6">
+        <div className="w-full border border-neutral-700 sm:mr-6 rounded-md p-6 max-w-[300px] mx-auto sm:mx-0 mb-6 sm:mb-0">
           <p className="uppercase text-xs text-center text-neutral-400 font-medium tracking-wider">
             Monthly
           </p>
@@ -114,7 +114,7 @@ const Plan = ({ increment, email }) => {
             {monthlyLoader ? <ButtonSpinner /> : "Select Plan"}
           </button>
         </div>
-        <div className="w-full border border-neutral-700 rounded-md p-6 relative overflow-hidden">
+        <div className="w-full border border-neutral-700 rounded-md p-6 relative overflow-hidden mx-auto sm:mx-0 max-w-[300px]">
           <p className="absolute tracking-wide rotate-45 bg-gradient-to-r from-rose-600 to-indigo-600 text-xs right-[-75px] pr-20 pl-20 pt-0.5 pb-0.5 text-white font-semibold uppercase">
             Best Deal
           </p>
