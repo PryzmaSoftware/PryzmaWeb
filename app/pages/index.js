@@ -16,7 +16,7 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Pryzma is a stock research platform for anyone looking to get information for the stock market. You can find things like financials, statistics, the latest news, and much more."
+          content="Get artificial intellignce powered trade signals along with other fundamental data to back up your technical analysis. We offer trade signals, financials, quotes, statistics, the latest news, and much more."
         />
         <meta
           name="keywords"
