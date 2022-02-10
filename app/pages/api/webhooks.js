@@ -160,7 +160,7 @@ const handler = async (req, res) => {
       };
 
       //update in mongodb
-      await users.updateOne({ stripeCustomerId: customer }, updateAmountdue);
+      await users.updateOne({ email: user.email }, updateAmountdue);
       console.log("Invoice Upcoming");
       break
     // unhandled event types get logged to the console
