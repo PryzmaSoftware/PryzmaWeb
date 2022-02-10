@@ -28,7 +28,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-84px)] min-h-[900px] flex px-4">
+    <div className="h-[calc(100vh-84px)] min-h-[1000px] flex px-4">
       <Head>
         <title>Pryzma - Sign up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
