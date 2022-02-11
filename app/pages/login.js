@@ -6,9 +6,12 @@ import { useState } from "react";
 import { withIronSession } from "next-iron-session";
 import Link from "next/link";
 import Head from "next/head";
+import { useToasts } from '@geist-ui/core'
 
 const Login = () => {
   const router = useRouter();
+
+  const {setToast} = useToasts()
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [emailError, setEmailError] = useState();
@@ -35,7 +38,7 @@ const Login = () => {
       setPasswordError("*incorrect password");
     } else if (response?.data === "user not found") {
       setIsSubmitting(false);
-      setEmailError("*user email not found");
+      setToast({text: '*user email not found', type: 'error'});
       // if unknown error, display message
     } else {
       setIsSubmitting(false);
