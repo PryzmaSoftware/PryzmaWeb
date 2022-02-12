@@ -6,15 +6,16 @@ import { Text, Grid, Button } from "@geist-ui/react";
 
 const Nav = () => {
   return (
-    <div>
+    <div style={{ position: "sticky", top: 0 }}>
       <Grid.Container
         justify="space-between"
         direction="row"
         alignItems="center"
         style={{
           padding: "10px 16px",
-          maxWidth: 1200,
+          maxWidth: 1000,
           margin: "auto",
+          padding: 16,
         }}
       >
         <Link href="/">

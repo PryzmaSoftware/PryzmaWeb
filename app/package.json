@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@geist-ui/core": "^2.3.1",
     "@geist-ui/react": "^2.2.5",
     "next": "12.0.10",
     "react": "17.0.2",
