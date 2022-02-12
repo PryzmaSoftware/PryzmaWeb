@@ -8,7 +8,7 @@ import UserContext from "../components/UserContext";
 import { useState } from "react";
 import SymbolNav from "../components/AdminHome/SymbolNav";
 import Script from "next/script";
-import { GeistProvider, CssBaseline } from '@geist-ui/core'
+import { GeistProvider, CssBaseline } from "@geist-ui/core";
 
 function MyApp({ Component, pageProps }) {
   const [symbol, setSymbol] = useState(null);
@@ -39,11 +39,9 @@ function MyApp({ Component, pageProps }) {
         />
         <UserContext.Provider value={{ user, setUser }}>
           <SymbolContext.Provider value={{ symbol, setSymbol }}>
-          <GeistProvider>
-    <CssBaseline /> 
-            <div className="font-inter">
-              <div className="flex">
-                <NestedNav />
+            <GeistProvider>
+              <CssBaseline />
+              <div className="font-inter">
                 <div className="w-full bg-neutral-900">
                   <Nav />
                   {router.pathname.endsWith("/admin") ||
@@ -56,7 +54,6 @@ function MyApp({ Component, pageProps }) {
                   <Component {...pageProps} />
                 </div>
               </div>
-            </div>
             </GeistProvider>
           </SymbolContext.Provider>
         </UserContext.Provider>
@@ -79,11 +76,11 @@ function MyApp({ Component, pageProps }) {
           gtag('config', 'G-TN02PJMMFZ');`}
       </Script>
       <GeistProvider>
-    <CssBaseline /> 
-      <div className="font-inter bg-black">
-        <Nav />
-        <Component {...pageProps} />
-      </div>
+        <CssBaseline />
+        <div className="font-inter bg-black">
+          <Nav />
+          <Component {...pageProps} />
+        </div>
       </GeistProvider>
     </>
   );
