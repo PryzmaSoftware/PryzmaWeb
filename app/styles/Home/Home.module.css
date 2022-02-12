@@ -1,0 +1,10 @@
+.container {
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mainText {
+  font-size: 150px;
+  font-weight: bold;
+}

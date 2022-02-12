@@ -1,0 +1,9 @@
+.link {
+  margin-right: 20px;
+  color: #888;
+}
+
+.link:hover {
+  color: white;
+  transition: all 200ms;
+}

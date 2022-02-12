@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import Nav from "../components/Nav";
+import "../styles/globals.css";
+import { GeistProvider, CssBaseline } from "@geist-ui/react";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => {
+  return (
+    <GeistProvider>
+      <CssBaseline />
+      <Nav />
+      <Component {...pageProps} />
+    </GeistProvider>
+  );
+};
 
-export default MyApp
+export default App;
