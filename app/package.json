@@ -12,11 +12,14 @@
     "@geist-ui/icons": "^1.0.1",
     "@geist-ui/react": "^2.2.5",
     "axios": "^0.25.0",
+    "bcryptjs": "^2.4.3",
     "mongodb": "^4.3.1",
     "next": "12.0.10",
+    "nodemailer": "^6.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "^7.27.0"
+    "react-hook-form": "^7.27.0",
+    "stripe": "^8.202.0"
   },
   "devDependencies": {
     "eslint": "8.9.0",

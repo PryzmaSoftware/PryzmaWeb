@@ -1,21 +1,27 @@
 import { Input, Text, Spacer, Button, Select, useToasts } from "@geist-ui/core";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
 
+  const router = useRouter();
   const { setToast } = useToasts();
 
   const [plan, setPlan] = useState(null);
   const [planError, setPlanError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (data) => {
+  const [emailError, setEmailError] = useState(false);
+
+  const onSubmit = async (data) => {
     if (data.password !== data.confirmPassword)
       return setToast({
         text: "The passwords you entered do not match.",
@@ -26,6 +32,32 @@ const SignUp = () => {
       return setToast({ text: "Please select a subscription.", type: "error" });
     }
     setIsLoading(true);
+
+    // send user data to backend
+    const response = await axios.post("/api/signup", {
+      data: data,
+      plan: plan,
+    });
+
+    // check response
+    if (response.status === 200) {
+      if (response.data === "email already exists") {
+        setIsLoading(false);
+        setEmailError(true);
+        return setToast({
+          text: "A user with that email already exists.",
+          type: "error",
+        });
+      }
+      if (response.data === "customer created")
+        router.push({ pathname: "/verify", query: { email: data.email } });
+    } else {
+      setIsLoading(false);
+      setToast({
+        text: "Something went wrong, please try again.",
+        type: "error",
+      });
+    }
   };
 
   const changePlan = (value) => {
@@ -35,6 +67,22 @@ const SignUp = () => {
 
   const testInput = () => {
     if (!plan) setPlanError(true);
+    if (
+      !watch("first") ||
+      !watch("last") ||
+      !watch("email") ||
+      !watch("password") ||
+      !watch("confirmPassword")
+    )
+      return setToast({
+        text: "Please fill out the required fields.",
+        type: "error",
+      });
+    if (watch("password").length < 8 || watch("password").length < 8)
+      setToast({
+        text: "Your password must be at least 8 characters.",
+        type: "error",
+      });
   };
 
   return (
@@ -71,7 +119,7 @@ const SignUp = () => {
           <Spacer />
           <Input
             label="Last Name"
-            placeholder="First Name"
+            placeholder="Last Name"
             width="100%"
             htmlType="text"
             type={errors.last && "error"}
@@ -82,7 +130,7 @@ const SignUp = () => {
             label="Email"
             placeholder="Email"
             width="100%"
-            type={errors.email && "error"}
+            type={errors.email || emailError ? "error" : "default"}
             htmlType="email"
             {...register("email", { required: true })}
           />
@@ -93,7 +141,7 @@ const SignUp = () => {
             width="100%"
             type={errors.password && "error"}
             htmlType="password"
-            {...register("password", { required: true })}
+            {...register("password", { required: true, minLength: 8 })}
           />
           <Spacer />
           <Input.Password
@@ -102,7 +150,7 @@ const SignUp = () => {
             width="100%"
             type={errors.confirmPassword && "error"}
             htmlType="password"
-            {...register("confirmPassword", { required: true })}
+            {...register("confirmPassword", { required: true, minLength: 8 })}
           />
           <Spacer />
           <Select

@@ -7,8 +7,6 @@ import NextLink from "next/link";
 const Nav = () => {
   const router = useRouter();
 
-  console.log(router.pathname);
-
   return (
     <div style={{ padding: "10px 16px" }}>
       <div
