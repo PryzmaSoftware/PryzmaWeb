@@ -1,48 +1,74 @@
-import styles from "../styles/Nav.module.css";
-import Image from "next/image";
+import { Tabs, Link, Button, Text } from "@geist-ui/core";
 import logo from "../public/images/logo.png";
-import Link from "next/link";
-import { Text, Grid, Button } from "@geist-ui/react";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
 
 const Nav = () => {
+  const router = useRouter();
+
+  console.log(router.pathname);
+
   return (
-    <div style={{ position: "sticky", top: 0 }}>
-      <Grid.Container
-        justify="space-between"
-        direction="row"
-        alignItems="center"
+    <div style={{ padding: "10px 16px" }}>
+      <div
         style={{
-          padding: "10px 16px",
           maxWidth: 1000,
           margin: "auto",
-          padding: 16,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
-        <Link href="/">
-          <a>
+        <NextLink href="/" passHref>
+          <Link>
             <Image src={logo} layout="fixed" height={32} width={110} />
-          </a>
-        </Link>
+          </Link>
+        </NextLink>
+        <Tabs
+          value={router.pathname}
+          onChange={(route) => router.push(route)}
+          hideBorder
+          hideDivider
+          align="center"
+          leftSpace="5px"
+          hoverWidthRatio={1}
+          style={{
+            marginBottom: -15,
+            position: "absolute",
+            left: "50%",
+            transform: "translate(-50%)",
+          }}
+        >
+          <Tabs.Item label="Contact" value="/contact" />
+          <Tabs.Item label="Pricing" value="/pricing" />
+          <Tabs.Item label="Features" value="/features" />
+        </Tabs>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Link href="/contact">
-            <a className={styles.link}>
-              <Text small>Contact</Text>
-            </a>
-          </Link>
-          <Link href="/login">
-            <a className={styles.link}>
-              <Text small>Login</Text>
-            </a>
-          </Link>
-          <Link href="/login">
-            <a>
-              <Button auto scale={0.8} type="secondary" ghost>
-                <Text b>Sign Up</Text>
-              </Button>
-            </a>
-          </Link>
+          <Tabs
+            value={router.pathname}
+            onChange={(route) => router.push(route)}
+            hideBorder
+            hideDivider
+            align="center"
+            hoverWidthRatio={0}
+            style={{ marginBottom: -15, marginRight: 15 }}
+          >
+            <Tabs.Item label="Login" value="/login"></Tabs.Item>
+          </Tabs>
+          <Button
+            auto
+            margin={0}
+            type="secondary"
+            scale={0.7}
+            onClick={() => router.push("/signup")}
+          >
+            <Text font="14px" style={{ fontWeight: 600 }}>
+              Sign Up
+            </Text>
+          </Button>
         </div>
-      </Grid.Container>
+      </div>
     </div>
   );
 };
