@@ -1,4 +1,4 @@
-import { Card, Text, Button } from "@geist-ui/core";
+import { Card, Text, Button, Link } from "@geist-ui/core";
 import Users from "@geist-ui/icons/users";
 
 const Contact = () => {
@@ -41,9 +41,15 @@ const Contact = () => {
         <Text style={{ textAlign: "center" }} type="secondary" margin={0}>
           You can contact our support team with any questions or comments you
           may have at{" "}
-          <a href="mailto:support@pryzma.io" target="_blank" rel="noreferrer">
+          <Link
+            color
+            underline
+            href="mailto:support@pryzma.io"
+            target="_blank"
+            rel="noreferrer"
+          >
             support@pryzma.io
-          </a>
+          </Link>
         </Text>
         <div
           style={{
@@ -54,24 +60,12 @@ const Contact = () => {
           }}
         >
           <Button width="80%" type="secondary" className="button">
-            <a href="mailto:support@rpryzma.io" className="link">
+            <Link href="mailto:support@rpryzma.io" className="link">
               Contact Now
-            </a>
+            </Link>
           </Button>
         </div>
       </Card>
-      <style>
-        {`
-        .button:hover .link {color: #fff}
-          .link {
-            color: #000;
-            transition: 300ms;
-          }
-          .link:hover {
-            color: #fff;
-          }
-        `}
-      </style>
     </div>
   );
 };

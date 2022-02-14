@@ -1,4 +1,4 @@
-import { Text, Button, Input, Spacer, useToasts } from "@geist-ui/core";
+import { Text, Button, Input, Spacer, useToasts, Tag } from "@geist-ui/core";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -66,14 +66,27 @@ const Verify = ({ query }) => {
   return (
     <div style={{ padding: 16 }}>
       <div style={{ maxWidth: 350, margin: "auto", marginTop: 30 }}>
-        <Text h2 style={{ fontWeight: 700, textAlign: "center" }} mb="10px">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Tag type="success">Your account has been created.</Tag>
+        </div>
+        <Text
+          h2
+          style={{ fontWeight: 700, textAlign: "center" }}
+          mb="10px"
+          mt="10px"
+        >
           Verify Email
         </Text>
         <Text
           type="secondary"
           style={{ textAlign: "center" }}
-          mt="0px"
           mb="30px"
+          mt="0px"
         >
           Check your email for the code we just sent you and then enter it below
           to verify your email.
