@@ -46,12 +46,14 @@ const handler = async (req, res) => {
     // create mongodb user document
     const newUser = {
       stripeCustomerId: customer.id,
+      subscriptionId: subscription.id,
       plan: plan,
       status: "active",
       paymentMethod: null,
       cancelAtPeriodEnd: false,
       cardDetails: null,
-      nextInvoice: null,
+      nextInvoice: subscription.current_period_end,
+      amountDue: null,
       firstName: first.charAt(0).toUpperCase() + first.slice(1),
       lastName: last.charAt(0).toUpperCase() + last.slice(1),
       email: email,

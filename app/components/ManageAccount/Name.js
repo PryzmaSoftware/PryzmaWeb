@@ -1,4 +1,4 @@
-import { Card, Text, Button, Input, useToasts } from "@geist-ui/core";
+import { Card, Text, Button, Input, useToasts, Grid } from "@geist-ui/core";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -50,23 +50,28 @@ const Name = ({ user }) => {
         value={last}
         onChange={(e) => setLast(e.target.value)}
       />
-      <Card.Footer style={{ display: "flex", justifyContent: "space-between" }}>
-        <Text type="secondary" mr="10px">
+      <Card.Footer disableAutoMargin pt="5px" pb="5px">
+      <Grid.Container alignItems="center" justify="space-between">
+      <Grid>
+      <Text type="secondary" mr="10px">
           Make sure your name is up to date with your billing information.
         </Text>
+      </Grid>
+      <Grid>
         <Button
           onClick={handleSubmit}
           auto
           type={isLoading ? "default" : "secondary"}
           scale={0.8}
           loading={isLoading ? true : false}
-          margin={0}
           disabled={
             user.firstName === first && user.lastName === last ? true : false
           }
         >
           Save
         </Button>
+        </Grid>
+      </Grid.Container>
       </Card.Footer>
     </Card>
   );

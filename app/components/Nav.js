@@ -74,7 +74,7 @@ const Nav = ({ themeType, setThemeType }) => {
             justifyContent: "space-between",
           }}
         >
-          <NextLink href="/" passHref>
+          <NextLink href={router.pathname.startsWith('/admin') ? '/admin' : '/'} passHref>
             <Link>
               <Image
                 src={themeType === "dark" ? logo : logoLight}
@@ -148,12 +148,11 @@ const Nav = ({ themeType, setThemeType }) => {
                 </Tabs>
                 <Button
                   auto
-                  margin={0}
                   type="secondary"
                   scale={0.7}
                   onClick={() => router.push("/signup")}
                 >
-                  <Text font="14px" style={{ fontWeight: 600 }}>
+                  <Text font="14px" style={{ fontWeight: 500 }}>
                     Sign Up
                   </Text>
                 </Button>

@@ -1,8 +1,11 @@
 import { withIronSessionSsr } from "iron-session/next";
 import clientPromise from "../../lib/mongodb";
-import { Text } from "@geist-ui/core";
+import { Text, Note, Spacer } from "@geist-ui/core";
 import Name from "../../components/ManageAccount/Name";
-import Email from "../../components/ManageAccount/email";
+import Email from "../../components/ManageAccount/Email";
+import Password from '../../components/ManageAccount/Password'
+import Subscription from '../../components/ManageAccount/Subscription';
+import {format} from 'date-fns'
 
 const ManageAccount = ({ user }) => {
   console.log(user);
@@ -12,8 +15,12 @@ const ManageAccount = ({ user }) => {
         <Text h2 style={{ fontWeight: 700 }}>
           Account Information
         </Text>
+      {user.status === 'active' && !user.paymentMethod && !user.cancelAtPeriodEnd ? <><Note type="warning">You must add a payment method if you wish to continue using Pryzma after your trial is over.</Note><Spacer h={1}/></> : ''}
+      {user.cancelAtPeriodEnd && <><Note type="error" mb="10px">{`Your subscription ends on ${format(new Date(user.nextInvoice * 1000), 'MMMM dd, yyyy')}`}</Note><Spacer h={1}/></>}
         <Name user={user} />
         <Email user={user} />
+        <Password user={user} />
+        <Subscription user={user} />
       </div>
     </div>
   );
@@ -55,6 +62,7 @@ export const getServerSideProps = withIronSessionSsr(
           lastName: updatedUser.lastName,
           email: updatedUser.email,
           stripeCustomerId: updatedUser.stripeCustomerId,
+          subscriptionId: updatedUser.subscriptionId,
           isVerified: updatedUser.isVerified,
           nextInvoice: updatedUser.nextInvoice,
           cardDetails: updatedUser.cardDetails,

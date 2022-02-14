@@ -6,6 +6,7 @@ import {
   Spacer,
   useToasts,
   Modal,
+  Grid
 } from "@geist-ui/core";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -89,28 +90,28 @@ const Email = ({ user }) => {
         <Input
           label="Email"
           mb="20px"
-          width="80%"
+          width="75%"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           style={{ minWidth: 220 }}
         />
-        <Card.Footer
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <Text type="secondary" mr="10px">
+        <Card.Footer disableAutoMargin pt="5px" pb="5px">
+        <Grid.Container justify="space-between" alignItems="center">
+          <Grid><Text type="secondary" mr="10px">
             After clicking save, we will send you an email to verify the change.
-          </Text>
+          </Text></Grid>
+          <Grid>
           <Button
             auto
             scale={0.8}
-            margin={0}
             type={isLoading ? "default" : "secondary"}
             disabled={user.email === email ? true : false}
             onClick={handleSubmit}
             loading={isLoading ? true : false}
           >
             Save
-          </Button>
+          </Button></Grid>
+        </Grid.Container>
         </Card.Footer>
       </Card>
       <Modal visible={modal} onClose={() => setModal(false)}>
@@ -136,6 +137,7 @@ const Email = ({ user }) => {
           Confirm
         </Modal.Action>
       </Modal>
+      <Spacer h={1.5}/>
     </>
   );
 };
