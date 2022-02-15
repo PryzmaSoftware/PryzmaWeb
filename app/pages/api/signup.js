@@ -31,6 +31,7 @@ const handler = async (req, res) => {
     // create stripe subscription
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
+      cancel_at_period_end: true,
       items:
         plan === "monthly"
           ? [{ price: "price_1KSXLQIUx22VK4GNO5RDPvWO" }]
@@ -48,9 +49,9 @@ const handler = async (req, res) => {
       stripeCustomerId: customer.id,
       subscriptionId: subscription.id,
       plan: plan,
-      status: "active",
+      status: "trialing",
       paymentMethod: null,
-      cancelAtPeriodEnd: false,
+      cancelAtPeriodEnd: true,
       cardDetails: null,
       nextInvoice: subscription.current_period_end,
       invoices: [],

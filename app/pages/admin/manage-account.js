@@ -16,38 +16,7 @@ const ManageAccount = ({ user }) => {
         <Text h2 style={{ fontWeight: 700 }}>
           Account Information
         </Text>
-        {user.status === "active" &&
-        !user.paymentMethod &&
-        !user.cancelAtPeriodEnd &&
-        user.plan ? (
-          <>
-            <Note type="warning">
-              You must add a payment method if you wish to continue using Pryzma
-              after your trial is over.
-            </Note>
-            <Spacer h={1} />
-          </>
-        ) : (
-          ""
-        )}
-        {user.cancelAtPeriodEnd && (
-          <>
-            <Note type="error" mb="10px">{`Your subscription ends on ${format(
-              new Date(user.nextInvoice * 1000),
-              "MMMM dd, yyyy"
-            )}`}</Note>
-            <Spacer h={1} />
-          </>
-        )}
-        {!user.plan && (
-          <>
-            <Note
-              type="error"
-              mb="10px"
-            >{`You must select a subscription plan to use our services.`}</Note>
-            <Spacer h={1} />
-          </>
-        )}
+        {user.status === 'trialing' && !user.paymentMethod && <><Note type="warning">You must enter a payment method if you wish to continue using our services after your free trial is over.</Note><Spacer h={1} /></>}
         <Name user={user} />
         <Email user={user} />
         <Password user={user} />
@@ -101,6 +70,7 @@ export const getServerSideProps = withIronSessionSsr(
           cancelAtPeriodEnd: updatedUser.cancelAtPeriodEnd,
           plan: updatedUser.plan,
           status: updatedUser.status,
+          invoices: updatedUser.invoices
         },
       },
     };
