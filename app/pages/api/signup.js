@@ -53,6 +53,7 @@ const handler = async (req, res) => {
       cancelAtPeriodEnd: false,
       cardDetails: null,
       nextInvoice: subscription.current_period_end,
+      invoices: [],
       amountDue: null,
       firstName: first.charAt(0).toUpperCase() + first.slice(1),
       lastName: last.charAt(0).toUpperCase() + last.slice(1),

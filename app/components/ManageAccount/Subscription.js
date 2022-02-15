@@ -6,11 +6,11 @@ import {
   useToasts,
   Grid,
   useModal,
+  Spacer,
 } from "@geist-ui/core";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-
 
 const Subscription = ({ user }) => {
   const router = useRouter();
@@ -47,9 +47,11 @@ const Subscription = ({ user }) => {
   const handleRenewSubscription = async () => {
     setIsLoading(true);
     // send sub id to backend
-    const response = await axios.post('/api/manage/renew-subscription', {subscriptionId: user.subscriptionId});
+    const response = await axios.post("/api/manage/renew-subscription", {
+      subscriptionId: user.subscriptionId,
+    });
 
-     // check response
+    // check response
     if (response.status === 200) {
       setTimeout(() => {
         setIsLoading(false);
@@ -64,7 +66,7 @@ const Subscription = ({ user }) => {
         type: "error",
       });
     }
-  }
+  };
 
   return (
     <>
@@ -85,7 +87,7 @@ const Subscription = ({ user }) => {
                   ? user.plan === "monthly"
                     ? "$79.99 billed monthly"
                     : "$799.99 billed annualy"
-                  : "You don't have a subscription at this time, please select a plan by clicking the button below."}
+                  : "You don't have a subscription at this time, you can subscribe by clicking the button below."}
               </Text>
             </Card>
           </Grid>
@@ -98,7 +100,12 @@ const Subscription = ({ user }) => {
               </Text>
             </Grid>
             <Grid>
-              {user.cancelAtPeriodEnd ? (
+              {!user.plan && (
+                <Button auto scale={0.8} type="success">
+                  Select Plan
+                </Button>
+              )}
+              {user.cancelAtPeriodEnd && user.plan && (
                 <Button
                   mr="8px"
                   auto
@@ -107,7 +114,8 @@ const Subscription = ({ user }) => {
                 >
                   Renew Plan
                 </Button>
-              ) : (
+              )}
+              {!user.cancelAtPeriodEnd && user.plan && (
                 <>
                   <Button
                     mr="8px"
@@ -127,10 +135,14 @@ const Subscription = ({ user }) => {
         </Card.Footer>
       </Card>
       <Modal {...bindings}>
-        <Modal.Title>{user.cancelAtPeriodEnd ? 'Renew Plan' : 'Cancel Plan'}</Modal.Title>
+        <Modal.Title>
+          {user.cancelAtPeriodEnd ? "Renew Plan" : "Cancel Plan"}
+        </Modal.Title>
         <Modal.Content>
           <Text type="secondary" style={{ textAlign: "center" }}>
-            {user.cancelAtPeriodEnd ? 'You are about to renew you subscription. If confirmed, we will continue to bill you at the normal rate, and you will keep access to our services.' : 'Are you sure you want to cancel your subscription? You will have access to current services until the next billing period.'}
+            {user.cancelAtPeriodEnd
+              ? "You are about to renew you subscription. If confirmed, we will continue to bill you at the normal rate, and you will keep access to our services."
+              : "Are you sure you want to cancel your subscription? You will have access to current services until the next billing period."}
           </Text>
         </Modal.Content>
         <Modal.Action passive onClick={() => setVisible(false)}>
@@ -138,11 +150,16 @@ const Subscription = ({ user }) => {
         </Modal.Action>
         <Modal.Action
           loading={isLoading ? true : false}
-          onClick={user.cancelAtPeriodEnd ? handleRenewSubscription : handleCancelSubscription}
+          onClick={
+            user.cancelAtPeriodEnd
+              ? handleRenewSubscription
+              : handleCancelSubscription
+          }
         >
           Confirm
         </Modal.Action>
       </Modal>
+      <Spacer h={1.5} />
     </>
   );
 };
