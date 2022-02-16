@@ -1,14 +1,29 @@
 import { withIronSessionSsr } from "iron-session/next";
 import clientPromise from "../../lib/mongodb";
-import { Text, Note, Spacer } from "@geist-ui/core";
+import { Text, Note, Spacer, useToasts } from "@geist-ui/core";
 import Name from "../../components/ManageAccount/Name";
 import Email from "../../components/ManageAccount/Email";
 import Password from "../../components/ManageAccount/Password";
 import Subscription from "../../components/ManageAccount/Subscription";
-import { format } from "date-fns";
 import PaymentMethod from "../../components/ManageAccount/PaymentMethod";
+import { format } from "date-fns";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const ManageAccount = ({ user }) => {
+  const router = useRouter();
+
+  const { setToast } = useToasts();
+
+  useEffect(() => {
+    if (!router.query.paymentUpdated) return;
+    router.replace(router.asPath);
+    setToast({
+      text: "Your payment method has been updated.",
+      type: "success",
+    });
+  }, [router.query.paymentUpdated]);
+
   console.log(user);
   return (
     <div style={{ padding: 16 }}>
@@ -16,12 +31,33 @@ const ManageAccount = ({ user }) => {
         <Text h2 style={{ fontWeight: 700 }}>
           Account Information
         </Text>
-        {user.status === 'trialing' && !user.paymentMethod && <><Note type="warning">You must enter a payment method if you wish to continue using our services after your free trial is over.</Note><Spacer h={1} /></>}
+        {user.status === "trialing" && !user.paymentMethod && (
+          <>
+            <Note type="warning">
+              You must enter a payment method if you wish to continue using our
+              services after your free trial is over.
+            </Note>
+            <Spacer h={1} />
+          </>
+        )}
+        {user.status === "active" &&
+          user.paymentMethod &&
+          user.cancelAtPeriodEnd && (
+            <>
+              <Note type="warning">
+                Your subscription ends on{" "}
+                {format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}
+              </Note>
+              <Spacer h={1} />
+            </>
+          )}
         <Name user={user} />
         <Email user={user} />
         <Password user={user} />
         <Subscription user={user} />
-        <PaymentMethod user={user} />
+        {!user.cancelAtPeriodEnd && user.status !== "trialing" && (
+          <PaymentMethod user={user} />
+        )}
       </div>
     </div>
   );
@@ -70,7 +106,8 @@ export const getServerSideProps = withIronSessionSsr(
           cancelAtPeriodEnd: updatedUser.cancelAtPeriodEnd,
           plan: updatedUser.plan,
           status: updatedUser.status,
-          invoices: updatedUser.invoices
+          invoices: updatedUser.invoices,
+          paymentMethod: updatedUser.paymentMethod,
         },
       },
     };

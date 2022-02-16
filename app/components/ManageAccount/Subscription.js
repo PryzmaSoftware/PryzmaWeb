@@ -7,11 +7,11 @@ import {
   Grid,
   useModal,
   Spacer,
+  Fieldset,
 } from "@geist-ui/core";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-
 
 const Subscription = ({ user }) => {
   const router = useRouter();
@@ -48,9 +48,11 @@ const Subscription = ({ user }) => {
   const handleRenewSubscription = async () => {
     setIsLoading(true);
     // send sub id to backend
-    const response = await axios.post('/api/manage/renew-subscription', {subscriptionId: user.subscriptionId});
+    const response = await axios.post("/api/manage/renew-subscription", {
+      subscriptionId: user.subscriptionId,
+    });
 
-     // check response
+    // check response
     if (response.status === 200) {
       setTimeout(() => {
         setIsLoading(false);
@@ -65,11 +67,11 @@ const Subscription = ({ user }) => {
         type: "error",
       });
     }
-  }
+  };
 
   return (
     <>
-      <Card>
+      <Fieldset>
         <Text h3>Your Subscription</Text>
         <Grid.Container mb="20px">
           <Grid mr="20px">
@@ -91,43 +93,47 @@ const Subscription = ({ user }) => {
             </Card>
           </Grid>
         </Grid.Container>
-        <Card.Footer disableAutoMargin pt="5px" pb="5px">
+        <Fieldset.Footer disableAutoMargin pt="5px" pb="5px">
           <Grid.Container justify="space-between" alignItems="center">
             <Grid>
-              <Text type="secondary">
-                {user.status === 'active' ? 'You can make changes to your subscription at any time.' : 'You are currently using your 7 day free trial.'}
-              </Text>
+              <Text type="secondary">Manage Subscription</Text>
             </Grid>
             <Grid>
-      {user.status === 'active' && user.cancelAtPeriodEnd && <Button
+              {user.status === "active" && user.cancelAtPeriodEnd && (
+                <Button auto scale={0.6} onClick={() => setVisible(true)}>
+                  Renew Plan
+                </Button>
+              )}
+              {user.status === "active" && !user.cancelAtPeriodEnd && (
+                <Button
                   mr="8px"
                   auto
-                  scale={0.8}
+                  type="error"
+                  ghost
+                  scale={0.6}
                   onClick={() => setVisible(true)}
                 >
-                  Renew Plan
-                </Button>}
-                {user.status === 'active' && !user.cancelAtPeriodEnd && <Button
-                    mr="8px"
-                    auto
-                    scale={0.8}
-                    onClick={() => setVisible(true)}
-                  >
-                    Cancel Plan
-                  </Button>}
-                {user.status === 'active' && !user.cancelAtPeriodEnd && <Button auto ghost scale={0.8}>
-                    Change Plan
-                  </Button>}
-                  
+                  Cancel Plan
+                </Button>
+              )}
+              {user.status === "active" && !user.cancelAtPeriodEnd && (
+                <Button auto ghost scale={0.6}>
+                  Change Plan
+                </Button>
+              )}
             </Grid>
           </Grid.Container>
-        </Card.Footer>
-      </Card>
+        </Fieldset.Footer>
+      </Fieldset>
       <Modal {...bindings}>
-        <Modal.Title>{user.cancelAtPeriodEnd ? 'Renew Plan' : 'Cancel Plan'}</Modal.Title>
+        <Modal.Title>
+          {user.cancelAtPeriodEnd ? "Renew Plan" : "Cancel Plan"}
+        </Modal.Title>
         <Modal.Content>
           <Text type="secondary" style={{ textAlign: "center" }}>
-            {user.cancelAtPeriodEnd ? 'You are about to renew you subscription. If confirmed, we will continue to bill you at the normal rate, and you will keep access to our services.' : 'Are you sure you want to cancel your subscription? You will have access to current services until the next billing period.'}
+            {user.cancelAtPeriodEnd
+              ? "You are about to renew you subscription. If confirmed, we will continue to bill you at the normal rate, and you will keep access to our services."
+              : "Are you sure you want to cancel your subscription? You will have access to current services until the next billing period."}
           </Text>
         </Modal.Content>
         <Modal.Action passive onClick={() => setVisible(false)}>
@@ -135,12 +141,16 @@ const Subscription = ({ user }) => {
         </Modal.Action>
         <Modal.Action
           loading={isLoading ? true : false}
-          onClick={user.cancelAtPeriodEnd ? handleRenewSubscription : handleCancelSubscription}
+          onClick={
+            user.cancelAtPeriodEnd
+              ? handleRenewSubscription
+              : handleCancelSubscription
+          }
         >
           Confirm
         </Modal.Action>
       </Modal>
-      <Spacer h={1.5}/>
+      <Spacer h={1.5} />
     </>
   );
 };

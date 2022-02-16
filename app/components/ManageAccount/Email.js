@@ -2,11 +2,11 @@ import {
   Input,
   Text,
   Button,
-  Card,
   Spacer,
   useToasts,
   Modal,
-  Grid
+  Grid,
+  Fieldset,
 } from "@geist-ui/core";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -85,7 +85,7 @@ const Email = ({ user }) => {
   return (
     <>
       <Spacer h={1.5} />
-      <Card>
+      <Fieldset>
         <Text h3>Your Email</Text>
         <Input
           label="Email"
@@ -95,25 +95,28 @@ const Email = ({ user }) => {
           onChange={(e) => setEmail(e.target.value)}
           style={{ minWidth: 220 }}
         />
-        <Card.Footer disableAutoMargin pt="5px" pb="5px">
-        <Grid.Container justify="space-between" alignItems="center">
-          <Grid><Text type="secondary" mr="10px">
-            After clicking save, we will send you an email to verify the change.
-          </Text></Grid>
-          <Grid>
-          <Button
-            auto
-            scale={0.8}
-            type={isLoading ? "default" : "secondary"}
-            disabled={user.email === email ? true : false}
-            onClick={handleSubmit}
-            loading={isLoading ? true : false}
-          >
-            Save
-          </Button></Grid>
-        </Grid.Container>
-        </Card.Footer>
-      </Card>
+        <Fieldset.Footer>
+          <Grid.Container justify="space-between" alignItems="center">
+            <Grid>
+              <Text type="secondary" mr="10px">
+                Update your email.
+              </Text>
+            </Grid>
+            <Grid>
+              <Button
+                auto
+                scale={0.6}
+                type={isLoading ? "default" : "secondary"}
+                disabled={user.email === email ? true : false}
+                onClick={handleSubmit}
+                loading={isLoading ? true : false}
+              >
+                Save
+              </Button>
+            </Grid>
+          </Grid.Container>
+        </Fieldset.Footer>
+      </Fieldset>
       <Modal visible={modal} onClose={() => setModal(false)}>
         <Modal.Title>Verify Email</Modal.Title>
         <Modal.Content>
@@ -137,7 +140,7 @@ const Email = ({ user }) => {
           Confirm
         </Modal.Action>
       </Modal>
-      <Spacer h={1.5}/>
+      <Spacer h={1.5} />
     </>
   );
 };
