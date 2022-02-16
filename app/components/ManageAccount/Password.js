@@ -67,7 +67,7 @@ const Password = ({ user }) => {
         <Fieldset.Footer>
           <Grid.Container alignItems="center" justify="space-between">
             <Grid>
-              <Text type="secondary" mr="10px">
+              <Text type="secondary" mr="10px" small>
                 Update Password.
               </Text>
             </Grid>

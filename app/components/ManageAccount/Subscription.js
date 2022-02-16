@@ -93,14 +93,14 @@ const Subscription = ({ user }) => {
             </Card>
           </Grid>
         </Grid.Container>
-        <Fieldset.Footer disableAutoMargin pt="5px" pb="5px">
+        <Fieldset.Footer>
           <Grid.Container justify="space-between" alignItems="center">
             <Grid>
-              <Text type="secondary">Manage Subscription</Text>
+              <Text type="secondary">Manage Plan</Text>
             </Grid>
             <Grid>
               {user.status === "active" && user.cancelAtPeriodEnd && (
-                <Button auto scale={0.6} onClick={() => setVisible(true)}>
+                <Button auto scale={0.5} onClick={() => setVisible(true)}>
                   Renew Plan
                 </Button>
               )}
@@ -110,14 +110,14 @@ const Subscription = ({ user }) => {
                   auto
                   type="error"
                   ghost
-                  scale={0.6}
+                  scale={0.5}
                   onClick={() => setVisible(true)}
                 >
                   Cancel Plan
                 </Button>
               )}
               {user.status === "active" && !user.cancelAtPeriodEnd && (
-                <Button auto ghost scale={0.6}>
+                <Button auto ghost scale={0.5}>
                   Change Plan
                 </Button>
               )}

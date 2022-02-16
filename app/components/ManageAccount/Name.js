@@ -53,7 +53,7 @@ const Name = ({ user }) => {
       <Fieldset.Footer>
         <Grid.Container alignItems="center" justify="space-between">
           <Grid>
-            <Text type="secondary" mr="10px">
+            <Text type="secondary" mr="10px" small>
               Update your name.
             </Text>
           </Grid>

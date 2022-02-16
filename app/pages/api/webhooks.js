@@ -50,6 +50,20 @@ const handler = async (req, res) => {
 
     // update in mongodb
     await collection.updateOne({ stripeCustomerId: customerId }, updateUser);
+  } else if (event.type === 'invoice.upcoming') {
+    // get information from event
+    const customerId = event.data.object.customer;
+    const invoice = event.data.object
+
+    // set up object for mongodb
+    const updateInvoice = {
+      $set: {
+        upcomingInvoices: invoice
+      }
+    }
+
+    // update in mongodb
+    await collection.updateOne({stripeCustomerId: customerId}, updateInvoice)
   }
 
   return res.status(200).send({ received: true });

@@ -6,7 +6,9 @@ import Email from "../../components/ManageAccount/Email";
 import Password from "../../components/ManageAccount/Password";
 import Subscription from "../../components/ManageAccount/Subscription";
 import PaymentMethod from "../../components/ManageAccount/PaymentMethod";
-import { format } from "date-fns";
+import RecentInvoices from '../../components/ManageAccount/RecentInvoices';
+import UpcomingInvoices from '../../components/ManageAccount/UpcomingInvoices'
+import { format, formatRelative } from "date-fns";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -26,7 +28,7 @@ const ManageAccount = ({ user }) => {
 
   console.log(user);
   return (
-    <div style={{ padding: 16 }}>
+    <div style={{ padding: 16, marginBottom: 50 }}>
       <div style={{ maxWidth: 1000, margin: "auto" }}>
         <Text h2 style={{ fontWeight: 700 }}>
           Account Information
@@ -34,8 +36,7 @@ const ManageAccount = ({ user }) => {
         {user.status === "trialing" && !user.paymentMethod && (
           <>
             <Note type="warning">
-              You must enter a payment method if you wish to continue using our
-              services after your free trial is over.
+              You trial ends on {format(new Date(user.nextInvoice * 1000), 'MMM dd, yyyy')}. You must add a payment method if wish to use our services after your trial is over.
             </Note>
             <Spacer h={1} />
           </>
@@ -44,7 +45,7 @@ const ManageAccount = ({ user }) => {
           user.paymentMethod &&
           user.cancelAtPeriodEnd && (
             <>
-              <Note type="warning">
+              <Note type="error">
                 Your subscription ends on{" "}
                 {format(new Date(user.nextInvoice * 1000), "MMMM dd, yyyy")}
               </Note>
@@ -55,9 +56,9 @@ const ManageAccount = ({ user }) => {
         <Email user={user} />
         <Password user={user} />
         <Subscription user={user} />
-        {!user.cancelAtPeriodEnd && user.status !== "trialing" && (
           <PaymentMethod user={user} />
-        )}
+        <UpcomingInvoices user={user} />
+          <RecentInvoices user={user} />
       </div>
     </div>
   );
@@ -85,9 +86,11 @@ export const getServerSideProps = withIronSessionSsr(
     const db = client.db();
     const collection = db.collection("users");
 
+    console.log(user)
+
     // get user from db
     let updatedUser = await collection.findOne({
-      stripeCustomerId: user.user.stripeCustomerId,
+      stripeCustomerId: user.user,
     });
 
     updatedUser = JSON.parse(JSON.stringify(updatedUser));
@@ -101,13 +104,14 @@ export const getServerSideProps = withIronSessionSsr(
           stripeCustomerId: updatedUser.stripeCustomerId,
           subscriptionId: updatedUser.subscriptionId,
           isVerified: updatedUser.isVerified,
-          nextInvoice: updatedUser.nextInvoice,
           cardDetails: updatedUser.cardDetails,
           cancelAtPeriodEnd: updatedUser.cancelAtPeriodEnd,
           plan: updatedUser.plan,
           status: updatedUser.status,
-          invoices: updatedUser.invoices,
+          recentInvoices: updatedUser.recentInvoices,
+          upcomingInvoices: updatedUser.upcomingInvoices,
           paymentMethod: updatedUser.paymentMethod,
+          nextInvoice: updatedUser.nextInvoice
         },
       },
     };

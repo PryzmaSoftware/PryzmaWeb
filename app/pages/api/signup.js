@@ -41,8 +41,16 @@ const handler = async (req, res) => {
       expand: ["latest_invoice.payment_intent"],
     });
 
+     // get customers invoices
+    const invoiceItems = await stripe.invoices.list({
+      subscription: subscription.id,
+      limit: 100,
+    });
+
     // generate email verification code
     const code = Math.floor(Math.random() * 10000 + 50000);
+
+    console.log(subscription)
 
     // create mongodb user document
     const newUser = {
@@ -53,9 +61,10 @@ const handler = async (req, res) => {
       paymentMethod: null,
       cancelAtPeriodEnd: true,
       cardDetails: null,
-      nextInvoice: subscription.current_period_end,
-      invoices: [],
+      recentInvoices: invoiceItems.data,
+      upcomingInvoices: null,
       amountDue: null,
+      nextInvoice: subscription.current_period_end,
       firstName: first.charAt(0).toUpperCase() + first.slice(1),
       lastName: last.charAt(0).toUpperCase() + last.slice(1),
       email: email,

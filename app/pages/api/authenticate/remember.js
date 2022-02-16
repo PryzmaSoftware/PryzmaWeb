@@ -26,7 +26,7 @@ const handler = withIronSessionApiRoute(
           // set session
           req.session.user = {
             id: user._id,
-            user: user,
+            user: user.stripeCustomerId,
           };
           await req.session.save();
           // send response

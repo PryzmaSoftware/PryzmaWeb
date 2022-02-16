@@ -19,15 +19,15 @@ const PaymentMethod = ({ user }) => {
   return (
     <>
       <Fieldset>
-        <Text h3>Payment Method</Text>
+        <Text h3>Your Payment Method</Text>
         {!user.paymentMethod && (
-          <Note type="error" mb="20px">
+          <Note type="warning" mb="20px" width="90%">
             You don't have a payment method on file. Add a payment method below
             to continue using our services before your trial is over.
           </Note>
         )}
         {user.paymentMethod && (
-          <Card mb="20px" width="50%">
+          <Card mb="20px" width="90%">
             <Grid.Container alignItems="center">
               <Dot type="success" />
               <Spacer w={0.5} />
@@ -44,13 +44,13 @@ const PaymentMethod = ({ user }) => {
                   {user.cardDetails.brand}
                 </Text>
               </Grid>
-              <Spacer w={2} />
+              <Spacer w={1.5} />
               <Grid>
                 <Text small type="secondary">
                   ****{user.cardDetails.last4}
                 </Text>
               </Grid>
-              <Spacer w={2} />
+              <Spacer w={1.5} />
               <Grid>
                 <Text small type="secondary">
                   exp {user.cardDetails.expMonth}/{user.cardDetails.expYear}
@@ -63,12 +63,12 @@ const PaymentMethod = ({ user }) => {
         <Fieldset.Footer>
           <Grid.Container justify="space-between" alignItems="center">
             <Grid>
-              <Text type="secondary" mr="10px">
+              <Text type="secondary" mr="10px" small>
                 Update payment method.
               </Text>
             </Grid>
             <Grid>
-              <Button scale={0.6} auto onClick={() => setVisible(true)}>
+              <Button scale={0.6} auto disabled={user.cancelAtPeriodEnd && user.status === 'active' ? true : false} onClick={() => setVisible(true)}>
                 Update
               </Button>
             </Grid>
@@ -81,6 +81,7 @@ const PaymentMethod = ({ user }) => {
           <ElementsProvider user={user} setVisible={setVisible} />
         </Modal.Content>
       </Modal>
+      <Spacer h={1.5} />
     </>
   );
 };

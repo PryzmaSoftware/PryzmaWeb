@@ -98,7 +98,7 @@ const Email = ({ user }) => {
         <Fieldset.Footer>
           <Grid.Container justify="space-between" alignItems="center">
             <Grid>
-              <Text type="secondary" mr="10px">
+              <Text type="secondary" mr="10px" small>
                 Update your email.
               </Text>
             </Grid>
