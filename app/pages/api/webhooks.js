@@ -108,7 +108,7 @@ const handler = async (req, res) => {
     const userStatus = {
       $set: {
         status: "active",
-        nextInvoice: nextInvoice,
+        nextInvoice: null,
         recentInvoices: invoices.data,
         upcomingInvoices: null,
         failedPaymentInvoice: invoiceLink,

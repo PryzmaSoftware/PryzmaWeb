@@ -122,7 +122,7 @@ const Subscription = ({ user }) => {
                   ghost
                   scale={0.5}
                   disabled={user.failedPaymentInvoice ? true : false}
-                  onClick={() => router.push("/change-plan")}
+                  onClick={() => router.push("/admin/change-plan")}
                 >
                   Change Plan
                 </Button>
@@ -132,7 +132,7 @@ const Subscription = ({ user }) => {
                   auto
                   ghost
                   scale={0.6}
-                  onClick={() => router.push("/select-plan")}
+                  onClick={() => router.push("/admin/select-plan")}
                 >
                   Select Plan
                 </Button>
