@@ -50,20 +50,95 @@ const handler = async (req, res) => {
 
     // update in mongodb
     await collection.updateOne({ stripeCustomerId: customerId }, updateUser);
-  } else if (event.type === 'invoice.upcoming') {
+  } else if (event.type === "invoice.upcoming") {
     // get information from event
     const customerId = event.data.object.customer;
-    const invoice = event.data.object
+    const invoice = event.data.object;
 
     // set up object for mongodb
     const updateInvoice = {
       $set: {
-        upcomingInvoices: invoice
-      }
-    }
+        upcomingInvoices: invoice,
+      },
+    };
 
     // update in mongodb
-    await collection.updateOne({stripeCustomerId: customerId}, updateInvoice)
+    await collection.updateOne({ stripeCustomerId: customerId }, updateInvoice);
+  } else if (event.type === "invoice.payment_succeeded") {
+    // get info from event
+    const customerId = event.data.object.customer;
+    const subscriptionId = event.data.object.subscription;
+    const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+    const nextInvoice = subscription.current_period_end;
+
+    // get all invoices to update recent invoices in mongodb
+    const invoices = await stripe.invoices.list({
+      subscription: subscriptionId,
+      limit: 100,
+    });
+
+    // create object for mongodb
+    // to update user status
+    const userStatus = {
+      $set: {
+        status: "active",
+        nextInvoice: nextInvoice,
+        recentInvoices: invoices.data,
+        upcomingInvoices: null,
+        failedPaymentInvoice: null,
+      },
+    };
+
+    // update in mongodb
+    await collection.updateOne({ stripeCustomerId: customerId }, userStatus);
+  } else if (event.type === "invoice.payment_failed") {
+    // get info from event
+    const customerId = event.data.object.customer;
+    const subscriptionId = event.data.object.subscription;
+    const invoiceLink = event.data.object.hosted_invoice_url;
+
+    // get all invoices to update recent invoices in mongodb
+    const invoices = await stripe.invoices.list({
+      subscription: subscriptionId,
+      limit: 100,
+    });
+
+    // create object for mongodb
+    // to update user status
+    const userStatus = {
+      $set: {
+        status: "active",
+        nextInvoice: nextInvoice,
+        recentInvoices: invoices.data,
+        upcomingInvoices: null,
+        failedPaymentInvoice: invoiceLink,
+      },
+    };
+    // update in mongodb
+    await collection.updateOne({ stripeCustomerId: customerId }, userStatus);
+  } else if (event.type === "customer.subscription.deleted") {
+    const customerId = event.data.object.customer;
+
+    // create document object to update customer
+    // in mongodb
+    const updateUser = {
+      $set: {
+        subscriptionId: null,
+        plan: null,
+        status: "inactive",
+        paymentMethod: null,
+        cancelAtPeriodEnd: false,
+        cardDetails: null,
+        recentInvoices: null,
+        upcomingInvoices: null,
+        nextInvoice: null,
+        magicLink: null,
+        failedPaymentInvoice: null,
+      },
+    };
+
+    // update in mongodb
+    await collection.updateOne({ stripeCustomerId: customerId }, updateUser);
   }
 
   return res.status(200).send({ received: true });

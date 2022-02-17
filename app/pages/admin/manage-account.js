@@ -1,14 +1,22 @@
 import { withIronSessionSsr } from "iron-session/next";
 import clientPromise from "../../lib/mongodb";
-import { Text, Note, Spacer, useToasts } from "@geist-ui/core";
+import {
+  Text,
+  Note,
+  Spacer,
+  useToasts,
+  Card,
+  Grid,
+  Button,
+} from "@geist-ui/core";
 import Name from "../../components/ManageAccount/Name";
 import Email from "../../components/ManageAccount/Email";
 import Password from "../../components/ManageAccount/Password";
 import Subscription from "../../components/ManageAccount/Subscription";
 import PaymentMethod from "../../components/ManageAccount/PaymentMethod";
-import RecentInvoices from '../../components/ManageAccount/RecentInvoices';
-import UpcomingInvoices from '../../components/ManageAccount/UpcomingInvoices'
-import { format, formatRelative } from "date-fns";
+import RecentInvoices from "../../components/ManageAccount/RecentInvoices";
+import UpcomingInvoices from "../../components/ManageAccount/UpcomingInvoices";
+import { format } from "date-fns";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -33,10 +41,33 @@ const ManageAccount = ({ user }) => {
         <Text h2 style={{ fontWeight: 700 }}>
           Account Information
         </Text>
+        {user.failedPaymentInvoice && (
+          <>
+            <Card>
+              <Grid.Container justify="space-between" alignItems="center">
+                <Text type="error" margin={0}>
+                  Your payment has failed. Please click the "Pay Now" button to
+                  pay your invoice.
+                </Text>
+                <Button
+                  type="error"
+                  ghost
+                  onClick={() => window.open(user.failedPaymentInvoice)}
+                >
+                  Pay Now
+                </Button>
+              </Grid.Container>
+            </Card>
+            <Spacer h={1} />
+          </>
+        )}
         {user.status === "trialing" && !user.paymentMethod && (
           <>
             <Note type="warning">
-              You trial ends on {format(new Date(user.nextInvoice * 1000), 'MMM dd, yyyy')}. You must add a payment method if wish to use our services after your trial is over.
+              You trial ends on{" "}
+              {format(new Date(user.nextInvoice * 1000), "MMM dd, yyyy")}. You
+              must add a payment method if wish to use our services after your
+              trial is over.
             </Note>
             <Spacer h={1} />
           </>
@@ -56,9 +87,9 @@ const ManageAccount = ({ user }) => {
         <Email user={user} />
         <Password user={user} />
         <Subscription user={user} />
-          <PaymentMethod user={user} />
-        <UpcomingInvoices user={user} />
-          <RecentInvoices user={user} />
+        {user.subscriptionId && <PaymentMethod user={user} />}
+        {user.subscriptionId && <UpcomingInvoices user={user} />}
+        {user.subscriptionId && <RecentInvoices user={user} />}
       </div>
     </div>
   );
@@ -86,7 +117,7 @@ export const getServerSideProps = withIronSessionSsr(
     const db = client.db();
     const collection = db.collection("users");
 
-    console.log(user)
+    console.log(user);
 
     // get user from db
     let updatedUser = await collection.findOne({
@@ -111,7 +142,8 @@ export const getServerSideProps = withIronSessionSsr(
           recentInvoices: updatedUser.recentInvoices,
           upcomingInvoices: updatedUser.upcomingInvoices,
           paymentMethod: updatedUser.paymentMethod,
-          nextInvoice: updatedUser.nextInvoice
+          nextInvoice: updatedUser.nextInvoice,
+          failedPaymentInvoice: updatedUser.failedPaymentInvoice,
         },
       },
     };

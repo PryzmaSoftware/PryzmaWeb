@@ -6,18 +6,27 @@ const RecentInvoices = ({ user }) => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const invoices = user.recentInvoices.map(element => {
-      return {date: format(new Date(element.period_start * 1000), 'MMM dd, yyyy'), number: element.number, status: element.status.charAt(0).toUpperCase() + element.status.slice(1), amountDue: element.amount_due === 0 ? '$0.00' : element.amount_due, amountPaid: element.amount_paid === 0 ? '$0.00' : element.amoumt_paid, link: element.hosted_invoice_url}
-    })
-    console.log(invoices)
-    setData(invoices)
+    if (!user.recentInvoices) return;
+    const invoices = user.recentInvoices.map((element) => {
+      return {
+        date: format(new Date(element.period_start * 1000), "MMM dd, yyyy"),
+        number: element.number,
+        status:
+          element.status.charAt(0).toUpperCase() + element.status.slice(1),
+        amountDue: element.amount_due === 0 ? "$0.00" : element.amount_due,
+        amountPaid: element.amount_paid === 0 ? "$0.00" : element.amoumt_paid,
+        link: element.hosted_invoice_url,
+      };
+    });
+    console.log(invoices);
+    setData(invoices);
   }, []);
 
-  const handleRowClick = (rowData) => {  
-    window.open(rowData.link)
-  } 
+  const handleRowClick = (rowData) => {
+    window.open(rowData.link);
+  };
 
-  if (!data) return ''
+  if (!data) return "";
 
   return (
     <>

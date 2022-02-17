@@ -29,7 +29,7 @@ const PaymentMethod = ({ user }) => {
         {user.paymentMethod && (
           <Card mb="20px" width="90%">
             <Grid.Container alignItems="center">
-              <Dot type="success" />
+              <Dot type={user.failedPaymentInvoice ? "error" : "success"} />
               <Spacer w={0.5} />
               <Grid style={{ position: "relative", top: 3 }}>
                 <CreditCard size={18} />
@@ -68,7 +68,17 @@ const PaymentMethod = ({ user }) => {
               </Text>
             </Grid>
             <Grid>
-              <Button scale={0.6} auto disabled={user.cancelAtPeriodEnd && user.status === 'active' ? true : false} onClick={() => setVisible(true)}>
+              <Button
+                scale={0.6}
+                auto
+                disabled={
+                  (user.cancelAtPeriodEnd && user.status === "active") ||
+                  user.failedPaymentInvoice
+                    ? true
+                    : false
+                }
+                onClick={() => setVisible(true)}
+              >
                 Update
               </Button>
             </Grid>

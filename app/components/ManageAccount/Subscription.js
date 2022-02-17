@@ -117,8 +117,24 @@ const Subscription = ({ user }) => {
                 </Button>
               )}
               {user.status === "active" && !user.cancelAtPeriodEnd && (
-                <Button auto ghost scale={0.5}>
+                <Button
+                  auto
+                  ghost
+                  scale={0.5}
+                  disabled={user.failedPaymentInvoice ? true : false}
+                  onClick={() => router.push("/change-plan")}
+                >
                   Change Plan
+                </Button>
+              )}
+              {user.status === "inactive" && (
+                <Button
+                  auto
+                  ghost
+                  scale={0.6}
+                  onClick={() => router.push("/select-plan")}
+                >
+                  Select Plan
                 </Button>
               )}
             </Grid>
@@ -133,6 +149,8 @@ const Subscription = ({ user }) => {
           <Text type="secondary" style={{ textAlign: "center" }}>
             {user.cancelAtPeriodEnd
               ? "You are about to renew you subscription. If confirmed, we will continue to bill you at the normal rate, and you will keep access to our services."
+              : user.failedPaymentInvoice
+              ? "Are you sure you want to cancel your subscription? You will lose access to all services immediately."
               : "Are you sure you want to cancel your subscription? You will have access to current services until the next billing period."}
           </Text>
         </Modal.Content>
