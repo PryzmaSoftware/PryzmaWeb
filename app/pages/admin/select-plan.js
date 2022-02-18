@@ -209,16 +209,20 @@ const PaymentProvider = ({ plan, customerId }) => {
       });
 
       if (response.status === 200) {
+        setTimeout(() => {
+          setToast({
+            text: "Your subscription has been created",
+            type: "success",
+          });
+  
+          return router.push("/admin/manage-account");
+        }, 5000)
+      } else {
         setToast({
-          text: "Your subscription has been created",
-          type: "success",
+          text: "Something went wrong, please try again later.",
+          type: "error",
         });
-        return router.push("/admin/manage-account");
       }
-      setToast({
-        text: "Something went wrong, please try again later.",
-        type: "error",
-      });
       // Your customer will be redirected to your `return_url`. For some payment
       // methods like iDEAL, your customer will be redirected to an intermediate
       // site first to authorize the payment, then redirected to the `return_url`.

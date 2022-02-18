@@ -34,9 +34,11 @@ const handler = async (req, res) => {
 
     // update subscription to not cancel at period end
     // this is to update when the customer is trialing
-    await stripe.subscriptions.update(user.subscriptionId, {
-      cancel_at_period_end: false,
-    });
+    if (user.subscriptionId) {
+      await stripe.subscriptions.update(user.subscriptionId, {
+        cancel_at_period_end: false,
+      });
+    }
 
     // creat document object to update in mongodb
     const updateUser = {
@@ -77,11 +79,14 @@ const handler = async (req, res) => {
       limit: 100,
     });
 
+    // get user from db
+    const user = await collection.findOne({ stripeCustomerId: customerId });
+
     // create object for mongodb
     // to update user status
     const userStatus = {
       $set: {
-        status: "active",
+        status: user.isVerified ? "trialing" : "active",
         nextInvoice: nextInvoice,
         recentInvoices: invoices.data,
         upcomingInvoices: null,
@@ -118,6 +123,13 @@ const handler = async (req, res) => {
     await collection.updateOne({ stripeCustomerId: customerId }, userStatus);
   } else if (event.type === "customer.subscription.deleted") {
     const customerId = event.data.object.customer;
+
+    // update customer subscription to no payment method
+    await stripe.customers.update(customerId, {
+      invoice_settings: {
+        default_payment_method: null,
+      },
+    });
 
     // create document object to update customer
     // in mongodb

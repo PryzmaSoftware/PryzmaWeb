@@ -13,8 +13,8 @@ const RecentInvoices = ({ user }) => {
         number: element.number,
         status:
           element.status.charAt(0).toUpperCase() + element.status.slice(1),
-        amountDue: element.amount_due === 0 ? "$0.00" : element.amount_due,
-        amountPaid: element.amount_paid === 0 ? "$0.00" : element.amoumt_paid,
+        amountDue: element.amount_due,
+        amountPaid: element.amount_paid,
         link: element.hosted_invoice_url,
       };
     });

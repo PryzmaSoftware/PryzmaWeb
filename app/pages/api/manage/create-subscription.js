@@ -5,7 +5,10 @@ const handler = async (req, res) => {
   try {
     const { customerId, plan, paymentMethod } = req.body;
 
-    console.log(customerId, plan, paymentMethod);
+    // connect to mongodb
+    const client = await clientPromise;
+    const db = client.db();
+    const collection = db.collection('users')
 
     // create the subscription
     const subscription = await stripe.subscriptions.create({
@@ -17,6 +20,18 @@ const handler = async (req, res) => {
       default_payment_method: paymentMethod,
       payment_behavior: "error_if_incomplete",
     });
+
+    // create update object for mongodb
+    const updateUser = {
+      $set: {
+        subscriptionId: subscription.id,
+        plan: plan,
+        paymentMethod: paymentMethod
+      }
+    }
+
+    // update in mongodb
+    await collection.updateOne({stripeCustomerId: customerId}, updateUser)
 
     // send response back to front end
     res.status(200).send("subscription created");

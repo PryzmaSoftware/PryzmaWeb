@@ -8,7 +8,7 @@ const UpcomingInvoices = ({user}) => {
 
   useEffect(() => {
     if (!user.upcomingInvoices) return setData('none')
-    setData([{date: format(new Date(user.upcomingInvoices.lines.data[0].period.start * 1000), 'MMM dd, yyyy'), amountDue: user.upcomingInvoices.amount_due === 7999 ? '$79.99' : '$799.99' }])
+    setData([{date: format(new Date(user.upcomingInvoices.lines.data[0].period.start * 1000), 'MMM dd, yyyy'), amountDue: user.upcomingInvoices.amount_due}])
   },[])
 
   if (!data) return ''
